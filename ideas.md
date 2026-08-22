@@ -1,81 +1,93 @@
-# RezvanMesh Case Study — Design Directions
+# RezvanMesh Case Study — Design Direction
 
-## Approach 1
-**Theme Name:** Coordinate Field
+## Three possible stylistic approaches
 
-**Very Brief Intro:** A bright engineering notebook translated into a spatial interface, using measured alignment, dimensional notation, and geometry as the page’s visual language. It feels deliberate, clear, and built for technical reading rather than promotion.
+### 1. Signal Field
+**Very Brief Intro:** An editorial engineering field guide that treats the communication network as an observable system. Deep navy surfaces, coordinate lines, and restrained telemetry accents create calm technical authority.
 
 **Probability:** 0.07
 
-## Approach 2
-**Theme Name:** Mineral Instrument
-
-**Very Brief Intro:** A tactile research artefact with quiet paper textures, layered diagrams, and warm annotation cues. It frames software engineering as a disciplined, material practice.
+### 2. Field Manual
+**Very Brief Intro:** A warm, paper-led research dossier that uses documentary typography, small evidence labels, and diagrammatic annotations. It feels suitable for a security review or technical archive.
 
 **Probability:** 0.04
 
-## Approach 3
-**Theme Name:** Mesh Observatory
-
-**Very Brief Intro:** A low-light analytical environment where illuminated mesh forms float in a deep viewing field. It emphasizes visual computation, but risks overshadowing the supplied identity with atmosphere.
+### 3. Civic Mesh
+**Very Brief Intro:** A high-contrast public-interest interface that combines an accessible civic palette with clear operational status patterns. It foregrounds purpose, resilience, and human-centered systems thinking.
 
 **Probability:** 0.09
 
----
+## Chosen approach — Signal Field
 
-# Chosen Direction: Coordinate Field
+### Design Movement
+**Signal Field** combines systems-cartography, Swiss technical publishing, and contemporary security-research interfaces. It translates RezvanMesh’s off-grid communication purpose into a composed field of topology, evidence, and clearly isolated responsibility layers.
 
-## Design Movement
-**Swiss International Typographic Style** interpreted through contemporary computational-geometry documentation. The interface is a measured technical composition—not a generic landing page—with structural rules and diagrams serving as the hero material.
+### Core Principles
 
-## Core Principles
-1. **Structure before ornament:** Every line, grid, and color change must describe hierarchy, a boundary, or a relationship.
-2. **Evidence at the surface:** Repository facts, named source files, and practical links lead instead of speculative product claims.
-3. **Spatial clarity:** Offset columns, generous exterior margins, and consistent alignment make long-form technical content easy to scan.
-4. **Modular rhythm:** Each section acts like a documented subsystem, with a label, a concise statement, and supporting detail.
+1. **Evidence before assertion:** Every major technical statement is scoped to the repository and structured as an inspectable record.
+2. **Topology as navigation:** Fine rules, coordinate crosses, and node marks make the mesh concept visible without resorting to decorative sci-fi motifs.
+3. **Asymmetric editorial flow:** Long-form case-study blocks travel along a vertical signal spine rather than a conventional centered-card landing page.
+4. **Operational restraint:** Deep navy, measured typography, short animations, and honest status language preserve a research-oriented tone.
 
-## Color Philosophy
-The supplied identity sets the palette. **IFEM navy** is the primary technical ink and navigation field; **mesh teal** identifies the computational/geometry layer; **signal blue** identifies models and representations; **construction amber** marks interfaces and workflow steps. A near-white ground keeps the presentation open and research-oriented, while a midnight dark mode reverses the environment without muddying these semantic distinctions.
+### Color Philosophy
+The baseline is a nearly black maritime navy, chosen to echo low-light operation and to make the supplied cyan-blue cube visual feel integral rather than ornamental. Teal signifies active interface boundaries, cobalt locates transport and mesh-routing layers, amber highlights power and verification states, while a warm white gives evidence panels the visual quality of a field notebook. Red remains reserved for security caveats and emergency semantics only.
 
-## Layout Paradigm
-The page is organized along a persistent vertical **coordinate rail** rather than a centered marketing stack. A narrow metadata column carries index markers and section titles, while content blocks step across a wider editorial field. On compact screens, the coordinate rail collapses into an inline section label without breaking reading order.
+### Layout Paradigm
+The page uses an offset **signal spine**: section labels and sequence numbers align on a narrow right rail in RTL reading order, while content unfolds in wider, staggered evidence panels. The hero follows a split command-center composition, with the supplied cube image held in a framed observation bay rather than a generic full-width image. Architecture is arranged as a descending interface stack with connected layer bands, not a conventional card grid.
 
-## Signature Elements
-1. **Layered mesh lozenges:** The provided identity’s stacked diamond forms are abstracted into a simple, recurring structural motif.
-2. **Measurement rail:** A vertical numbered guide establishes the reading sequence and anchors modular sections.
-3. **Technical brackets:** Precise navy corner rules and small datum dots punctuate hero, diagram, and footer compositions.
+### Signature Elements
 
-## Interaction Philosophy
-Interactions should confirm navigation and reveal hierarchy without creating spectacle. Controls have crisp inset shifts, diagrams emphasize their active layer on hover or keyboard focus, and external references are visually explicit. Motion never conceals information.
+1. A small **coordinate crosshair** that appears in the navigation, evidence headers, and image frames.
+2. A **three-color mesh-thread** motif in teal, cobalt, and amber that joins architecture layers and direct-link references.
+3. Fine **field-grid texture** and technical index labels that reinforce the inspection-record concept.
 
-## Animation
-At first reveal, mesh layers enter with 45–70ms staggered vertical offsets and opacity transitions. The coordinate rail draws only once on load; subsequent hover states use short 160–220ms transform and color transitions with a snappy ease-out. All nonessential motion is disabled under `prefers-reduced-motion`.
+### Interaction Philosophy
+Interactions should confirm observation rather than demand attention. Navigation anchors move readers directly to evidence. Buttons have physical, compact press feedback. Hover states reveal layer descriptions and external-link intent while preserving stable layouts. The theme control switches the inspection environment from dark field mode to light dossier mode.
 
-## Typography System
-**Space Grotesk** provides the technical display voice for titles, labels, and UI; **Source Serif 4** adds an editorial, research-paper reading texture for substantial prose. Small labels are uppercase with expanded tracking. Headings are compact and assured, while paragraph measure is intentionally narrow for focused technical reading.
+### Animation
+On initial load, the hero’s mesh threads draw in over 560ms and the content records rise by no more than 12px using a deliberate ease-out. Layer bands highlight their interface edges on hover in 180ms. Scrolling animations are limited to opacity and transform and disabled for `prefers-reduced-motion`. No looping glow, parallax, or distracting simulated signal noise is allowed.
 
-## Brand Essence
-**RezvanMesh is a modular geometry-engineering case study for teams that value explicit computational boundaries and verifiable software structure.**
+### Typography System
+**Space Grotesk** carries project labels, navigation, and display headings with firm geometry. **IBM Plex Sans** handles explanatory text, metadata, and evidence captions with high technical legibility. A compact monospace style, **IBM Plex Mono**, is reserved for section indices, layer IDs, and protocol-oriented snippets. Display headings use tight but breathable tracking; body paragraphs remain short and wide enough for comfortable scanning in RTL layout.
 
-Personality: **methodical, lucid, exacting**.
+### Brand Essence
+**RezvanMesh is an open engineering record for resilient, off-grid Android communication, designed for readers who value inspectable architecture over promotional claims.**
 
-## Brand Voice
-Headlines state what the system does; CTAs identify the evidence being opened. Avoid abstract promises and empty superlatives.
+**Personality:** precise, resilient, candid.
 
-Example lines:
+### Brand Voice
+Headlines should be declarative and technical; CTAs should invite inspection rather than conversion; microcopy should name the artifact or boundary being opened.
 
-> Geometry processing, expressed as explicit engineering layers.
+> “A communication path should remain inspectable when infrastructure does not.”
 
-> Inspect the repository evidence.
+> “Open the repository record.”
 
-## Wordmark & Logo
-Use the supplied IFEM Doctrine mark as the authoritative graphic identity. In the site chrome, its stacked-layer emblem appears at a generous, recognizable scale beside a bespoke letterspaced `REZVANMESH` wordmark; it is not recreated as generic text. The emblem is also used as the favicon source.
+### Wordmark & Logo
+Use the authentic RezvanMesh application mark from the repository as the primary product identifier. Pair it with a tracked, custom-styled **REZVANMESH** wordmark and an indexed descriptor rather than a default-text logo. The supplied IFEM doctrine mark is an attribution seal for the methodology section, not a replacement product logo.
 
-## Signature Brand Color
-**Mesh Teal — `#26947E`**. This is the system’s ownable computational signal: calm, precise, and distinct against technical navy.
+### Signature Brand Color
+**Signal Cyan — `#17D9E3`** is the ownable interface color used for active borders, link directionality, and the field coordinate system.
+
+## Asset usage plan
+
+| Asset | Source | Site role |
+| --- | --- | --- |
+| RezvanMesh application mark | Repository `res/drawable/ic_rezvan_logo.png` | Header identity, hero system badge, favicon source |
+| IFEM doctrine logo | Supplied upload | Methodology section seal and interface-first reference |
+| Cyan wireframe cube | Supplied upload | Hero observation bay and architecture-section visual anchor |
+
+## Content accuracy rule
+
+The repository defines RezvanMesh as a decentralized, off-grid Android mesh communication application. The case study must therefore describe communications engineering, BLE/WiFi transport, Kotlin/Rust interfaces, cryptography, encrypted storage, diagnostics, and current limitations. Geometry language may only be used as a visual metaphor for systems topology, not as a false claim about the application domain.
 
 ## Style Decisions
 
-- The coordinate rail remains visibly continuous across the case study; every major block is indexed against the same reading spine with rules and datum nodes.
-- Serif italics act as sparing research annotations rather than the dominant driver of hierarchy; Space Grotesk scale, weight, and alignment carry primary hierarchy.
-- Color semantics are fixed: Mesh Teal `#26947E` denotes computational mesh/layer logic, signal blue denotes models or representations, and construction amber denotes interfaces, workflow steps, and declared status.
+- The authentic RezvanMesh Android application mark and tracked REZVANMESH wordmark remain the primary product identity in the header and hero. The IFEM doctrine seal is restricted to methodology attribution.
+- Signal Cyan `#17D9E3` is reserved for active inspection controls, coordinate marks, boundaries, navigation direction, and primary actions. Cobalt, amber, and red remain semantic support colors.
+- Evidence blocks must read as inspectable technical records through layer indices, artifact labels, bounded status tags, and candid operational language rather than generic product-feature cards.
+- In RTL mode, the signal spine occupies the right-side rail: section indices, rail labels, and coordinate marks reinforce one continuous navigation field.
+- Evidence diagrams and captured interfaces remain inside dark observation mats with technical source labels; untreated white document slabs are not allowed in the dark field environment.
+- The teal, cobalt, and amber thread is a page-wide connection language linking architecture, transport, verification, and routing evidence.
+- Persian headings use Vazirmatn with IBM Plex Sans Arabic technical metadata so the RTL voice has the same engineered restraint as the English Space Grotesk and IBM Plex system.
+- In RTL desktop layouts, the right inspection rail is a visible and continuous navigation spine, not a decorative secondary element.
+- All technical visuals are presented as dark-field observation records; pale source surfaces are subdued by low-light matting and explicit technical framing.

@@ -1,0 +1,31 @@
+# Bilingual Update Checklist
+
+- [x] Inventory all visitor-facing Farsi copy and attribution references.
+- [x] Add a persistent Farsi/English language toggle at the top of the page.
+- [x] Provide complete English equivalents and switch document direction appropriately.
+- [x] Standardize the developer name as Soheil Mozaffari and email as Soheil.Mozaffari@gmail.com.
+- [x] Validate the toggle on desktop and mobile, then save the updated checkpoint.
+- [x] Upload the supplied Network and Emergency application screens as deployable assets.
+- [x] Add bilingual contextual screen evidence to the operating-model section.
+- [x] Validate desktop and mobile presentation after the Signal Field refinement, then save the updated checkpoint.
+- [x] Create a repository-grounded radio-to-Rust boundary architecture diagram.
+- [x] Add bilingual annotation and diagram context to the case study.
+- [x] Validate the rendered diagram on desktop and mobile, then save the updated checkpoint.
+- [x] Define verified explanatory text for each interactive architecture-diagram hotspot.
+- [x] Add bilingual hover and keyboard tooltips to the diagram components.
+- [x] Validate hotspot placement, interaction, and responsive behavior, then save the updated checkpoint.
+- [x] Define the verified inbound and outbound packet-flow stages for the architecture diagram.
+- [x] Implement interactive animation controls and reduced-motion fallback behavior.
+- [x] Validate the flow animation on desktop and mobile, then save the updated checkpoint.
+- [x] Define verified stage labels for inbound and outbound packet flow.
+- [x] Add synchronized animated labels and a static reduced-motion fallback.
+- [x] Validate stage timing and mobile readability, then save the updated checkpoint.
+- [x] Define browser-locale handling and English fallback behavior.
+- [x] Implement locale-aware initial Farsi/English selection without disrupting the manual toggle.
+- [x] Validate locale fallback and save the updated checkpoint.
+- [x] Define smooth direction-aware language transition behavior with a reduced-motion-safe fallback.
+- [x] Add English/Farsi layout transition effects without delaying the language controls.
+- [x] Validate the toggle transition and integrated Signal Field refinement on desktop and mobile, then save the updated checkpoint.
+- [x] Define localized metadata, language URLs, and English fallback behavior for sharing.
+- [x] Add dynamic Open Graph, Twitter, canonical, and alternate-language metadata.
+- [x] Validate Farsi/English share URLs, revised dark-field treatment, and manual language-toggle compatibility, then save the updated checkpoint.

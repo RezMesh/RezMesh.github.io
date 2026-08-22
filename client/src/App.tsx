@@ -1,4 +1,6 @@
-/** Coordinate Field: light technical research canvas with an intentional dark-mode inversion. */
+/**
+ * Signal Field application shell: light-first technical case study with an accessible optional dark inspection mode.
+ */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -20,7 +22,7 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="light">
+      <ThemeProvider defaultTheme="light" switchable>
         <TooltipProvider>
           <Toaster />
           <Router />

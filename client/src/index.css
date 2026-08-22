@@ -2,7 +2,6 @@
  * Signal Field design system: editorial systems-cartography, technical blue/teal/amber accents,
  * RTL signal-spine layout, and accessible light/dark inspection environments.
  */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 

@@ -31,14 +31,15 @@ import {
   Zap,
 } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 type Language = "fa" | "en";
 
 const ASSETS = {
-  repositoryMark: "/assets/rezvanmesh-mark.webp",
+  repositoryMark: "/assets/rezvanmesh-mark-96.webp",
   ifemMark: "/assets/ifem-doctrine-mark.webp",
-  cube: "/assets/rezvanmesh-cube.webp",
+  cube: "/assets/rezvanmesh-cube-640.webp",
+  cubeMobile: "/assets/rezvanmesh-cube-400.webp",
   networkScreen: "/assets/rezvanmesh-network-screen.webp",
   emergencyScreen: "/assets/rezvanmesh-emergency-screen.webp",
   radioRustBoundary: "/assets/rezvanmesh-radio-rust-boundary.webp",
@@ -416,7 +417,8 @@ export default function Home() {
   }, [flowAnimated, flowDirection, flowStages.length]);
 
   return (
-    <div className={`site-shell language-${language}${languageTransition ? ` language-transition to-${languageTransition}` : ""}`} dir={direction} lang={language}>
+    <TooltipProvider delayDuration={120}>
+      <div className={`site-shell language-${language}${languageTransition ? ` language-transition to-${languageTransition}` : ""}`} dir={direction} lang={language}>
       <div className="grid-noise" aria-hidden="true" />
       <div className="global-signal-axis" aria-hidden="true"><i /><i /><i /><i /><i /></div>
       <header className="site-header">
@@ -457,7 +459,7 @@ export default function Home() {
           <div className="hero-observation">
             <Crosshair className="hero-crosshair" />
             <div className="observation-label top-label">OBSERVATION BAY / 01</div>
-            <div className="observation-frame"><img src={ASSETS.cube} alt={c.cubeAlt} /><div className="image-fade" /><div className="image-status"><Signal className="size-3.5" /> TOPOLOGY / ACTIVE</div></div>
+            <div className="observation-frame"><img src={ASSETS.cube} srcSet={`${ASSETS.cubeMobile} 400w, ${ASSETS.cube} 640w`} sizes="(max-width: 700px) calc(100vw - 44px), 385px" alt={c.cubeAlt} fetchPriority="high" decoding="sync" /><div className="image-fade" /><div className="image-status"><Signal className="size-3.5" /> TOPOLOGY / ACTIVE</div></div>
             <div className="mesh-routes" aria-hidden="true"><i /><i /><i /><b /><b /></div>
             <div className="observation-caption"><span>FIELD NOTE</span><p>{c.fieldNote}</p></div>
           </div>
@@ -479,11 +481,11 @@ export default function Home() {
 
         <section className="section-wrap boundary-diagram-section" aria-labelledby="boundary-diagram-title">
           <div className="boundary-diagram-heading"><div><p className="eyebrow-line">{c.architecture.diagram.eyebrow}</p><h2 id="boundary-diagram-title">{c.architecture.diagram.title}</h2></div><p>{c.architecture.diagram.text}</p></div>
-          <figure className="architecture-diagram-figure"><div className="diagram-source"><span>{c.architecture.diagram.source}</span><i /></div><p className="diagram-interaction-hint">{c.architecture.diagram.interactionHint}</p><div className="packet-flow-panel"><div><span>{c.architecture.diagram.flow.title}</span><p>{c.architecture.diagram.flow.text}</p></div><div className="packet-flow-controls" role="group" aria-label={c.architecture.diagram.flow.title}><button type="button" className={`flow-mode ${flowDirection === "inbound" ? "active" : ""}`} onClick={() => setFlowDirection("inbound")} aria-pressed={flowDirection === "inbound"}>{c.architecture.diagram.flow.inbound}</button><button type="button" className={`flow-mode ${flowDirection === "outbound" ? "active" : ""}`} onClick={() => setFlowDirection("outbound")} aria-pressed={flowDirection === "outbound"}>{c.architecture.diagram.flow.outbound}</button><button type="button" className="flow-icon-control" onClick={() => setFlowRunning(!flowRunning)} aria-label={flowRunning ? c.architecture.diagram.flow.pause : c.architecture.diagram.flow.play}>{flowRunning ? <Pause className="size-3.5" /> : <Play className="size-3.5" />}</button><button type="button" className={`motion-control ${motionOptOut ? "active" : ""}`} onClick={() => setMotionOptOut(!motionOptOut)} aria-pressed={motionOptOut}>{motionOptOut ? c.architecture.diagram.flow.fullMotion : c.architecture.diagram.flow.reduce}</button></div></div>{systemReducedMotion && <p className="motion-preference-note">{c.architecture.diagram.flow.systemReduced}</p>}<div className="diagram-canvas"><img src={ASSETS.radioRustBoundary} alt={language === "fa" ? "نمودار معماری مرز میان RezvanRadioService در Android و MeshEngine در Rust، با قرارداد JNI و جریان بایت‌های بسته و عمل" : "Architecture diagram of the boundary between Android RezvanRadioService and Rust MeshEngine, showing the JNI contract and packet/action-byte flow"} /><svg className={`diagram-flow-overlay ${flowAnimated ? "is-animating" : "is-static"} ${flowDirection}`} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path className="packet-flow-path" d={flowPath} /><circle className="packet-flow-dot" cx={flowStart[0]} cy={flowStart[1]} r="1.15">{flowAnimated && <animateMotion dur="4.8s" repeatCount="indefinite" path={flowPath} />}</circle></svg><div className={`packet-stage-label ${flowAnimated ? "is-moving" : "is-static"} ${flowDirection} stage-${flowStageIndex + 1}`} style={{ left: stageLeft, top: stageTop }} aria-live="polite"><span>{stageNumber} / {stageTitle}</span><p>{stageText}</p></div><div className="diagram-flow-status"><span className={flowAnimated ? "active" : ""} /><b>{flowAnimated ? c.architecture.diagram.flow.title : c.architecture.diagram.flow.static}</b></div><div className="diagram-hotspots">{c.architecture.diagram.tooltips.map(([index, label, text, [left, top], tone]) => <Tooltip key={index}><TooltipTrigger asChild><button type="button" className={`diagram-hotspot ${tone}`} style={{ left, top }} aria-label={`${label}: ${text}`}><span>{index}</span></button></TooltipTrigger><TooltipContent side="top" sideOffset={10} className="diagram-tooltip-content"><strong>{label}</strong><p>{text}</p></TooltipContent></Tooltip>)}</div></div><figcaption>{c.architecture.diagram.items.map(([label, text], index) => <div className={`diagram-callout callout-${index + 1}`} key={label}><span>{String(index + 1).padStart(2, "0")} / {label}</span><p>{text}</p></div>)}</figcaption></figure>
+          <figure className="architecture-diagram-figure"><div className="diagram-source"><span>{c.architecture.diagram.source}</span><i /></div><p className="diagram-interaction-hint">{c.architecture.diagram.interactionHint}</p><div className="packet-flow-panel"><div><span>{c.architecture.diagram.flow.title}</span><p>{c.architecture.diagram.flow.text}</p></div><div className="packet-flow-controls" role="group" aria-label={c.architecture.diagram.flow.title}><button type="button" className={`flow-mode ${flowDirection === "inbound" ? "active" : ""}`} onClick={() => setFlowDirection("inbound")} aria-pressed={flowDirection === "inbound"}>{c.architecture.diagram.flow.inbound}</button><button type="button" className={`flow-mode ${flowDirection === "outbound" ? "active" : ""}`} onClick={() => setFlowDirection("outbound")} aria-pressed={flowDirection === "outbound"}>{c.architecture.diagram.flow.outbound}</button><button type="button" className="flow-icon-control" onClick={() => setFlowRunning(!flowRunning)} aria-label={flowRunning ? c.architecture.diagram.flow.pause : c.architecture.diagram.flow.play}>{flowRunning ? <Pause className="size-3.5" /> : <Play className="size-3.5" />}</button><button type="button" className={`motion-control ${motionOptOut ? "active" : ""}`} onClick={() => setMotionOptOut(!motionOptOut)} aria-pressed={motionOptOut}>{motionOptOut ? c.architecture.diagram.flow.fullMotion : c.architecture.diagram.flow.reduce}</button></div></div>{systemReducedMotion && <p className="motion-preference-note">{c.architecture.diagram.flow.systemReduced}</p>}<div className="diagram-canvas"><img src={ASSETS.radioRustBoundary} loading="lazy" decoding="async" alt={language === "fa" ? "نمودار معماری مرز میان RezvanRadioService در Android و MeshEngine در Rust، با قرارداد JNI و جریان بایت‌های بسته و عمل" : "Architecture diagram of the boundary between Android RezvanRadioService and Rust MeshEngine, showing the JNI contract and packet/action-byte flow"} /><svg className={`diagram-flow-overlay ${flowAnimated ? "is-animating" : "is-static"} ${flowDirection}`} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path className="packet-flow-path" d={flowPath} /><circle className="packet-flow-dot" cx={flowStart[0]} cy={flowStart[1]} r="1.15">{flowAnimated && <animateMotion dur="4.8s" repeatCount="indefinite" path={flowPath} />}</circle></svg><div className={`packet-stage-label ${flowAnimated ? "is-moving" : "is-static"} ${flowDirection} stage-${flowStageIndex + 1}`} style={{ left: stageLeft, top: stageTop }} aria-live="polite"><span>{stageNumber} / {stageTitle}</span><p>{stageText}</p></div><div className="diagram-flow-status"><span className={flowAnimated ? "active" : ""} /><b>{flowAnimated ? c.architecture.diagram.flow.title : c.architecture.diagram.flow.static}</b></div><div className="diagram-hotspots">{c.architecture.diagram.tooltips.map(([index, label, text, [left, top], tone]) => <Tooltip key={index}><TooltipTrigger asChild><button type="button" className={`diagram-hotspot ${tone}`} style={{ left, top }} aria-label={`${label}: ${text}`}><span>{index}</span></button></TooltipTrigger><TooltipContent side="top" sideOffset={10} className="diagram-tooltip-content"><strong>{label}</strong><p>{text}</p></TooltipContent></Tooltip>)}</div></div><figcaption>{c.architecture.diagram.items.map(([label, text], index) => <div className={`diagram-callout callout-${index + 1}`} key={label}><span>{String(index + 1).padStart(2, "0")} / {label}</span><p>{text}</p></div>)}</figcaption></figure>
         </section>
 
         <section id="ifem" className="section-wrap ifem-section" aria-labelledby="ifem-title">
-          <div className="ifem-card"><div className="ifem-seal-wrap"><img src={ASSETS.ifemMark} alt="IFEM Doctrine" className="ifem-seal" /><span>METHOD / IFEM</span></div><div className="ifem-copy"><p className="eyebrow-line">BUILT WITH IFEM</p><h2 id="ifem-title">{c.ifem.title}</h2><p>{c.ifem.text}</p></div><div className="ifem-principles">{c.ifem.principles.map((principle, index) => <div key={principle}><span>{String(index + 1).padStart(2, "0")}</span><b>{principle}</b></div>)}</div></div>
+          <div className="ifem-card"><div className="ifem-seal-wrap"><img src={ASSETS.ifemMark} alt="IFEM Doctrine" className="ifem-seal" loading="lazy" decoding="async" /><span>METHOD / IFEM</span></div><div className="ifem-copy"><p className="eyebrow-line">BUILT WITH IFEM</p><h2 id="ifem-title">{c.ifem.title}</h2><p>{c.ifem.text}</p></div><div className="ifem-principles">{c.ifem.principles.map((principle, index) => <div key={principle}><span>{String(index + 1).padStart(2, "0")}</span><b>{principle}</b></div>)}</div></div>
           <a href="https://IFEM-doctrine.github.io/" className="ifem-link group" target="_blank" rel="noreferrer"><span>{c.ifem.link}</span><ExternalArrow /></a>
         </section>
 
@@ -495,8 +497,8 @@ export default function Home() {
         <section className="section-wrap app-evidence-section" aria-labelledby="app-evidence-title">
           <div className="app-evidence-heading"><div><p className="eyebrow-line">{c.screens.eyebrow}</p><h2 id="app-evidence-title">{c.screens.title}</h2></div><p>{c.screens.text}</p></div>
           <div className="app-screen-grid">
-            <figure className="app-screen-card network-screen"><div className="screen-heading"><span>01 / {c.screens.network.label}</span><i /></div><div className="phone-frame"><img src={ASSETS.networkScreen} alt={language === "fa" ? "نمای رابط شبکهٔ RezvanMesh با وضعیت اتصال و توپولوژی گره‌ها" : "RezvanMesh Network interface showing connection status and node topology"} /></div><figcaption><strong>{c.screens.network.title}</strong><span>{c.screens.network.caption}</span></figcaption></figure>
-            <figure className="app-screen-card emergency-screen"><div className="screen-heading"><span>02 / {c.screens.emergency.label}</span><i /></div><div className="phone-frame"><img src={ASSETS.emergencyScreen} alt={language === "fa" ? "نمای رابط اضطراری RezvanMesh با هشدار SOS و گزینه‌های همراه" : "RezvanMesh Emergency interface with an SOS alert and alert options"} /></div><figcaption><strong>{c.screens.emergency.title}</strong><span>{c.screens.emergency.caption}</span></figcaption></figure>
+            <figure className="app-screen-card network-screen"><div className="screen-heading"><span>01 / {c.screens.network.label}</span><i /></div><div className="phone-frame"><img src={ASSETS.networkScreen} loading="lazy" decoding="async" alt={language === "fa" ? "نمای رابط شبکهٔ RezvanMesh با وضعیت اتصال و توپولوژی گره‌ها" : "RezvanMesh Network interface showing connection status and node topology"} /></div><figcaption><strong>{c.screens.network.title}</strong><span>{c.screens.network.caption}</span></figcaption></figure>
+            <figure className="app-screen-card emergency-screen"><div className="screen-heading"><span>02 / {c.screens.emergency.label}</span><i /></div><div className="phone-frame"><img src={ASSETS.emergencyScreen} loading="lazy" decoding="async" alt={language === "fa" ? "نمای رابط اضطراری RezvanMesh با هشدار SOS و گزینه‌های همراه" : "RezvanMesh Emergency interface with an SOS alert and alert options"} /></div><figcaption><strong>{c.screens.emergency.title}</strong><span>{c.screens.emergency.caption}</span></figcaption></figure>
           </div>
         </section>
 
@@ -510,7 +512,8 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="site-footer"><div className="footer-brand"><img src={ASSETS.repositoryMark} alt="" /><span>REZVANMESH / CASE STUDY</span></div><p>{c.footer}</p><a href="#top">{c.backToTop}<ChevronDown className="size-4 rotate-180" /></a></footer>
-    </div>
+        <footer className="site-footer"><div className="footer-brand"><img src={ASSETS.repositoryMark} alt="" /><span>REZVANMESH / CASE STUDY</span></div><p>{c.footer}</p><a href="#top">{c.backToTop}<ChevronDown className="size-4 rotate-180" /></a></footer>
+      </div>
+    </TooltipProvider>
   );
 }

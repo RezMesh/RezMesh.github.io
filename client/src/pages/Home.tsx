@@ -421,7 +421,7 @@ export default function Home() {
       <div className="global-signal-axis" aria-hidden="true"><i /><i /><i /><i /><i /></div>
       <header className="site-header">
         <a href="#top" className="brand" aria-label={c.brandHome}>
-          <img src={ASSETS.repositoryMark} alt="RezvanMesh" className="brand-mark" />
+          <img src={ASSETS.repositoryMark} alt="" className="brand-mark" />
           <span className="brand-type"><strong>REZVANMESH</strong><small>ANDROID MESH COMMUNICATION</small></span>
         </a>
 

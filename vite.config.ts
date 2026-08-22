@@ -201,7 +201,40 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+function inlineProductionCss(): Plugin {
+  return {
+    name: "inline-production-css",
+    apply: "build",
+    closeBundle() {
+      const outputDir = path.resolve(PROJECT_ROOT, "dist", "public");
+      const htmlPath = path.join(outputDir, "index.html");
+      const assetsDir = path.join(outputDir, "assets");
+
+      if (!fs.existsSync(htmlPath) || !fs.existsSync(assetsDir)) {
+        return;
+      }
+
+      const cssFileName = fs.readdirSync(assetsDir).find((fileName) => fileName.endsWith(".css"));
+      if (!cssFileName) {
+        return;
+      }
+
+      const cssPath = path.join(assetsDir, cssFileName);
+      const html = fs.readFileSync(htmlPath, "utf-8");
+      const css = fs.readFileSync(cssPath, "utf-8");
+      const escapedFileName = cssFileName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const stylesheetLink = new RegExp(`<link\\s+[^>]*href="/assets/${escapedFileName}"[^>]*>`, "g");
+      const updatedHtml = html.replace(stylesheetLink, `<style>${css}</style>`);
+
+      if (updatedHtml !== html) {
+        fs.writeFileSync(htmlPath, updatedHtml, "utf-8");
+        fs.unlinkSync(cssPath);
+      }
+    },
+  };
+}
+
+const plugins = [react(), tailwindcss(), vitePluginManusDebugCollector(), vitePluginStorageProxy(), inlineProductionCss()];
 
 export default defineConfig({
   plugins,

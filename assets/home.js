@@ -98,6 +98,8 @@ document.querySelectorAll("[data-langlink]").forEach(a=>a.addEventListener("clic
 const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const add=(el,c)=>el&&el.classList.add(c),rm=(el,c)=>el&&el.classList.remove(c);
+let MOTION_PAUSED=RM;
+function announce(msg){const el=document.getElementById("a11yAnnouncer");if(!el||!msg)return;el.textContent="";requestAnimationFrame(()=>{el.textContent=msg;});}
 const cl=v=>Math.min(1,Math.max(0,v)),seg=(p,a,b)=>cl((p-a)/(b-a));
 const LOOPS=[];
 function makeLoop(dur,steps,target,onTick){let idx=0,tt=0,last=0,run=false,raf=0;
@@ -106,7 +108,7 @@ function makeLoop(dur,steps,target,onTick){let idx=0,tt=0,last=0,run=false,raf=0
     if(onTick)onTick(tt);
     if(tt>=dur){tt=0;idx=0;}
     raf=requestAnimationFrame(frame);}
-  function start(){if(RM){steps.forEach(s=>s.fn());if(onTick)onTick(dur);return;}if(run)return;run=true;last=0;raf=requestAnimationFrame(frame);}
+  function start(){if(RM){steps.forEach(s=>s.fn());if(onTick)onTick(dur);return;}if(MOTION_PAUSED||run)return;run=true;last=0;raf=requestAnimationFrame(frame);}
   function pause(){run=false;cancelAnimationFrame(raf);}
   if(target&&"IntersectionObserver"in window)new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?start():pause()),{threshold:.2}).observe(target);else start();
   LOOPS.push({start,pause,target});return{start,pause};}
@@ -115,7 +117,7 @@ $$(".rv,.band").forEach(el=>rio.observe(el));
 const vio=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle("pause",!e.isIntersecting)),{threshold:.08});
 $$(".scn-item.on, #pocket svg").forEach(el=>vio.observe(el));
 document.addEventListener("visibilitychange",()=>{if(document.hidden)LOOPS.forEach(l=>l.pause());
-  else LOOPS.forEach(l=>{if(!l.target)return;const r=l.target.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)l.start();});});
+  else if(!MOTION_PAUSED)LOOPS.forEach(l=>{if(!l.target)return;const r=l.target.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)l.start();});});
 /* ================= chrome ================= */
 const hdr=$("#hdr"),prog=$("#progress"),backTop=$("#backTop");let sTick=false;
 addEventListener("scroll",()=>{if(sTick)return;sTick=true;requestAnimationFrame(()=>{
@@ -123,8 +125,17 @@ addEventListener("scroll",()=>{if(sTick)return;sTick=true;requestAnimationFrame(
   prog.style.width=(h>0?(y/h)*100:0)+"%";hdr.classList.toggle("scrolled",y>30);backTop.classList.toggle("on",y>760);sTick=false;});},{passive:true});
 backTop.addEventListener("click",()=>scrollTo({top:0,behavior:RM?"auto":"smooth"}));
 const menuBtn=$("#menuBtn"),mnav=$("#mnav");
-menuBtn.addEventListener("click",()=>{const o=mnav.classList.toggle("open");menuBtn.setAttribute("aria-expanded",String(o));});
-mnav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{mnav.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");}));
+function setMenu(open,restoreFocus=false){
+  mnav.classList.toggle("open",open);
+  mnav.setAttribute("aria-hidden",String(!open));
+  mnav.inert=!open;
+  menuBtn.setAttribute("aria-expanded",String(open));
+  if(restoreFocus)menuBtn.focus();
+}
+setMenu(false);
+menuBtn.addEventListener("click",()=>setMenu(menuBtn.getAttribute("aria-expanded")!=="true"));
+mnav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&menuBtn.getAttribute("aria-expanded")==="true")setMenu(false,true);});
 const spy=new IntersectionObserver(es=>es.forEach(e=>{const l=document.querySelector('nav.main a[href="#'+e.target.id+'"]');
   if(l&&e.isIntersecting){$$("nav.main a").forEach(a=>a.classList.remove("active"));l.classList.add("active");}}),{rootMargin:"-42% 0px -52% 0px"});
 ["problem","how","emergency","power","scenarios","engineering"].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
@@ -216,7 +227,8 @@ if(story){
     if(storyLoop)storyLoop.pause();
     clearTimeout(storyRestart);
     setStory(i,i===3);
-    if(storyLoop&&!RM)storyRestart=setTimeout(()=>storyLoop.start(),4500);
+    announce(btn.dataset.status||"");
+    if(storyLoop&&!RM&&!MOTION_PAUSED)storyRestart=setTimeout(()=>storyLoop.start(),4500);
   }));
 }
 /* ================= HOW (scrub) ================= */
@@ -300,7 +312,7 @@ function markRows(){const emg=panel.classList.contains("emg");
   $$("#duty .drow").forEach(r=>r.classList.toggle("on",!emg&&r.dataset.state===curState));}
 window.__dyn=[()=>{if(curState)setState(curState);buildDuty();}];
 buildDuty();
-function powFrame(ts){if(!powRun)return;if(!powLast)powLast=ts;const dt=(ts-powLast)/1000;powLast=ts;
+function powFrame(ts){if(!powRun||MOTION_PAUSED){powRaf=0;return;}if(!powLast)powLast=ts;const dt=(ts-powLast)/1000;powLast=ts;
   const now=performance.now();
   if(now>emgUntil&&panel.classList.contains("emg")){panel.classList.remove("emg");setState(curState);}
   if(!panel.classList.contains("emg"))batt=Math.max(0,batt-dt*(96/36));
@@ -324,33 +336,77 @@ function scopeTick(){const emg=panel.classList.contains("emg");const st=emg?"eme
 if(RM){setState("balanced");batt=62;$("#battFill").style.height="62%";$("#battPct").textContent="62%";
   scopeSize();for(let i=0;i<samples.length;i++)samples[i]=sample("balanced",i);scopeDraw();}
 else{setState("active");scopeSize();addEventListener("resize",()=>{scopeSize();scopeDraw();});
-  setInterval(()=>{if(powRun&&!document.hidden)scopeTick();},90);
+  setInterval(()=>{if(powRun&&!document.hidden&&!MOTION_PAUSED)scopeTick();},90);
   new IntersectionObserver(es=>es.forEach(e=>{powRun=e.isIntersecting;powLast=0;
     if(powRun&&!powRaf)powRaf=requestAnimationFrame(powFrame);
     if(!powRun){cancelAnimationFrame(powRaf);powRaf=0;}}),{threshold:.15}).observe(panel);}
 /* ================= SCENARIOS ================= */
-const SCN_N=7;let scnIdx=0,scnTimer=0,scnPaused=false;
+const SCN_N=7;let scnIdx=0,scnTimer=0,scnPaused=false,scnVisible=false;
 const list=$("#scnList"),items=$$(".scn-item");
 function buildScnList(){list.innerHTML="";for(let i=0;i<SCN_N;i++){
   const b=document.createElement("button");b.className="srow2";b.setAttribute("role","tab");b.dataset.i=i;
+  b.id="scenario-tab-"+i;b.setAttribute("aria-controls","scenario-panel-"+i);b.setAttribute("tabindex",i===scnIdx?"0":"-1");
   b.innerHTML='<span class="n">0'+(i+1)+'</span><span class="tt" data-i18n="scn.'+(i+1)+'t">'+t("scn."+(i+1)+"t")+'</span><span class="tg" data-i18n="tag.'+(i+1)+'">'+t("tag."+(i+1))+'</span><span class="prog"></span>';
   b.addEventListener("click",()=>{setScn(i);resetScnTimer();});
-  list.appendChild(b);}}
+  list.appendChild(b);}
+  items.forEach((it,i)=>{it.id="scenario-panel-"+i;it.setAttribute("role","tabpanel");it.setAttribute("aria-labelledby","scenario-tab-"+i);});
+}
 function setScn(i){scnIdx=i;
-  $$("#scnList .srow2").forEach((r,k)=>{r.classList.toggle("on",k===i);r.setAttribute("aria-selected",String(k===i));});
-  items.forEach((it,k)=>it.classList.toggle("on",k===i));
+  $("#scnList .srow2").forEach((r,k)=>{const on=k===i;r.classList.toggle("on",on);r.setAttribute("aria-selected",String(on));r.setAttribute("tabindex",on?"0":"-1");});
+  items.forEach((it,k)=>{const on=k===i;it.classList.toggle("on",on);it.setAttribute("aria-hidden",String(!on));});
   $("#scnTitle").textContent=t("scn."+(i+1)+"t");
   $("#scnMsg").textContent=t("scn."+(i+1)+"m");
   $("#scnNum").textContent="0"+(i+1)+" / 07";}
 function resetScnTimer(){clearInterval(scnTimer);
-  scnTimer=setInterval(()=>{if(!scnPaused&&!document.hidden)setScn((scnIdx+1)%SCN_N);},7000);}
+  scnTimer=setInterval(()=>{if(!scnPaused&&scnVisible&&!document.hidden&&!MOTION_PAUSED)setScn((scnIdx+1)%SCN_N);},7000);}
 buildScnList();setScn(0);resetScnTimer();
 list.addEventListener("mouseenter",()=>{scnPaused=true;add($("#scnWrap"),"scnpaused");});
 list.addEventListener("mouseleave",()=>{scnPaused=false;rm($("#scnWrap"),"scnpaused");});
+list.addEventListener("keydown",e=>{
+  const tab=e.target.closest('[role="tab"]');if(!tab)return;
+  const tabs=$("#scnList [role='tab']");let i=tabs.indexOf(tab),next=i;
+  const rtl=document.documentElement.dir==="rtl";
+  if(e.key==="ArrowRight")next=(i+(rtl?-1:1)+tabs.length)%tabs.length;
+  else if(e.key==="ArrowLeft")next=(i+(rtl?1:-1)+tabs.length)%tabs.length;
+  else if(e.key==="Home")next=0;
+  else if(e.key==="End")next=tabs.length-1;
+  else return;
+  e.preventDefault();setScn(next);tabs[next].focus();resetScnTimer();
+});
+if("IntersectionObserver"in window)new IntersectionObserver(es=>es.forEach(e=>{scnVisible=e.isIntersecting;}),{threshold:.08}).observe($("#scenarios"));else scnVisible=true;
 window.__dyn.push(()=>{buildScnList();setScn(scnIdx);});
 /* ================= copy / toast ================= */
 const toast=$("#toast");let toastT=0;
 function showToast(){toast.setAttribute("data-i18n","toast.copied");toast.textContent=t("toast.copied");toast.classList.add("on");clearTimeout(toastT);toastT=setTimeout(()=>toast.classList.remove("on"),2400);}
 $("#btnCopy").addEventListener("click",async()=>{try{await navigator.clipboard.writeText("Soheil.Mozaffari@gmail.com");showToast();}
   catch(e){const ta=document.createElement("textarea");ta.value="Soheil.Mozaffari@gmail.com";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");showToast();}catch(_){}ta.remove();}});
+/* ================= ACCESSIBLE MOTION CONTROL ================= */
+const motionToggle=$("#motionToggle");
+function syncMotionToggle(){
+  if(!motionToggle)return;
+  motionToggle.setAttribute("aria-pressed",String(MOTION_PAUSED));
+  const lab=motionToggle.querySelector(".motion-label");
+  const icon=motionToggle.querySelector(".motion-icon");
+  if(lab)lab.textContent=MOTION_PAUSED?motionToggle.dataset.resume:motionToggle.dataset.pause;
+  if(icon)icon.textContent=MOTION_PAUSED?"▶":"Ⅱ";
+}
+function setMotionPaused(paused,userInitiated=false){
+  MOTION_PAUSED=paused;
+  document.documentElement.classList.toggle("motion-paused",paused);
+  if(paused){
+    LOOPS.forEach(l=>l.pause());
+    if(powRaf){cancelAnimationFrame(powRaf);powRaf=0;}
+  }else{
+    LOOPS.forEach(l=>{if(!l.target)return;const r=l.target.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)l.start();});
+    if(powRun&&!powRaf){powLast=0;powRaf=requestAnimationFrame(powFrame);}
+  }
+  syncMotionToggle();
+  if(userInitiated)announce(paused?motionToggle.dataset.paused:motionToggle.dataset.resumed);
+}
+if(motionToggle){
+  if(RM)document.documentElement.classList.add("motion-paused");
+  syncMotionToggle();
+  motionToggle.addEventListener("click",()=>setMotionPaused(!MOTION_PAUSED,true));
+}
+
 

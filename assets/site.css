@@ -21,7 +21,7 @@ header{background:linear-gradient(180deg,rgba(5,12,18,.97),rgba(8,16,24,.92));bo
 .bar{min-height:72px;gap:16px;position:relative}
 .brand{font:700 20px/1 var(--disp);letter-spacing:-.025em;gap:9px;white-space:nowrap}
 .brand svg{display:none!important}
-.brand::before{content:"";width:32px;height:32px;flex:none;background:url("/assets/brand/rezmesh-mark.svg") center/contain no-repeat;filter:drop-shadow(0 0 7px rgba(95,212,192,.28))}
+.brand::before{content:"";width:36px;height:36px;flex:none;background:linear-gradient(135deg,#F0FBFF 0%,#8FEDE3 58%,#55DFFF 100%);-webkit-mask:url("/assets/brand/rezmesh-mark.svg") center/contain no-repeat;mask:url("/assets/brand/rezmesh-mark.svg") center/contain no-repeat;filter:drop-shadow(0 0 8px rgba(95,212,192,.32))}
 .nav{gap:16px}
 .nav a{font:500 11px/1 var(--body);letter-spacing:.01em;text-transform:none;padding:27px 0 24px;position:relative;color:#B7C5CF}
 .nav a::after{content:"";position:absolute;inset-inline:0;bottom:18px;height:2px;background:#55DFFF;transform:scaleX(0);transition:transform .25s}
@@ -50,7 +50,7 @@ header{background:linear-gradient(180deg,rgba(5,12,18,.97),rgba(8,16,24,.92));bo
 @media(max-width:430px){
   .bar{gap:8px;min-height:66px}
   .brand{font-size:16px;gap:7px}
-  .brand::before{width:27px;height:27px}
+  .brand::before{width:30px;height:30px}
   .nav-menu summary{width:34px;height:34px}
   .langs a{padding:7px 6px;font-size:8.5px}
   .wrap{padding-inline:14px}

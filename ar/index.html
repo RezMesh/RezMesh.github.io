@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RezMesh — اتصال يتجاوز البنية التحتية</title>
+<meta content="صُمم RezMesh لاتصال مرن من جهاز إلى جهاز عندما تصبح الشبكات الخلوية أو الإنترنت غير متاحة أو غير موثوقة أو مزدحمة." name="description"/>
+<meta content="#0B0F14" name="theme-color"/>
+<link href="https://rezmesh.github.io/" hreflang="en" rel="alternate"/>
+<link href="https://rezmesh.github.io/fa/" hreflang="fa" rel="alternate"/>
+<link href="https://rezmesh.github.io/ar/" hreflang="ar" rel="alternate"/>
+<link href="https://rezmesh.github.io/" hreflang="x-default" rel="alternate"/>
+<link href='data:image/svg+xml,&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="-52 -52 104 104"&gt;&lt;circle r="46" fill="none" stroke="%235FD4C0" stroke-width="6"/&gt;&lt;path d="M0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20Z M0,0 -34.6,-20 M0,0 34.6,-20 M0,0 0,40" fill="none" stroke="%235FD4C0" stroke-width="6"/&gt;&lt;/svg&gt;' rel="icon"/>
+<link href="/assets/cdn.jsdelivr.net/fontsource/css/space-grotesk@latest/500.css" rel="stylesheet"/>
+<link href="/assets/cdn.jsdelivr.net/fontsource/css/space-grotesk@latest/700.css" rel="stylesheet"/>
+<link href="/assets/cdn.jsdelivr.net/fontsource/css/ibm-plex-sans@latest/index.css" rel="stylesheet"/>
+<link href="/assets/cdn.jsdelivr.net/fontsource/css/ibm-plex-sans@latest/500.css" rel="stylesheet"/>
+<link href="/assets/cdn.jsdelivr.net/fontsource/css/ibm-plex-mono@latest/index.css" rel="stylesheet"/>
+<link href="/assets/cdn.jsdelivr.net/fontsource/css/ibm-plex-mono@latest/500.css" rel="stylesheet"/>
+<link href="/assets/cdn.jsdelivr.net/fontsource/css/vazirmatn@latest/index.css" rel="stylesheet"/>
+<link href="/assets/cdn.jsdelivr.net/fontsource/css/vazirmatn@latest/700.css" rel="stylesheet"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "name": "RezMesh", "alternateName": "RezvanMesh", "operatingSystem": "Android", "applicationCategory": "CommunicationApplication", "description": "صُمم RezMesh لاتصال مرن من جهاز إلى جهاز عندما تصبح الشبكات الخلوية أو الإنترنت غير متاحة أو غير موثوقة أو مزدحمة.", "creator": {"@type": "Person", "name": "Soheil Mozaffari", "url": "https://smozaff.github.io/", "sameAs": ["https://www.linkedin.com/in/sohmozaffari/", "https://orcid.org/0009-0001-2428-1295"]}, "isBasedOn": {"@type": "CreativeWork", "name": "BOUND Method v3.0 — Boundary-Oriented Unified Development", "url": "https://bound-method.github.io/", "sameAs": ["https://doi.org/10.5281/zenodo.22257583"]}}, {"@type": "WebSite", "name": "RezMesh", "inLanguage": ["en", "fa", "ar"], "url": "https://rezmesh.github.io/"}]}</script>
+<link href="/assets/home.css" rel="stylesheet"/><link href="https://rezmesh.github.io/ar/" rel="canonical"/><meta content="website" property="og:type"/><meta content="RezMesh" property="og:site_name"/><meta content="RezMesh — اتصال يتجاوز البنية التحتية" property="og:title"/><meta content="صُمم RezMesh لاتصال مرن من جهاز إلى جهاز عندما تصبح الشبكات الخلوية أو الإنترنت غير متاحة أو غير موثوقة أو مزدحمة." property="og:description"/><meta content="https://rezmesh.github.io/ar/" property="og:url"/><meta content="https://rezmesh.github.io/assets/social/rezmesh-og.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="RezMesh — اتصال يتجاوز البنية التحتية" name="twitter:title"/><meta content="صُمم RezMesh لاتصال مرن من جهاز إلى جهاز عندما تصبح الشبكات الخلوية أو الإنترنت غير متاحة أو غير موثوقة أو مزدحمة." name="twitter:description"/><meta content="https://rezmesh.github.io/assets/social/rezmesh-og.png" name="twitter:image"/></head>
+<body><a class="skip-link" href="#main-content">انتقل إلى المحتوى</a>
+<div aria-hidden="true" id="progress"></div>
+<header id="hdr">
+<div class="wrap hbar">
+<a aria-label="الرئيسية" class="brand" href="/ar/">
+<svg aria-hidden="true" viewbox="-52 -52 104 104"><circle fill="none" r="47" stroke="#5FD4C0" stroke-width="4"></circle><circle fill="none" opacity=".45" r="42" stroke="#5FD4C0" stroke-width="1.2"></circle><g fill="#5FD4C0" stroke="#5FD4C0"><path d="M0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20Z" fill="none" stroke-width="3.2"></path><path d="M0,0 -34.6,-20 M0,0 34.6,-20 M0,0 0,40" fill="none" stroke-width="3.2"></path><g stroke="none"><circle cx="0" cy="-40" r="4"></circle><circle cx="34.6" cy="-20" r="4"></circle><circle cx="34.6" cy="20" r="4"></circle><circle cx="0" cy="40" r="4"></circle><circle cx="-34.6" cy="20" r="4"></circle><circle cx="-34.6" cy="-20" r="4"></circle><circle cx="0" cy="-20" r="3.2"></circle><circle cx="-17.3" cy="10" r="3.2"></circle><circle cx="17.3" cy="10" r="3.2"></circle></g></g></svg>
+      RezMesh 
+</a>
+<nav aria-label="التنقل الرئيسي" class="main"><a href="/ar/how-it-works/">كيف يعمل</a><a href="/ar/emergency-communication/">الطوارئ</a><a href="/ar/power-management/">الطاقة</a><a href="/ar/scenarios/">السيناريوهات</a><a href="/ar/about-rezmesh/">عن RezMesh</a><a href="/ar/contact/">الوصول التجريبي</a></nav>
+<button aria-controls="mnav" aria-expanded="false" aria-label="القائمة" id="menuBtn"><span></span><span></span><span></span></button>
+<nav aria-label="اللغة" class="langs" role="group"><a href="/">EN</a><a href="/fa/">FA</a><a aria-current="page" href="/ar/">AR</a></nav>
+</div>
+</header>
+<nav aria-label="تنقل الهاتف" id="mnav"><a href="/ar/how-it-works/">كيف يعمل</a><a href="/ar/emergency-communication/">الطوارئ</a><a href="/ar/power-management/">الطاقة</a><a href="/ar/scenarios/">السيناريوهات</a><a href="/ar/about-rezmesh/">عن RezMesh</a><a href="/ar/contact/">الوصول التجريبي</a></nav>
+<main id="main-content">
+<!-- ============ HERO ============ -->
+<section id="hero">
+<svg aria-label="تفقد مدينة عند الغروب البنية الخلوية والإنترنت؛ تتصل الهواتف القريبة عبر RezMesh وتستمر الرسالة في الوصول." id="heroScene" preserveaspectratio="xMidYMax slice" role="img" viewbox="0 0 1440 900">
+<defs>
+<lineargradient id="sky" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0A0E14"></stop><stop offset=".55" stop-color="#12222E"></stop><stop offset="1" stop-color="#3A3226"></stop></lineargradient>
+<lineargradient id="swg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#E8A33D" stop-opacity="0"></stop><stop offset=".5" stop-color="#E8A33D" stop-opacity=".2"></stop><stop offset="1" stop-color="#E8A33D" stop-opacity="0"></stop></lineargradient>
+</defs>
+<rect fill="url(#sky)" height="900" width="1440"></rect>
+<g><circle class="star" cx="140" cy="110" r="1.2"></circle><circle class="star" cx="360" cy="64" r="1" style="animation-delay:1s"></circle><circle class="star" cx="630" cy="120" r="1.3" style="animation-delay:2s"></circle><circle class="star" cx="840" cy="60" r="1" style="animation-delay:.6s"></circle><circle class="star" cx="1050" cy="130" r="1.2" style="animation-delay:1.6s"></circle><circle class="star" cx="1290" cy="78" r="1" style="animation-delay:2.6s"></circle><circle class="star" cx="960" cy="196" r="1" style="animation-delay:3.2s"></circle><circle class="star" cx="220" cy="220" r="1" style="animation-delay:1.9s"></circle></g>
+<g fill="none" stroke="#fff" stroke-opacity=".045"><path d="M0 180 Q360 106 720 184 T1440 178"></path><path d="M0 256 Q360 182 720 260 T1440 254"></path><path d="M0 346 Q390 270 780 352 T1440 340"></path><circle cx="1120" cy="240" r="40"></circle><circle cx="1120" cy="240" r="62"></circle><circle cx="240" cy="420" r="34"></circle><circle cx="240" cy="420" r="52"></circle></g>
+<g id="cloudG" transform="translate(300,170)">
+<g fill="#93A8B8"><circle cx="-15" cy="0" r="13"></circle><circle cx="2" cy="-9" r="16"></circle><circle cx="19" cy="0" r="12"></circle><rect height="15" rx="7" width="42" x="-19" y="-2"></rect></g>
+<text fill="#7C8F9E" font-family="IBM Plex Mono,monospace" font-size="12" letter-spacing="2" text-anchor="middle" x="0" y="38">الإنترنت</text>
+</g>
+<g id="towerG" transform="translate(1160,0)">
+<path d="M0 600 L0 356 M-30 600 L0 460 L30 600 M-18 520 L18 520 M-12 460 L12 460" fill="none" stroke="#93A8B8" stroke-width="3"></path>
+<circle class="twlight" cx="0" cy="348" r="5"></circle>
+<text fill="#7C8F9E" font-family="IBM Plex Mono,monospace" font-size="12" letter-spacing="2" text-anchor="middle" x="0" y="628">برج خلوي</text>
+</g>
+<path d="M0 900 L0 610 L130 610 L130 540 L220 540 L220 630 L340 630 L340 510 L440 510 L440 620 L560 620 L560 550 L680 550 L680 640 L820 640 L820 520 L940 520 L940 626 L1080 626 L1080 560 L1200 560 L1200 634 L1440 634 L1440 900 Z" fill="#0D1926"></path>
+<path d="M0 900 L0 660 L90 660 L90 586 L180 586 L180 690 L270 690 L270 546 L375 546 L375 672 L480 672 L480 606 L600 606 L600 700 L705 700 L705 570 L810 570 L810 682 L930 682 L930 616 L1050 616 L1050 694 L1170 694 L1170 594 L1290 594 L1290 676 L1440 676 L1440 900 Z" fill="#0A141C"></path>
+<g fill="#FFD98A" opacity=".26"><rect height="8" width="6" x="120" y="612"></rect><rect height="8" width="6" x="294" y="576"></rect><rect height="8" width="6" x="333" y="618"></rect><rect height="8" width="6" x="510" y="630"></rect><rect height="8" width="6" x="738" y="596"></rect><rect height="8" width="6" x="840" y="636"></rect><rect height="8" width="6" x="969" y="639"></rect><rect height="8" width="6" x="1209" y="621"></rect><rect height="8" width="6" x="645" y="588"></rect></g>
+<path d="M0 716 Q360 688 720 716 T1440 710 L1440 900 L0 900 Z" fill="#0C1822"></path>
+<g><line class="inf" x1="450" x2="1148" y1="682" y2="460"></line><line class="inf" x1="990" x2="1172" y1="708" y2="460"></line><line class="inf" x1="1160" x2="322" y1="356" y2="178"></line></g>
+<rect fill="url(#swg)" height="1200" id="sweep" transform="rotate(12 720 450)" width="240" x="-60" y="-140"></rect>
+<g>
+<circle class="devring" cx="450" cy="682" r="11"></circle><circle class="devring" cx="630" cy="712" r="11" style="animation-delay:.5s"></circle><circle class="devring" cx="810" cy="682" r="11" style="animation-delay:1s"></circle><circle class="devring" cx="990" cy="708" r="11" style="animation-delay:1.5s"></circle>
+<circle class="devdot" cx="450" cy="682" r="5.5"></circle><circle class="devdot" cx="630" cy="712" r="5.5"></circle><circle class="devdot" cx="810" cy="682" r="5.5"></circle><circle class="devdot" cx="990" cy="708" r="5.5"></circle>
+<circle class="devdot" cx="225" cy="722" opacity=".5" r="4.5"></circle>
+</g>
+<path class="mlk" d="M450 682 L630 712" id="hl1" pathlength="1"></path>
+<path class="mlk" d="M630 712 L810 682" id="hl2" pathlength="1"></path>
+<path class="mlk" d="M810 682 L990 708" id="hl3" pathlength="1"></path>
+<circle class="hmsg" id="hmsg" r="5" style="offset-path:path('M450 682 L630 712 L810 682 L990 708')"></circle>
+</svg>
+<div aria-hidden="true" class="scrim"></div>
+<div class="wrap hero-copy settle">
+<h1>RezMesh</h1>
+<p class="hero-tag" data-i18n="hero.tag">اتصال يتجاوز البنية التحتية.</p>
+<p class="hero-sub" data-i18n="hero.sub">تواصل دون خدمة خلوية أو بنية تحتية للإنترنت.</p>
+<p class="hero-body" data-i18n="hero.body">صُمم RezMesh لاتصال مرن من جهاز إلى جهاز عندما تكون الشبكات التقليدية غير متاحة أو معطلة أو مثقلة بالأحمال أو بعيدة المنال.</p>
+<div class="hero-cta">
+<a class="btn" data-i18n="hero.cta1" href="#problem">استكشف RezMesh</a>
+<a class="btn ghost" data-i18n="hero.cta2" href="/ar/how-it-works/">شاهد كيف يعمل</a>
+</div>
+<p class="hero-beta"><span data-i18n="hero.beta">سيصدر الإصدار التجريبي قريبًا. للوصول التجريبي، تواصل مباشرة مع سهيل مظفري.</span> <a href="mailto:Soheil.Mozaffari@gmail.com">Soheil.Mozaffari@gmail.com</a></p>
+</div>
+<div class="wrap tele">
+<span data-i18n="hero.seq" id="heroSeq">التسلسل 01 — فقدان البنية / تشكّل الشبكة</span>
+<span aria-hidden="true" class="dots" id="hDots"><b class="on"></b><b></b><b></b><b></b></span>
+<span aria-live="polite" class="status" id="heroStatus" style="position:static;background:none;border:0;padding:0"><i></i><span data-i18n="hs.1">البنية التحتية تعمل</span></span>
+<span id="tcode">T+00S</span>
+</div>
+</section>
+<!-- ============ BAND ============ -->
+<section class="band" id="band">
+<div class="wrap">
+<p class="l1"><span data-i18n="princ.l1">قد تختفي البنية التحتية.</span></p>
+<p class="l2"><span data-i18n="princ.l2">الناس وأجهزتهم ما زالوا هناك.</span></p>
+<p class="note" data-i18n="princ.note">يحوّل RezMesh الأجهزة المتبقية إلى نقاط اتصال محتملة.</p>
+</div>
+</section>
+<!-- ============ 01 PROBLEM ============ -->
+<section class="light pad" id="problem">
+<div class="wrap">
+<div class="shead rv">
+<span class="snum">01 /</span>
+<div><p class="kick" data-i18n="prob.kick">المشكلة</p>
+<h2 data-i18n="prob.head">حين تختفي الشبكة، تبقى الأجهزة القريبة قادرة على التواصل.</h2></div>
+</div>
+<div class="g2">
+<div class="rv">
+<p class="lede" data-i18n="prob.lead">قد تختفي البنية التحتية، لكن الحاجة إلى التواصل لا تختفي.</p>
+<p class="lede dim" data-i18n="prob.body">الأبراج الخلوية والإنترنت والخدمات المركزية مفيدة—حتى تتضرر أو تصبح غير متاحة أو مزدحمة أو محظورة أو بعيدة جدًا. يبدأ RezMesh الاتصال من الاتجاه الآخر: من الأجهزة الموجودة فعليًا في المكان.</p>
+<p aria-live="polite" data-i18n="ps.conv" id="probStatus">تُوجَّه الرسالة عبر بنية المشغل</p>
+<div class="pctl">
+<button class="btn" data-i18n="prob.btnRemove" id="btnRemove">أزل البنية التحتية</button>
+<button class="btn ghost" data-i18n="prob.btnRestore" id="btnRestore">أعد البنية التحتية</button>
+</div>
+<p class="pnote" data-i18n="prob.note">تمتد المسافة عبر الأجهزة القريبة المشاركة—لا عبر اتصال سحري بعيد المدى.</p>
+</div>
+<figure class="plate rv d1">
+<figcaption class="plate-h"><span class="fig">FIG. 01</span><span data-i18n="fig.p1">Mesh reorganization after infrastructure loss</span><span class="fig-r">N.T.S.</span></figcaption>
+<div class="plate-b">
+<svg aria-label="يفشل المسار التقليدي عبر البرج والخادم عند اختفاء البنية، ثم تحمل الأجهزة المحلية الرسالة نفسها." class="st-conv" id="probSvg" role="img" viewbox="0 0 1000 440">
+<path class="pconv" d="M70 120 H930"></path>
+<g id="breakX" stroke="#D95A4E" stroke-width="2.6"><line x1="488" x2="512" y1="108" y2="132"></line><line x1="512" x2="488" y1="108" y2="132"></line></g>
+<path class="pmesh" d="M70 320 H930" pathlength="1"></path>
+<g class="nodeI" transform="translate(250,120)"><g class="nicon"><path d="M0 -24 L0 8 M-12 8 L0 -8 L12 8 M-8 -12 L8 -12"></path></g><circle cx="0" cy="-27" fill="#D95A4E" r="2.6"></circle><text class="nlabel" data-i18n="lbl.tower" text-anchor="middle" y="34">برج خلوي</text></g>
+<g class="nodeI" transform="translate(410,120)"><g fill="#7C8F9E"><circle cx="-8" cy="0" r="8"></circle><circle cx="2" cy="-5" r="10"></circle><circle cx="11" cy="1" r="7"></circle><rect height="9" rx="4" width="24" x="-11" y="-1"></rect></g><text class="nlabel" data-i18n="lbl.net" text-anchor="middle" y="34">مشغل / إنترنت</text></g>
+<g class="nodeI" transform="translate(570,120)"><g class="nicon"><rect height="32" rx="3" width="26" x="-13" y="-16"></rect><line x1="-7" x2="7" y1="-7" y2="-7"></line><line x1="-7" x2="7" y1="1" y2="1"></line></g><text class="nlabel" data-i18n="lbl.server" text-anchor="middle" y="38">خادم</text></g>
+<g class="nodeI" transform="translate(730,120)"><g fill="#7C8F9E"><circle cx="-8" cy="0" r="8"></circle><circle cx="2" cy="-5" r="10"></circle><circle cx="11" cy="1" r="7"></circle><rect height="9" rx="4" width="24" x="-11" y="-1"></rect></g><text class="nlabel" data-i18n="lbl.net" text-anchor="middle" y="34">مشغل / إنترنت</text></g>
+<g class="gphone" style="--px:70px" transform="translate(70,120)"><g class="nicon"><rect height="36" rx="3" width="20" x="-10" y="-18"></rect><circle cx="0" cy="11" fill="#111A22" r="1.5" stroke="none"></circle></g><text class="nlabel" data-i18n="lbl.phone" text-anchor="middle" y="40">هاتف</text></g>
+<g class="gphone" style="--px:930px" transform="translate(930,120)"><g class="nicon"><rect height="36" rx="3" width="20" x="-10" y="-18"></rect><circle cx="0" cy="11" fill="#111A22" r="1.5" stroke="none"></circle></g><text class="nlabel" data-i18n="lbl.phone" text-anchor="middle" y="40">هاتف</text></g>
+<g class="gdev" style="--dx:360px" transform="translate(360,320)"><g class="nicon" stroke="#2E7D6F"><rect height="32" rx="3" width="18" x="-9" y="-16"></rect><path d="M-14 -22 a14 14 0 0 1 28 0" fill="none"></path></g><text class="nlabel" data-i18n="lbl.device" text-anchor="middle" y="40">جهاز قريب</text></g>
+<g class="gdev" style="--dx:640px" transform="translate(640,320)"><g class="nicon" stroke="#2E7D6F"><rect height="32" rx="3" width="18" x="-9" y="-16"></rect><path d="M-14 -22 a14 14 0 0 1 28 0" fill="none"></path></g><text class="nlabel" data-i18n="lbl.device" text-anchor="middle" y="40">جهاز قريب</text></g>
+<circle class="pmsg" fill="#54646F" id="pmsgC" r="6" style="offset-path:path('M70 120 H930')"></circle>
+<circle class="pmsg" fill="#2E7D6F" id="pmsgM" r="6" style="offset-path:path('M70 320 H930')"></circle>
+</svg>
+</div>
+<div class="plate-f">
+<span class="lg"><i></i><span data-i18n="hero.legendInfra">البنية التحتية التقليدية</span></span>
+<span class="lg"><i class="t"></i><span data-i18n="hero.legendMesh">مسار RezMesh المحلي</span></span>
+<span class="fig-r" data-i18n="ps.auto">يتحول مباشرة — الأزرار للإعادة</span>
+</div>
+</figure>
+</div>
+<a class="btn ghost route-cta" href="/ar/how-it-works/">اقرأ الشرح الكامل</a></div>
+</section>
+<!-- ============ 02 HOW (scroll-scrubbed) ============ -->
+<section id="how">
+<div id="howTall">
+<div class="wrap how-sticky">
+<div class="how-left">
+<p class="kick" data-i18n="how.kick">كيف يعمل</p>
+<h2 data-i18n="how.lead">الأجهزة القريبة تصبح جزءًا من مسار الاتصال.</h2>
+<p class="lede dim" data-i18n="how.body">يستخدم RezMesh اتصالًا محليًا من جهاز إلى جهاز لبناء مسارات مرنة بين الأجهزة المشاركة، دون اشتراط خدمة خلوية أو إنترنت كنقطة بداية.</p>
+<ol id="howList">
+<span aria-hidden="true" id="howRail"></span>
+<li data-stage="0"><h3><b>01</b><span data-i18n="how.s1t">اكتشاف</span></h3><p data-i18n="how.s1d">تتعرف أجهزة RezMesh القريبة على بعضها عبر إمكانات لاسلكية محلية.</p></li>
+<li data-stage="1"><h3><b>02</b><span data-i18n="how.s2t">اتصال</span></h3><p data-i18n="how.s2d">تُنشئ الأجهزة علاقات اتصال محلية دون حاجة إلى خدمة إنترنت مركزية.</p></li>
+<li data-stage="2"><h3><b>03</b><span data-i18n="how.s3t">توجيه</span></h3><p data-i18n="how.s3d">تنتقل المعلومات نحو وجهتها عبر الأجهزة المشاركة المتاحة.</p></li>
+<li data-stage="3"><h3><b>04</b><span data-i18n="how.s4t">تكيّف</span></h3><p data-i18n="how.s4d">يتغير سلوك الاتصال واستهلاك الطاقة وفق ظروف التشغيل.</p></li>
+</ol>
+<p id="howRead">PHASE 01 / 04 — 000%</p>
+<p id="howHint"><svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-width="1.4" viewbox="0 0 10 14" width="10"><path d="M5 1v11M1.5 8.5 5 12l3.5-3.5"></path></svg><span data-i18n="how.scroll">مرّر لتقديم التسلسل</span></p>
+</div>
+<figure class="plate" style="position:relative">
+<figcaption class="plate-h"><span class="fig">FIG. 02</span><span data-i18n="fig.h">Route adaptation under topology change</span><span class="fig-r">SCRUB →</span></figcaption>
+<div class="plate-b" style="position:relative">
+<div class="status ok" id="howStatus"><i></i><span data-i18n="how.s1t">اكتشاف</span></div>
+<svg aria-label="يكتشف جهاز جديد الأجهزة القريبة ويتصل ويوجه عبر عقدة وسيطة ويتكيف عندما يتغير شكل الشبكة." id="howSvg" role="img" viewbox="0 0 900 520">
+<g fill="none" stroke="#fff" stroke-opacity=".04"><path d="M0 90 Q220 40 450 92 T900 88"></path><path d="M0 440 Q240 400 470 444 T900 436"></path><circle cx="700" cy="420" r="30"></circle><circle cx="700" cy="420" r="46"></circle></g>
+<path class="hbase" d="M320 180 L520 260"></path><path class="hbase" d="M300 360 L560 420"></path><path class="hbase" d="M560 420 L760 180"></path>
+<path class="hdash" d="M150 300 L760 180" id="hdirect" opacity="0"></path>
+<text class="hlab" data-i18n="how.out" id="houtLab" opacity="0" text-anchor="middle" x="455" y="228">خارج المدى المباشر</text>
+<text data-i18n="how.recalc" id="recalcLab" opacity="0" text-anchor="middle" x="450" y="478">إعادة حساب المسار…</text>
+<path class="hlk" d="M150 300 L320 180" id="hk1" pathlength="1"></path>
+<path class="hlk" d="M150 300 L300 360" id="hk2" pathlength="1"></path>
+<path class="hlk" d="M150 300 L520 260 L760 180" id="routeA" pathlength="1" style="stroke-width:2.4"></path>
+<path class="hlk" d="M150 300 L300 360 L560 420 L760 180" id="routeB" pathlength="1" style="stroke-width:2.4"></path>
+<g id="n4g"><circle class="hn" cx="520" cy="260" r="7"></circle><circle class="hnring" cx="520" cy="260" id="n4ring" opacity="0" r="12"></circle></g>
+<circle class="hn" cx="320" cy="180" r="7"></circle><circle class="hn" cx="300" cy="360" r="7"></circle><circle class="hn" cx="560" cy="420" r="7"></circle>
+<circle class="hdest" cx="760" cy="180" id="hdest" opacity="0" r="14"></circle><circle class="hn" cx="760" cy="180" fill="#E8A33D" r="7"></circle>
+<g id="n1g" opacity="0"><circle class="hn" cx="150" cy="300" fill="#5FD4C0" r="8"></circle><circle class="hnring" cx="150" cy="300" id="n1ring" opacity="0" r="13"></circle></g>
+<circle class="hmsgd" id="msgA" opacity="0" r="5"></circle><circle class="hmsgd" id="msgB" opacity="0" r="5"></circle>
+</svg>
+</div>
+<div class="plate-f"><span class="lg"><i class="d" style="background:#5FD4C0"></i><span data-i18n="lbl.device">جهاز قريب</span></span><span class="lg"><i class="d" style="background:#E8A33D"></i><span data-i18n="how.dest">الوجهة</span></span><span class="lg"><i class="t"></i><span data-i18n="how.route">المسار النشط</span></span></div>
+</figure>
+<a class="btn ghost route-cta" href="/ar/how-it-works/">اقرأ الشرح الكامل</a></div>
+</div>
+</section>
+<!-- ============ 03 EMERGENCY ============ -->
+<section class="pad" id="emergency">
+<div class="wrap">
+<div class="shead rv">
+<span class="snum">03 /</span>
+<div><p class="kick" data-i18n="emg.kick">بث الطوارئ</p>
+<h2 data-i18n="emg.head">رسالة عاجلة واحدة؛ مجتمع من الأجهزة التي يمكن الوصول إليها.</h2>
+<p class="lede dim" data-i18n="emg.body">يتضمن RezMesh آلية تنبيه طوارئ تُعلي أولوية المعلومات العاجلة عبر الشبكة المحلية المتاحة، ويمكن للرسائل أن تنتشر عبر الأجهزة المشاركة دون الاعتماد على البنية الخلوية أو الإنترنت.</p></div>
+</div>
+<div class="emggrid">
+<figure class="plate rv" style="position:relative">
+<figcaption class="plate-h"><span class="fig">FIG. 03</span><span data-i18n="fig.e">Emergency propagation across a neighbourhood mesh</span><span class="fig-r">SCALE 1:24 000</span></figcaption>
+<div class="plate-b" style="position:relative">
+<span id="emgChip">T+0s</span>
+<svg aria-label="ينتشر تنبيه طوارئ أولًا إلى الأجهزة المباشرة ثم إلى المجتمع المحلي الأوسع القابل للوصول، ويتوقف ضمن التغطية الفعلية." id="emgSvg" role="img" viewbox="0 0 900 560">
+<rect fill="#0A1016" height="560" width="900"></rect>
+<g class="street"><line x1="0" x2="900" y1="140" y2="140"></line><line x1="0" x2="900" y1="280" y2="280"></line><line x1="0" x2="900" y1="420" y2="420"></line><line x1="150" x2="150" y1="0" y2="560"></line><line x1="300" x2="300" y1="0" y2="560"></line><line x1="450" x2="450" y1="0" y2="560"></line><line x1="600" x2="600" y1="0" y2="560"></line><line x1="750" x2="750" y1="0" y2="560"></line></g>
+<rect class="park" height="100" rx="8" width="110" x="620" y="300"></rect><rect class="park" height="100" rx="8" width="110" x="170" y="20"></rect>
+<g class="hous"><rect height="18" width="26" x="190" y="180"></rect><rect height="18" width="26" x="340" y="180"></rect><rect height="18" width="26" x="490" y="180"></rect><rect height="18" width="26" x="640" y="180"></rect><rect height="18" width="26" x="190" y="320"></rect><rect height="18" width="26" x="340" y="320"></rect><rect height="18" width="26" x="490" y="320"></rect><rect height="18" width="26" x="190" y="460"></rect><rect height="18" width="26" x="490" y="40"></rect><rect height="18" width="26" x="640" y="460"></rect></g>
+<g class="etower"><path d="M820 90 L820 40 M810 90 L820 60 L830 90"></path><line x1="806" x2="834" y1="52" y2="52"></line></g>
+<line opacity=".7" stroke="#D95A4E" stroke-width="1.8" x1="808" x2="832" y1="38" y2="62"></line><line opacity=".7" stroke="#D95A4E" stroke-width="1.8" x1="832" x2="808" y1="38" y2="62"></line>
+<g id="blobs">
+<circle class="eblob" cx="300" cy="280" r="86"></circle>
+<circle class="eblob" cx="150" cy="280" r="80"></circle><circle class="eblob" cx="450" cy="280" r="80"></circle><circle class="eblob" cx="300" cy="140" r="80"></circle><circle class="eblob" cx="300" cy="420" r="80"></circle>
+<circle class="eblob" cx="150" cy="140" r="76"></circle><circle class="eblob" cx="450" cy="140" r="76"></circle><circle class="eblob" cx="600" cy="280" r="76"></circle><circle class="eblob" cx="150" cy="420" r="76"></circle><circle class="eblob" cx="450" cy="420" r="76"></circle>
+<circle class="eblob" cx="600" cy="140" r="72"></circle><circle class="eblob" cx="750" cy="280" r="72"></circle><circle class="eblob" cx="600" cy="420" r="72"></circle>
+</g>
+<g id="elinks">
+<g class="w1"><path class="elink" d="M300 280 L150 280" pathlength="1"></path><path class="elink" d="M300 280 L450 280" pathlength="1"></path><path class="elink" d="M300 280 L300 140" pathlength="1"></path><path class="elink" d="M300 280 L300 420" pathlength="1"></path></g>
+<g class="w2"><path class="elink" d="M150 280 L150 140" pathlength="1"></path><path class="elink" d="M300 140 L450 140" pathlength="1"></path><path class="elink" d="M450 280 L600 280" pathlength="1"></path><path class="elink" d="M150 280 L150 420" pathlength="1"></path><path class="elink" d="M300 420 L450 420" pathlength="1"></path></g>
+<g class="w3"><path class="elink" d="M450 140 L600 140" pathlength="1"></path><path class="elink" d="M600 280 L750 280" pathlength="1"></path><path class="elink" d="M600 280 L600 420" pathlength="1"></path></g>
+</g>
+<g id="enodes">
+<circle class="enode" cx="150" cy="280" data-w="1" r="6"></circle><circle class="enode" cx="450" cy="280" data-w="1" r="6"></circle><circle class="enode" cx="300" cy="140" data-w="1" r="6"></circle><circle class="enode" cx="300" cy="420" data-w="1" r="6"></circle>
+<circle class="enode" cx="150" cy="140" data-w="2" r="6"></circle><circle class="enode" cx="450" cy="140" data-w="2" r="6"></circle><circle class="enode" cx="600" cy="280" data-w="2" r="6"></circle><circle class="enode" cx="150" cy="420" data-w="2" r="6"></circle><circle class="enode" cx="450" cy="420" data-w="2" r="6"></circle>
+<circle class="enode" cx="600" cy="140" data-w="3" r="6"></circle><circle class="enode" cx="750" cy="280" data-w="3" r="6"></circle><circle class="enode" cx="600" cy="420" data-w="3" r="6"></circle>
+<circle class="enode" cx="750" cy="140" opacity=".45" r="6"></circle><circle class="enode" cx="750" cy="420" opacity=".45" r="6"></circle>
+</g>
+<circle cx="300" cy="280" fill="#E8A33D" r="8"></circle><circle cx="300" cy="280" fill="none" opacity=".7" r="14" stroke="#E8A33D" stroke-width="1.4"></circle>
+<g transform="translate(150,140)"><path class="eicon" d="M-9 2 L0 -7 L9 2 M-6 0 L-6 9 L6 9 L6 0"></path><path class="eicon" d="M0 -7 L0 -14 L7 -12 L0 -10"></path></g>
+<text data-i18n="lbl.shelter" fill="#E8A33D" font-family="IBM Plex Mono,monospace" font-size="11" letter-spacing="1" text-anchor="middle" x="150" y="122">مأوى</text>
+<g transform="translate(600,420)"><circle class="eicon" r="10"></circle><path class="eicon" d="M-4 0 H4 M0 -4 V4"></path></g>
+<text data-i18n="lbl.medical" fill="#E8A33D" font-family="IBM Plex Mono,monospace" font-size="11" letter-spacing="1" text-anchor="middle" x="600" y="448">نقطة طبية</text>
+<g fill="#9FC4B8"><circle cx="450" cy="140" r="3.2"></circle><circle cx="600" cy="280" r="3.2"></circle><circle cx="300" cy="420" r="3.2"></circle></g>
+<text data-i18n="lbl.volunteers" fill="#9FC4B8" font-family="IBM Plex Mono,monospace" font-size="11" letter-spacing="1" text-anchor="middle" x="452" y="120">متطوعون</text>
+<g fill="none" opacity=".7" stroke="#8CA0AF" stroke-width="1.2" transform="translate(830,520)"><path d="M0 0 h60 M0 -4 v8 M60 -4 v8"></path><path d="M30 -14 l6 10 h-12 z"></path></g>
+</svg>
+</div>
+<div class="plate-f">
+<span class="lg"><i class="da"></i><span data-i18n="lg.origin">تنبيه المصدر</span></span>
+<span class="lg"><i class="da" style="opacity:.75"></i><span data-i18n="lg.reached">جهاز تم الوصول إليه</span></span>
+<span class="lg"><i class="a"></i><span data-i18n="lg.link">وصلة شبكية</span></span>
+<span class="lg"><i class="ca"></i><span data-i18n="lg.cover">منطقة التغطية</span></span>
+</div>
+</figure>
+<aside aria-label="حالة الانتشار" class="emgrail rv d1">
+<div>
+<div class="wrow on" data-w="0"><span class="t">T+0s</span><span class="d" data-i18n="emg.w0">المصدر ينشئ التنبيه</span></div>
+<div class="wrow" data-w="1"><span class="t">T+1s</span><span class="d" data-i18n="emg.w1">الأقران المباشرون يستقبلون</span></div>
+<div class="wrow" data-w="2"><span class="t">T+2s</span><span class="d" data-i18n="emg.w2">المجموعة التالية التي يمكن الوصول إليها</span></div>
+<div class="wrow" data-w="3"><span class="t">T+3s</span><span class="d" data-i18n="emg.w3">شبكة أوسع — ثم تستقر</span></div>
+</div>
+<button class="btn amber" data-i18n="emg.btn" id="btnEmgRun">تفعيل تنبيه الطوارئ</button>
+<div class="emgcount">
+<span class="num" id="emgCount">1</span><span class="den"> / 15</span>
+<p><span data-i18n="emg.reached">أجهزة تم الوصول إليها</span></p>
+</div>
+</aside>
+</div>
+<p class="emgnote" data-i18n="emg.note">يعتمد الانتشار على الأجهزة الحاضرة والمشاركة؛ التغطية الشاملة غير مضمونة.</p>
+<a class="btn ghost route-cta" href="/ar/emergency-communication/">اقرأ الشرح الكامل</a></div>
+</section>
+<!-- ============ 04 POWER ============ -->
+<section class="light pad" id="power">
+<div class="wrap">
+<div class="shead rv">
+<span class="snum">04 /</span>
+<div><p class="kick" data-i18n="pow.kick">تحكم ذكي بالطاقة</p>
+<h2 data-i18n="pow.head">مرونة الاتصال تعني أيضًا حماية البطارية.</h2>
+<p class="lede dim" data-i18n="pow.lead">في الطوارئ، لا يفيد الاتصال إلا ما دام الجهاز يعمل.</p></div>
+</div>
+<div class="g2" style="align-items:start">
+<figure class="plate powplate rv powpanel run" id="powPanel">
+<figcaption class="plate-h"><span class="fig">FIG. 04</span><span data-i18n="fig.pw">Power states and radio duty cycling</span><span class="fig-r">LIVE</span></figcaption>
+<div class="plate-b grid">
+<div class="pzone" style="text-align:center">
+<span class="mono" data-i18n="pow.battery" style="font-size:9.5px;letter-spacing:.2em;color:var(--inkMut)">البطارية</span>
+<div class="batt"><i style="bottom:25%"></i><i style="bottom:50%"></i><i style="bottom:75%"></i><div id="battFill" style="height:96%"></div></div>
+<span id="battPct">96%</span>
+<svg aria-hidden="true" style="margin:18px auto 0;max-width:170px" viewbox="0 0 200 120">
+<rect fill="none" height="86" rx="8" stroke="#111A22" stroke-width="2" width="44" x="78" y="10"></rect>
+<g class="prings"><circle cx="100" cy="52" r="15"></circle><circle cx="100" cy="52" r="15" style="animation-delay:.9s"></circle><circle cx="100" cy="52" r="15" style="animation-delay:1.8s"></circle></g>
+</svg>
+</div>
+<div class="pzone">
+<span class="mono" data-i18n="pow.axis" style="font-size:9.5px;letter-spacing:.2em;color:var(--inkMut)">النشاط اللاسلكي</span>
+<canvas id="scope" style="margin-top:10px"></canvas>
+<div class="scope-ax"><span data-i18n="pow.time">الزمن →</span><span id="scopeState">ACTIVE</span></div>
+<div aria-hidden="true" class="duty" id="duty"></div>
+</div>
+<div class="pzone">
+<div class="srail" id="srail">
+<span class="ovlab" data-i18n="pow.override">تجاوز مقصود</span>
+<div class="srow ov" data-state="emergency"><i></i><span data-i18n="st.emergency">طوارئ</span></div>
+<span class="ovlab" data-i18n="pow.scale" style="color:var(--inkMut)">مقياس البطارية التنازلي</span>
+<div class="srow" data-state="active"><i></i><span data-i18n="st.active">نشط</span></div>
+<div class="srow" data-state="balanced"><i></i><span data-i18n="st.balanced">متوازن</span></div>
+<div class="srow" data-state="saver"><i></i><span data-i18n="st.saver">توفير الطاقة</span></div>
+<div class="srow" data-state="minimal"><i></i><span data-i18n="st.minimal">الحد الأدنى</span></div>
+<div class="srow" data-state="hibernation"><i></i><span data-i18n="st.hibernation">سبات</span></div>
+<div class="srow" data-state="dead"><i></i><span data-i18n="st.dead">متوقف</span></div>
+</div>
+<p id="stateDesc" style="margin-top:14px">Scanning frequent; connections responsive; radio activity high.</p>
+<p class="wakeline"><span data-i18n="pw.wake">استيقاظات اللاسلكي</span>: <b id="wakeVal">frequent</b></p>
+<button class="btn" data-i18n="pow.btnEmg" id="btnPwrEmg" style="margin-top:16px">عرض حالة الطوارئ</button>
+</div>
+</div>
+</figure>
+<div class="rv d1">
+<p class="lede dim" data-i18n="pow.body">يوفر RezMesh حالات طاقة متعددة تغيّر درجة استخدام موارد الاتصال: من الاتصال النشط إلى أوضاع أكثر تحفظًا ثم السبات. وتتغير معها توقيتات فحص BLE والإعلان وتوفر Wi‑Fi Direct وتواتر تحديثات التوجيه.</p>
+<p class="pquote" data-i18n="pow.quote">أنفق الطاقة حين يهم الاتصال، ووفّرها حين يهم وقت البقاء.</p>
+<p class="pterm"><strong data-i18n="pow.term">دورية المهام (Duty cycling).</strong> <span data-i18n="pow.termNote">يوضح المخطط الشريطي مدى تكرار استيقاظ اللاسلكي: وتيرة الفحص والإرسال تتبع حالة الطاقة الحالية.</span></p>
+</div>
+</div>
+<a class="btn ghost route-cta" href="/ar/power-management/">اقرأ الشرح الكامل</a></div>
+</section>
+<!-- ============ 05 SCENARIOS ============ -->
+<section class="pad" id="scenarios">
+<div class="wrap">
+<div class="shead rv">
+<span class="snum">05 /</span>
+<div><p class="kick" data-i18n="scn.kick">سيناريوهات واقعية</p>
+<h2 data-i18n="scn.head">صُمم للأماكن التي يصبح فيها الاتصال غير مؤكد.</h2>
+<p class="lede dim" data-i18n="scn.hint">اختر سيناريو — تتحدث المنصة. تتغير القصة البصرية؛ يبقى المبدأ ثابتًا.</p></div>
+</div>
+<div class="scnwrap" id="scnWrap">
+<div aria-label="السيناريوهات" class="scn-sticky rv" id="scnList" role="tablist"></div>
+<figure class="plate rv d1">
+<figcaption class="plate-h"><span class="fig">FIG. 05</span><span id="scnTitle">Earthquake</span><span class="fig-r" id="scnNum">01 / 07</span></figcaption>
+<div class="plate-b scn-stage" id="scnStage">
+<div class="scn-item on" data-i="0"><svg viewbox="0 0 320 180"><path d="M0 150 L40 150 L40 90 L80 90 L80 150 L120 150 L120 70 L160 70 L160 150 L210 150 L210 100 L250 100 L250 150 L320 150" fill="#0E1A24"></path><path d="M60 150 L74 138 L66 150 L82 142" fill="none" stroke="#3A4C5A"></path><g class="vinf"><path d="M285 150 L285 60 M275 150 L285 95 L295 150" fill="none" stroke="#7C8F9E" stroke-width="1.6"></path><circle cx="285" cy="56" fill="#D95A4E" r="2.6"></circle></g><circle class="vpulse" cx="60" cy="120" r="8"></circle><path class="vmesh" d="M60 120 L140 108 L215 122 L275 112" pathlength="1"></path><circle class="vmsg" r="4" style="offset-path:path('M60 120 L140 108 L215 122 L275 112')"></circle><g fill="#CFE3EE"><circle cx="60" cy="120" r="3.6"></circle><circle cx="140" cy="108" r="3.6"></circle><circle cx="215" cy="122" r="3.6"></circle><circle cx="275" cy="112" r="3.6"></circle></g><rect fill="none" height="10" stroke="#E8A33D" stroke-width="1.4" width="14" x="268" y="102"></rect></svg></div>
+<div class="scn-item" data-i="1"><svg viewbox="0 0 320 180"><path d="M0 96 Q80 88 160 96 T320 94 L320 128 Q240 136 160 128 T0 130 Z" fill="#173042"></path><g class="vrain"><line x1="40" x2="36" y1="10" y2="26"></line><line x1="110" x2="106" y1="0" y2="16"></line><line x1="180" x2="176" y1="14" y2="30"></line><line x1="250" x2="246" y1="4" y2="20"></line><line x1="290" x2="286" y1="18" y2="34"></line></g><g class="vinf"><path d="M40 96 L40 40 M30 96 L40 60 L50 96" fill="none" stroke="#7C8F9E" stroke-width="1.6"></path></g><circle class="vpulse" cx="70" cy="60" r="8"></circle><path class="vmesh" d="M70 60 L130 66 L160 92 L190 66 L255 58" pathlength="1"></path><circle class="vmsg" r="4" style="offset-path:path('M70 60 L130 66 L160 92 L190 66 L255 58')"></circle><g fill="#CFE3EE"><circle cx="70" cy="60" r="3.6"></circle><circle cx="130" cy="66" r="3.6"></circle><circle cx="160" cy="92" r="3.6"></circle><circle cx="190" cy="66" r="3.6"></circle><circle cx="255" cy="58" r="3.6"></circle></g><g fill="#CFE3EE" opacity=".45"><circle cx="60" cy="152" r="3.6"></circle><circle cx="120" cy="156" r="3.6"></circle><circle cx="220" cy="154" r="3.6"></circle></g></svg></div>
+<div class="scn-item" data-i="2"><svg viewbox="0 0 320 180"><path d="M0 150 L90 70 L150 120 L230 50 L320 140 L320 180 L0 180 Z" fill="#12202B"></path><path class="vinf" d="M230 50 L262 78" fill="none" stroke="#E8A33D" stroke-width="2.6"></path><path class="vsmoke" d="M240 60 Q250 40 244 26 M252 70 Q266 48 258 30"></path><circle class="vpulse" cx="210" cy="86" r="8"></circle><path class="vmesh" d="M210 86 L160 112 L110 128 L60 142" pathlength="1"></path><circle class="vmsg" r="4" style="offset-path:path('M210 86 L160 112 L110 128 L60 142')"></circle><g fill="#CFE3EE"><circle cx="210" cy="86" r="3.6"></circle><circle cx="160" cy="112" r="3.6"></circle><circle cx="110" cy="128" r="3.6"></circle><circle cx="60" cy="142" r="3.6"></circle></g></svg></div>
+<div class="scn-item" data-i="3"><svg viewbox="0 0 320 180"><g fill="#1B2936"><rect class="vblk" height="42" width="52" x="30" y="40"></rect><rect class="vblk" height="42" style="animation-delay:.5s" width="52" x="96" y="40"></rect><rect class="vblk" height="42" style="animation-delay:1s" width="52" x="162" y="40"></rect><rect class="vblk" height="42" style="animation-delay:1.5s" width="52" x="228" y="40"></rect><rect class="vblk" height="42" style="animation-delay:2s" width="52" x="30" y="98"></rect><rect class="vblk" height="42" style="animation-delay:2.5s" width="52" x="96" y="98"></rect><rect class="vblk" height="42" style="animation-delay:3s" width="52" x="162" y="98"></rect><rect class="vblk" height="42" style="animation-delay:3.5s" width="52" x="228" y="98"></rect></g><path class="vmesh" d="M56 61 L122 61 L188 119 L254 119 M122 61 L122 119" pathlength="1"></path><g fill="#5FD4C0"><circle cx="56" cy="61" r="3.2"></circle><circle cx="122" cy="61" r="3.2"></circle><circle cx="122" cy="119" r="3.2"></circle><circle cx="188" cy="119" r="3.2"></circle><circle cx="254" cy="119" r="3.2"></circle></g></svg></div>
+<div class="scn-item" data-i="4"><svg viewbox="0 0 320 180"><path d="M0 160 L70 90 L120 120 L190 46 L250 100 L320 60 L320 180 L0 180 Z" fill="#101D28"></path><path d="M40 150 Q90 120 120 122 T200 90 T280 66" fill="none" stroke="#3A4C5A" stroke-dasharray="3 5"></path><g class="vinf" opacity=".4"><path d="M30 150 L30 110 M22 150 L30 124 L38 150" fill="none" stroke="#7C8F9E" stroke-width="1.6"></path><line stroke="#D95A4E" stroke-width="1.6" x1="20" x2="40" y1="112" y2="132"></line><line stroke="#D95A4E" stroke-width="1.6" x1="40" x2="20" y1="112" y2="132"></line></g><circle class="vpulse" cx="60" cy="132" r="8"></circle><path class="vmesh" d="M60 132 L120 122 L180 96 L240 84" pathlength="1"></path><circle class="vmsg" r="4" style="offset-path:path('M60 132 L120 122 L180 96 L240 84')"></circle><g fill="#CFE3EE"><circle cx="60" cy="132" r="3.6"></circle><circle cx="120" cy="122" r="3.6"></circle><circle cx="180" cy="96" r="3.6"></circle><circle cx="240" cy="84" r="3.6"></circle></g></svg></div>
+<div class="scn-item" data-i="5"><svg viewbox="0 0 320 180"><ellipse cx="160" cy="100" fill="#12212D" rx="130" ry="58"></ellipse><ellipse cx="160" cy="100" fill="#0C1620" rx="90" ry="36"></ellipse><g class="vinf"><path d="M160 42 L160 12" stroke="#7C8F9E" stroke-width="1.6"></path><path class="vcong" d="M146 20 a20 20 0 0 1 28 0 M140 12 a28 28 0 0 1 40 0" fill="none" stroke="#D95A4E" stroke-width="1.6"></path></g><g fill="#8CA0AF"><circle cx="110" cy="92" r="2.8"></circle><circle cx="126" cy="104" r="2.8"></circle><circle cx="142" cy="94" r="2.8"></circle><circle cx="158" cy="108" r="2.8"></circle><circle cx="176" cy="96" r="2.8"></circle><circle cx="192" cy="106" r="2.8"></circle><circle cx="206" cy="92" r="2.8"></circle><circle cx="150" cy="120" r="2.8"></circle><circle cx="176" cy="122" r="2.8"></circle></g><path class="vmesh" d="M110 92 L126 104 L142 94 L158 108 L176 96" pathlength="1"></path><path class="vmesh" d="M150 120 L176 122 L192 106" pathlength="1" style="animation-delay:.4s"></path><circle class="vmsg" r="3.4" style="offset-path:path('M110 92 L126 104 L142 94 L158 108 L176 96')"></circle></svg></div>
+<div class="scn-item" data-i="6"><svg viewbox="0 0 320 180"><g fill="#15222E"><rect height="60" width="46" x="30" y="50"></rect><rect height="76" width="46" x="90" y="34"></rect><rect height="52" width="46" x="150" y="58"></rect><rect height="68" width="46" x="210" y="42"></rect></g><g class="vinf"><path d="M285 110 L285 44 M275 110 L285 66 L295 110" fill="none" stroke="#7C8F9E" stroke-width="1.6"></path><circle cx="285" cy="40" fill="#D95A4E" r="2.6"></circle></g><circle class="vpulse" cx="60" cy="132" r="8"></circle><path class="vmesh" d="M60 132 L112 128 L168 134 L228 126" pathlength="1"></path><circle class="vmsg" r="4" style="offset-path:path('M60 132 L112 128 L168 134 L228 126')"></circle><g fill="#CFE3EE"><circle cx="60" cy="132" r="3.6"></circle><circle cx="112" cy="128" r="3.6"></circle><circle cx="168" cy="134" r="3.6"></circle><circle cx="228" cy="126" r="3.6"></circle></g><g transform="translate(228,126)"><circle fill="none" r="8" stroke="#E8A33D" stroke-width="1.4"></circle><path d="M-3 0 H3 M0 -3 V3" stroke="#E8A33D" stroke-width="1.4"></path></g></svg></div>
+</div>
+<div class="plate-f"><span id="scnMsg" style="text-transform:none;letter-spacing:.02em;font-family:var(--body);font-size:13px">Local communication when centralized infrastructure is damaged or unavailable.</span></div>
+</figure>
+</div>
+<p class="principle rv" data-i18n-html="scn.principle">تختفي البنية التحتية. <em>تبقى الأجهزة المحلية.</em></p>
+<a class="btn ghost route-cta" href="/ar/scenarios/">اقرأ الشرح الكامل</a></div>
+</section>
+<!-- ============ 06 POCKET + GLOSSARY ============ -->
+<section class="light pad" id="pocket">
+<div class="wrap">
+<div class="shead rv">
+<span class="snum">06 /</span>
+<div><p class="kick" data-i18n="poc.kick">بدون عتاد خاص</p>
+<h2 data-i18n="poc.head">صُمم حول الجهاز الموجود في جيبك بالفعل</h2>
+<p class="lede dim" data-i18n="poc.lead">تبدأ الشبكة من الأجهزة التي يحملها الناس بالفعل.</p></div>
+</div>
+<div class="pkflow">
+<figure class="plate rv" style="max-width:420px;width:100%;margin-inline:auto">
+<figcaption class="plate-h"><span class="fig">FIG. 06</span><span data-i18n="fig.pk">From endpoint to participating node</span></figcaption>
+<div class="plate-b">
+<svg aria-label="يتحول هاتف عادي من نقطة معزولة إلى عقدة مشاركة في RezMesh؛ تنضم الأجهزة القريبة وتتكون مسارات محلية مرنة." role="img" viewbox="0 0 360 300">
+<rect fill="none" height="110" rx="10" stroke="#111A22" stroke-width="2.4" width="60" x="150" y="26"></rect>
+<circle cx="180" cy="120" fill="#111A22" r="2.6"></circle>
+<g class="pk-ring"><circle cx="180" cy="80" r="26"></circle><circle cx="180" cy="80" r="26" style="animation-delay:1.2s"></circle><circle cx="180" cy="80" r="26" style="animation-delay:2.4s"></circle></g>
+<g class="pk-dev"><circle cx="80" cy="220" fill="#2E7D6F" r="6"></circle><circle cx="180" cy="250" fill="#2E7D6F" r="6"></circle><circle cx="280" cy="220" fill="#2E7D6F" r="6"></circle></g>
+<path class="pk-link" d="M180 136 L80 220" pathlength="1"></path><path class="pk-link" d="M180 136 L180 250" pathlength="1" style="animation-delay:.3s"></path><path class="pk-link" d="M180 136 L280 220" pathlength="1" style="animation-delay:.6s"></path><path class="pk-link" d="M80 220 L180 250 L280 220" pathlength="1" style="animation-delay:.9s"></path>
+<text class="pk-lab pk-labA" data-i18n="poc.labA" text-anchor="middle" x="180" y="14">طرف معزول</text>
+<text class="pk-lab pk-labB" data-i18n="poc.labB" fill="#2E7D6F" text-anchor="middle" x="180" y="14">عقدة مشاركة</text>
+</svg>
+</div>
+</figure>
+<ol class="pksteps rv d1">
+<li data-i18n="poc.f1">هاتف<small data-i18n="poc.s1">جهاز أندرويد عادي، بلا عتاد إضافي</small></li>
+<li data-i18n="poc.f2">اتصال لاسلكي محلي<small data-i18n="poc.s2">اكتشاف BLE ونقل Wi‑Fi Direct</small></li>
+<li data-i18n="poc.f3">أجهزة RezMesh القريبة<small data-i18n="poc.s3">كل جهاز مشارك عقدة</small></li>
+<li data-i18n="poc.f4">مسارات اتصال محلية مرنة<small data-i18n="poc.s4">تمتد المسافة قفزة بقفزة، لا بالسحر</small></li>
+</ol>
+</div>
+<dl class="gl rv">
+<div><span class="gn">TERM 01</span><dt data-i18n="gl.t1">اتصال من جهاز إلى جهاز</dt><dd data-i18n="gl.d1">تتحدث الأجهزة مباشرة مع بعضها دون برج أو خادم.</dd></div>
+<div><span class="gn">TERM 02</span><dt data-i18n="gl.t2">اتصال شبكي (mesh)</dt><dd data-i18n="gl.d2">كل جهاز مشارك يمكنه نقل رسائل الآخرين؛ تمتد المسافة عبر العقد القريبة.</dd></div>
+<div><span class="gn">TERM 03</span><dt data-i18n="gl.t3">اتصال واعٍ بالطاقة</dt><dd data-i18n="gl.d3">يُضبط النشاط اللاسلكي وفق مستوى البطارية وظروف التشغيل للحفاظ على وقت البقاء.</dd></div>
+</dl>
+</div>
+</section>
+<!-- ============ 07 ENGINEERING ============ -->
+<section class="light2 pad" id="engineering">
+<div class="wrap">
+<div class="shead rv">
+<span class="snum">07 /</span>
+<div><p class="kick" data-i18n="eng.kick">التأليف والمنهج</p>
+<h2 data-i18n="eng.head">الهندسة خلف RezMesh</h2></div>
+</div>
+<div class="g2">
+<div class="rv">
+<p class="lede" data-i18n="eng.bound" style="font-weight:600;color:var(--ink)">يُطوَّر RezMesh باستخدام منهجية BOUND الإصدار 3.0 — التطوير الموحّد الموجّه بالحدود.</p>
+<p class="lede dim" data-i18n="eng.author">يطوّر RezMesh سهيل مظفري، مهندس برمجيات ومؤلف منهجية BOUND الإصدار 3.0.</p>
+<div class="idlist">
+<a href="https://smozaff.github.io/" rel="noopener" target="_blank"><span data-i18n="eng.l1">الموقع المهني لسهيل مظفري</span><svg aria-hidden="true" fill="none" height="12" stroke="currentColor" stroke-width="1.4" viewbox="0 0 12 12" width="12"><path d="M4 8 8 4M5 4h3v3"></path></svg></a>
+<a href="https://www.linkedin.com/in/sohmozaffari/" rel="noopener" target="_blank"><span>LinkedIn</span><svg aria-hidden="true" fill="none" height="12" stroke="currentColor" stroke-width="1.4" viewbox="0 0 12 12" width="12"><path d="M4 8 8 4M5 4h3v3"></path></svg></a>
+<a href="https://orcid.org/0009-0001-2428-1295" rel="noopener" target="_blank"><span>ORCID</span><svg aria-hidden="true" fill="none" height="12" stroke="currentColor" stroke-width="1.4" viewbox="0 0 12 12" width="12"><path d="M4 8 8 4M5 4h3v3"></path></svg></a>
+<a href="https://bound-method.github.io/" rel="noopener" target="_blank"><span data-i18n="eng.l4">موقع منهجية BOUND</span><svg aria-hidden="true" fill="none" height="12" stroke="currentColor" stroke-width="1.4" viewbox="0 0 12 12" width="12"><path d="M4 8 8 4M5 4h3v3"></path></svg></a>
+<a href="https://doi.org/10.5281/zenodo.22257583" rel="noopener" target="_blank"><span data-i18n="eng.l5">سجل DOI على Zenodo</span><svg aria-hidden="true" fill="none" height="12" stroke="currentColor" stroke-width="1.4" viewbox="0 0 12 12" width="12"><path d="M4 8 8 4M5 4h3v3"></path></svg></a>
+</div>
+</div>
+<figure class="plate rv d1">
+<figcaption class="plate-h"><span class="fig">FIG. 07</span><span data-i18n="fig.t">Entity relationship</span><span class="fig-r">SAMEAS GRAPH</span></figcaption>
+<div class="plate-b">
+<svg aria-label="علاقة الهوية: سهيل مظفري هو مؤلف BOUND Method v3.0 ومطور RezMesh الذي كان يُعرف سابقًا باسم RezvanMesh." class="tree" role="img" viewbox="0 0 460 330">
+<line x1="210" x2="120" y1="82" y2="200"></line><line x1="210" x2="300" y1="82" y2="200"></line><line class="dash" x1="300" x2="382" y1="216" y2="272"></line>
+<g><circle cx="210" cy="72" r="6"></circle><text text-anchor="middle" x="210" y="46">Soheil Mozaffari</text><text class="sub" text-anchor="middle" x="210" y="100">مهندس برمجيات</text></g>
+<g><circle cx="120" cy="210" r="6"></circle><text text-anchor="middle" x="120" y="240">BOUND Method v3.0</text><text class="sub" text-anchor="middle" x="120" y="258">BOUNDARY-ORIENTED UNIFIED DEVELOPMENT</text></g>
+<g><circle cx="300" cy="210" r="6"></circle><text text-anchor="middle" x="300" y="240">RezMesh</text></g>
+<g><circle class="hollow" cx="392" cy="280" r="4.5"></circle><text class="sub" text-anchor="middle" x="392" y="302">REZVANMESH</text><text class="sub" data-i18n="eng.former" text-anchor="middle" x="346" y="242">سابقًا</text></g>
+</svg>
+</div>
+</figure>
+</div>
+<a class="btn ghost route-cta" href="/ar/bound-method/">اقرأ الشرح الكامل</a></div>
+</section>
+<!-- ============ BETA ============ -->
+<section class="pad" id="beta">
+<div aria-hidden="true" class="radar"></div>
+<div class="wrap rv">
+<p class="kick" data-i18n="beta.kick" style="justify-content:center">التوفر</p>
+<h2 data-i18n="beta.head" style="margin-top:16px">سيصدر RezMesh التجريبي قريبًا.</h2>
+<p class="lede dim" data-i18n="beta.body">يستعد RezMesh لإصداره التجريبي. يمكن للمنظمات والباحثين والصحفيين والشركاء المحتملين والمستخدمين المهتمين مراسلة سهيل مظفري مباشرة للحصول على وصول تجريبي.</p>
+<div class="cta">
+<a class="btn" data-i18n="beta.cta" href="mailto:Soheil.Mozaffari@gmail.com?subject=RezMesh%20Beta%20access">تواصل للوصول التجريبي</a>
+<button class="btn ghost" data-i18n="beta.copy" id="btnCopy">نسخ البريد</button>
+</div>
+<p class="bmail"><span data-i18n="beta.mail">تواصل مباشر:</span> <a href="mailto:Soheil.Mozaffari@gmail.com">Soheil.Mozaffari@gmail.com</a></p>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div class="fgrid">
+<div>
+<a class="brand" href="/ar/" style="margin-bottom:14px"><svg aria-hidden="true" style="width:22px;height:22px" viewbox="-52 -52 104 104"><circle fill="none" r="47" stroke="#5FD4C0" stroke-width="5"></circle><g fill="none" stroke="#5FD4C0" stroke-width="4"><path d="M0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20Z"></path><path d="M0,0 -34.6,-20 M0,0 34.6,-20 M0,0 0,40"></path></g></svg>RezMesh</a>
+<p class="dim" data-i18n="foot.tag" style="font-size:.86rem;max-width:30ch">اتصال يتجاوز البنية التحتية.</p>
+</div>
+<div><h4 data-i18n="foot.product">المنتج</h4><ul><li><a href="/ar/how-it-works/">كيف يعمل</a></li><li><a href="/ar/emergency-communication/">الطوارئ</a></li><li><a href="/ar/power-management/">إدارة الطاقة</a></li><li><a href="/ar/scenarios/">السيناريوهات</a></li><li><a href="/ar/about-rezmesh/">عن RezMesh</a></li></ul></div>
+<div><h4 data-i18n="foot.identity">الهوية</h4><ul>
+<li><a href="https://smozaff.github.io/" rel="noopener" target="_blank">Soheil Mozaffari</a></li>
+<li><a href="https://bound-method.github.io/" rel="noopener" target="_blank">BOUND Method v3.0</a></li>
+<li><a href="https://orcid.org/0009-0001-2428-1295" rel="noopener" target="_blank">ORCID</a></li>
+<li><a href="https://doi.org/10.5281/zenodo.22257583" rel="noopener" target="_blank">Zenodo DOI</a></li>
+</ul></div>
+<div><h4 data-i18n="foot.langs">اللغات</h4><ul><li><a href="/">English</a></li><li><a href="/fa/">فارسی</a></li><li><a href="/ar/">العربية</a></li></ul></div>
+</div>
+<div class="fhist">
+<span data-i18n="foot.history">كان RezMesh معروفًا سابقًا باسم RezvanMesh.</span>
+<span data-i18n="foot.colophon">المخططات توضيحية وليست بمقياس. التنسيق بخطوط Space Grotesk وIBM Plex Sans وIBM Plex Mono.</span>
+<span data-i18n="foot.rights">© سهيل مظفري. جميع الحقوق محفوظة.</span>
+</div>
+</div>
+</footer>
+<div id="toast" role="status">Email copied</div>
+<button aria-label="العودة إلى الأعلى" id="backTop"><svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-width="1.6" viewbox="0 0 16 16" width="15"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"></path></svg></button>
+<noscript><style>.mlk,.hlk,.elink,.pmesh,.pk-link,.gdev{opacity:1 !important;stroke-dashoffset:0 !important}.rv,.settle>*{opacity:1;transform:none}.band .l1>span,.band .l2>span{transform:none}#howTall{height:auto}.how-sticky{position:static}</style></noscript>
+<script defer="True" src="/assets/home.js"></script></body>
+</html>

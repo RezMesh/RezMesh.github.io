@@ -1,4 +1,4 @@
-name: Build and deploy site to Pages
+name: Deploy RezMesh static site to Pages
 
 on:
   push:
@@ -15,33 +15,45 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up pnpm
-        uses: pnpm/action-setup@v4
+      - name: Prepare static site artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _site
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: pnpm
-          cache-dependency-path: pnpm-lock.yaml
+          cp index.html 404.html robots.txt sitemap.xml _site/
+          touch _site/.nojekyll
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+          for dir in \
+            assets \
+            how-it-works \
+            emergency-communication \
+            power-management \
+            scenarios \
+            about-rezmesh \
+            bound-method \
+            contact \
+            fa \
+            ar
+          do
+            test -d "$dir"
+            cp -R "$dir" _site/
+          done
 
-      - name: Type-check application
-        run: pnpm run check
-
-      - name: Build static site
-        run: pnpm run build
-
-      - name: Verify Pages entry point
-        run: test -f dist/public/index.html
+          test -f _site/index.html
+          test -f _site/fa/index.html
+          test -f _site/ar/index.html
+          test -f _site/robots.txt
+          test -f _site/sitemap.xml
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -49,15 +61,8 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/public
+          path: _site
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5

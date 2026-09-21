@@ -1,0 +1,305 @@
+{
+  "common": {
+    "home": "Home",
+    "how": "How it works",
+    "emergency": "Emergency",
+    "power": "Power",
+    "scenarios": "Scenarios",
+    "about": "About RezMesh",
+    "bound": "BOUND Method",
+    "contact": "Beta access",
+    "product": "Product",
+    "identity": "Identity",
+    "languages": "Languages",
+    "more": "Explore related topic",
+    "beta": "RezMesh Beta is coming soon.",
+    "betaBody": "For information about Beta access, contact Soheil Mozaffari directly.",
+    "email": "Contact for Beta Access"
+  },
+  "how-it-works": {
+    "title": "How RezMesh Works",
+    "meta": "How RezMesh uses local device discovery, device-to-device connections and participating nodes to keep communication moving without cellular service or internet infrastructure.",
+    "kicker": "How it works",
+    "lede": "RezMesh starts with devices that are physically present. Nearby participating devices discover one another, establish local relationships and create communication paths that do not require a cellular tower or internet service as the starting point.",
+    "sections": [
+      [
+        "Discover nearby devices",
+        "RezMesh looks for participating devices using local wireless capabilities. Discovery is the first step: a device cannot become part of a local path until nearby participants know that it is present."
+      ],
+      [
+        "Connect locally",
+        "After discovery, devices can establish local communication relationships. The important difference is architectural: communication does not need to travel first to a remote cloud service simply to reach another device nearby."
+      ],
+      [
+        "Route through available participants",
+        "A destination may sit outside the sender’s immediate direct reach. Participating intermediate devices can become part of the path, allowing information to move hop by hop through the local mesh."
+      ],
+      [
+        "Adapt as the local topology changes",
+        "People move, radios sleep, devices leave and new devices appear. RezMesh treats the available path as something that can change. The communication model is therefore about resilient local paths, not one permanent connection."
+      ]
+    ],
+    "callout": "Range is extended through participating nearby devices. RezMesh is not presented as a phone magically gaining unlimited radio range.",
+    "diagram": "mesh"
+  },
+  "emergency-communication": {
+    "title": "Emergency Communication Without Internet",
+    "meta": "RezMesh emergency communication prioritizes urgent local messages and allows them to propagate through participating reachable devices without depending on cellular or internet infrastructure.",
+    "kicker": "Emergency communication",
+    "lede": "When ordinary communications are disrupted, the important question is not whether a cloud service is reachable. It is whether an urgent message can still move through the devices and people that remain nearby.",
+    "sections": [
+      [
+        "From one origin to a reachable local community",
+        "An emergency alert begins at one device. Directly reachable participants receive it first. Those devices can then help the information move farther through the available local mesh."
+      ],
+      [
+        "Propagation is geographic, not magical",
+        "The reachable area grows only where participating devices and viable local links exist. The website deliberately shows a finite coverage pattern rather than suggesting universal delivery."
+      ],
+      [
+        "Useful during disrupted local coordination",
+        "A shelter, medical point, volunteer group or family network may still need to exchange urgent local information when centralized communication is damaged, overloaded or unavailable."
+      ],
+      [
+        "Priority without exaggerated promises",
+        "RezMesh is designed to give emergency communication higher priority across the available mesh. Delivery still depends on the participating devices and paths that actually exist at the time."
+      ]
+    ],
+    "callout": "RezMesh does not replace official emergency systems. It provides an infrastructure-independent local communication option when conventional connectivity cannot be relied upon.",
+    "diagram": "emergency"
+  },
+  "power-management": {
+    "title": "Smart Power Control for Resilient Communication",
+    "meta": "RezMesh uses multiple operating states to balance radio activity and battery preservation for power-aware off-grid communication.",
+    "kicker": "Smart power control",
+    "lede": "A communication system is useful only while the devices participating in it still have power. RezMesh therefore treats energy use as part of communication resilience rather than as an unrelated phone setting.",
+    "sections": [
+      [
+        "Power states change communication activity",
+        "RezMesh defines Emergency, Active, Balanced, Power Saver, Minimal, Hibernation and Dead states. These states represent different priorities between responsiveness and energy preservation."
+      ],
+      [
+        "Radio behavior becomes more conservative",
+        "As the system moves toward lower-power states, scanning and other communication activity become less frequent. The goal is not to make the product “worse”; it is to spend less energy when continuous activity is less important."
+      ],
+      [
+        "Emergency is a priority state",
+        "Emergency is not simply another point on a descending battery scale. It is a deliberate high-priority state intended for moments when communication urgency outweighs normal conservation behavior."
+      ],
+      [
+        "What changes in practice",
+        "The implemented power model controls behaviors including BLE scan timing, advertising availability, Wi‑Fi Direct availability and routing-update frequency. Android-side behavior can also respond to the selected power state."
+      ]
+    ],
+    "callout": "Spend energy when communication matters. Conserve it when survival time matters.",
+    "diagram": "power"
+  },
+  "scenarios": {
+    "title": "RezMesh Scenarios",
+    "meta": "Explore resilient communication scenarios for RezMesh including disasters, infrastructure outages, remote hiking, crowded events and conflict-related communications disruption.",
+    "kicker": "Real-world scenarios",
+    "lede": "The environments change, but the underlying problem stays recognizable: conventional connectivity becomes uncertain while people and their devices remain physically present.",
+    "sections": [
+      [
+        "Disaster response",
+        "Earthquakes, floods and wildfires can damage, overload or fragment normal communications. RezMesh is designed around local communication paths among participating devices."
+      ],
+      [
+        "Remote hiking and expeditions",
+        "Outside ordinary coverage, a group can no longer assume that every message starts with a cellular tower. Local devices become the relevant communication environment."
+      ],
+      [
+        "Infrastructure outages and crowded events",
+        "Connectivity may fail because infrastructure is damaged, unavailable or simply overloaded. RezMesh provides a local device-to-device alternative for participating users."
+      ],
+      [
+        "Conflict and communications disruption",
+        "Civilian communities, families, shelters and humanitarian personnel may face periods where ordinary communications are disrupted. The RezMesh story remains continuity and local coordination—not tactical operations."
+      ]
+    ],
+    "callout": "The infrastructure disappears. Local devices remain.",
+    "diagram": "scenario"
+  },
+  "scenarios/disaster-response": {
+    "title": "RezMesh for Disaster Response",
+    "meta": "How RezMesh can support resilient local communication during earthquakes, floods and wildfires when conventional networks are disrupted.",
+    "kicker": "Scenario · Disaster response",
+    "lede": "Disasters can fragment communications at the exact moment local coordination becomes most important. RezMesh is designed around the devices that remain in the affected area.",
+    "sections": [
+      [
+        "Earthquake",
+        "A damaged cellular path does not remove the people, phones, shelters and local medical points in a neighborhood. Participating devices can form local paths that allow status information to move toward reachable coordination points."
+      ],
+      [
+        "Flood",
+        "Flooded roads can split communities and make infrastructure unreliable. Local communication paths can follow the people and devices that remain reachable along the edges of the affected area."
+      ],
+      [
+        "Wildfire",
+        "In rural or trail environments, coverage may already be inconsistent before a wildfire or evacuation. Urgent local warnings can move through participating devices that are still reachable."
+      ],
+      [
+        "A complement to official response systems",
+        "RezMesh should be understood as an additional resilient local communication option. It is not a replacement for emergency services, public warning systems or professional radio networks."
+      ]
+    ],
+    "callout": "Local communication when centralized infrastructure is damaged, overloaded or unavailable.",
+    "diagram": "emergency"
+  },
+  "scenarios/remote-hiking": {
+    "title": "RezMesh for Remote Hiking and Expeditions",
+    "meta": "RezMesh supports local device-to-device communication for hiking groups and expeditions beyond normal cellular coverage.",
+    "kicker": "Scenario · Outdoors",
+    "lede": "Remote terrain makes the limitation obvious: a phone may still be useful even when the nearest tower is not. RezMesh starts from the devices that the group already carries.",
+    "sections": [
+      [
+        "Beyond ordinary coverage",
+        "A hiking group can move into terrain where cellular coverage is absent or unreliable. Local communication therefore cannot assume that every message first reaches a carrier network."
+      ],
+      [
+        "A group can become a local path",
+        "Participating devices can discover nearby members and establish local communication relationships. When geometry permits, intermediate members can become part of a multi-device path."
+      ],
+      [
+        "Movement changes the topology",
+        "Hikers spread out, regroup and move around terrain. A route that was available a few minutes ago may change, making adaptation more important than a fixed connection model."
+      ],
+      [
+        "Battery matters in the field",
+        "Long trips make energy preservation part of communication planning. RezMesh power states are designed to trade radio activity against longer device survival when appropriate."
+      ]
+    ],
+    "callout": "Stay connected beyond ordinary coverage—through participating nearby devices, not satellite-like range.",
+    "diagram": "mesh"
+  },
+  "scenarios/infrastructure-outage": {
+    "title": "RezMesh During Infrastructure Outages",
+    "meta": "RezMesh provides a local communication model for cellular, internet and centralized-service outages or congestion.",
+    "kicker": "Scenario · Infrastructure outage",
+    "lede": "An outage can remove a central path without removing the devices at either end. RezMesh is designed to reorganize communication around the local devices that remain available.",
+    "sections": [
+      [
+        "The conventional path can fail centrally",
+        "A normal message may depend on a tower, carrier network, internet path and remote service even when sender and recipient are physically close."
+      ],
+      [
+        "Local communication changes the dependency",
+        "RezMesh allows participating devices to communicate locally rather than requiring every interaction to traverse distant infrastructure."
+      ],
+      [
+        "Outage and congestion are different problems with a similar effect",
+        "A network can be physically damaged, unavailable, blocked or simply overloaded. In each case, the user experiences the same practical problem: the normal path cannot be relied upon."
+      ],
+      [
+        "Continuity instead of spectacle",
+        "The product story is intentionally calm. The important visual is not infrastructure failing dramatically; it is communication continuing after the failure."
+      ]
+    ],
+    "callout": "Communication that does not begin with a cloud connection.",
+    "diagram": "mesh"
+  },
+  "scenarios/conflict-communications-disruption": {
+    "title": "RezMesh for Conflict and Communications Disruption",
+    "meta": "RezMesh is positioned for resilient civilian local communication when conventional networks become unavailable during conflict or communications disruption.",
+    "kicker": "Scenario · Communications disruption",
+    "lede": "During conflict or prolonged communications disruption, civilians may still need to exchange local information even when the infrastructure they normally depend on is unavailable.",
+    "sections": [
+      [
+        "Civilian continuity first",
+        "The scenario centers families, shelters, community coordination points and humanitarian personnel. It does not present RezMesh as a targeting, combat or offensive system."
+      ],
+      [
+        "Infrastructure independence can matter",
+        "Cellular and internet availability can become intermittent or disappear entirely. Local device-to-device communication provides a different dependency model."
+      ],
+      [
+        "Information moves through reachable participants",
+        "A local message can move only where participating devices and viable links exist. The visual model therefore shows finite local paths rather than blanket coverage."
+      ],
+      [
+        "Calm communication under disruption",
+        "The product should communicate resilience rather than fear: people remain, devices remain, and local communication can continue where paths are available."
+      ]
+    ],
+    "callout": "Resilient civilian communication when conventional networks become unavailable.",
+    "diagram": "scenario"
+  },
+  "about-rezmesh": {
+    "title": "About RezMesh",
+    "meta": "About RezMesh, formerly known as RezvanMesh: its mission, product identity, creator Soheil Mozaffari and relationship to BOUND Method v3.0.",
+    "kicker": "Product identity",
+    "lede": "RezMesh is a resilient device-to-device communication project designed around situations where cellular service or internet infrastructure cannot be assumed.",
+    "sections": [
+      [
+        "RezMesh today",
+        "RezMesh is the current product name. The project may still appear in older references under the historical name RezvanMesh; those references describe the same project lineage."
+      ],
+      [
+        "Mission",
+        "The product begins from a simple premise: infrastructure can disappear while people and their devices remain. RezMesh explores how those devices can become local communication points."
+      ],
+      [
+        "Created by Soheil Mozaffari",
+        "RezMesh is developed by Soheil Mozaffari. The project is connected to his professional identity through his canonical website, LinkedIn profile and ORCID record."
+      ],
+      [
+        "Developed using BOUND Method v3.0",
+        "RezMesh is developed using BOUND Method v3.0 — Boundary-Oriented Unified Development. The methodology has its own canonical website and scholarly record rather than being duplicated here."
+      ]
+    ],
+    "callout": "RezMesh was formerly known as RezvanMesh. Soheil Mozaffari is the visible creator identity associated with the project.",
+    "diagram": "identity"
+  },
+  "bound-method": {
+    "title": "RezMesh and BOUND Method v3.0",
+    "meta": "RezMesh is developed using BOUND Method v3.0 — Boundary-Oriented Unified Development, authored by Soheil Mozaffari.",
+    "kicker": "Engineering method",
+    "lede": "RezMesh is developed using BOUND Method v3.0 — Boundary-Oriented Unified Development. This page is a bridge to the methodology, not a duplicate of the canonical BOUND publication and website.",
+    "sections": [
+      [
+        "Why the relationship matters",
+        "RezMesh and BOUND are separate entities. RezMesh is the product; BOUND is the software engineering method used to structure its development."
+      ],
+      [
+        "Boundary-oriented engineering",
+        "BOUND concentrates architectural attention on responsibility boundaries and the contracts that cross them. The method is intended to make parallel implementation more independent while keeping shared behavior explicit."
+      ],
+      [
+        "Continuous verification",
+        "BOUND treats mechanically verifiable contracts and continuous conformance checking as part of the engineering system rather than as optional documentation."
+      ],
+      [
+        "Canonical methodology record",
+        "Detailed BOUND material belongs on the BOUND Method website and in its scholarly record. RezMesh links to those sources so the product site stays focused on the product itself."
+      ]
+    ],
+    "callout": "RezMesh is developed using BOUND Method v3.0 — Boundary-Oriented Unified Development.",
+    "diagram": "identity"
+  },
+  "contact": {
+    "title": "RezMesh Beta Access and Contact",
+    "meta": "RezMesh Beta is coming soon. Contact Soheil Mozaffari directly for information about Beta access, organizations, media or partnerships.",
+    "kicker": "Availability",
+    "lede": "RezMesh Beta is coming soon. Organizations, researchers, journalists, potential partners and interested Beta users can contact Soheil Mozaffari directly for information about Beta access.",
+    "sections": [
+      [
+        "Beta access",
+        "Use the direct email below for Beta access inquiries. There is no public download presented on this site yet."
+      ],
+      [
+        "Organizations and emergency/disaster stakeholders",
+        "Government, emergency-management, NGO and humanitarian organizations can use the same contact channel for product discussions."
+      ],
+      [
+        "Media and professional inquiries",
+        "Journalists, employers, recruiters and potential partners can contact Soheil Mozaffari directly using the published address."
+      ],
+      [
+        "Canonical identity",
+        "For professional background and research identity, use the linked professional website, LinkedIn profile and ORCID record."
+      ]
+    ],
+    "callout": "Direct contact: Soheil.Mozaffari@gmail.com",
+    "diagram": "contact"
+  }
+}

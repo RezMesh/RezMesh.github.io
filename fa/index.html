@@ -35,107 +35,68 @@
 <nav aria-label="ناوبری موبایل" id="mnav"><a aria-current="page" href="/fa/">خانه</a><a href="/fa/how-it-works/">نحوهٔ کار</a><a href="/fa/emergency-communication/">اضطراری</a><a href="/fa/power-management/">توان</a><a href="/fa/scenarios/">سناریوها</a><a href="/fa/about-rezmesh/">درباره</a><a href="/fa/bound-method/">BOUND</a><a href="/fa/contact/">تماس</a></nav>
 <main id="main-content">
 <!-- ============ HERO ============ -->
-<section id="hero">
-<svg aria-label="شهری در غروب زیرساخت تلفن همراه و اینترنت را از دست می‌دهد؛ تلفن‌های نزدیک مسیر محلی RezMesh می‌سازند و پیام همچنان می‌رسد." id="heroScene" preserveaspectratio="xMidYMax slice" role="img" viewbox="0 0 1440 900">
-<defs>
-<lineargradient id="sky" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0A0E14"></stop><stop offset=".55" stop-color="#12222E"></stop><stop offset="1" stop-color="#3A3226"></stop></lineargradient>
-<lineargradient id="swg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#E8A33D" stop-opacity="0"></stop><stop offset=".5" stop-color="#E8A33D" stop-opacity=".2"></stop><stop offset="1" stop-color="#E8A33D" stop-opacity="0"></stop></lineargradient>
-</defs>
-<rect fill="url(#sky)" height="900" width="1440"></rect>
-<g><circle class="star" cx="140" cy="110" r="1.2"></circle><circle class="star" cx="360" cy="64" r="1" style="animation-delay:1s"></circle><circle class="star" cx="630" cy="120" r="1.3" style="animation-delay:2s"></circle><circle class="star" cx="840" cy="60" r="1" style="animation-delay:.6s"></circle><circle class="star" cx="1050" cy="130" r="1.2" style="animation-delay:1.6s"></circle><circle class="star" cx="1290" cy="78" r="1" style="animation-delay:2.6s"></circle><circle class="star" cx="960" cy="196" r="1" style="animation-delay:3.2s"></circle><circle class="star" cx="220" cy="220" r="1" style="animation-delay:1.9s"></circle></g>
-<g fill="none" stroke="#fff" stroke-opacity=".045"><path d="M0 180 Q360 106 720 184 T1440 178"></path><path d="M0 256 Q360 182 720 260 T1440 254"></path><path d="M0 346 Q390 270 780 352 T1440 340"></path><circle cx="1120" cy="240" r="40"></circle><circle cx="1120" cy="240" r="62"></circle><circle cx="240" cy="420" r="34"></circle><circle cx="240" cy="420" r="52"></circle></g>
-<g id="cloudG" transform="translate(300,170)">
-<g fill="#93A8B8"><circle cx="-15" cy="0" r="13"></circle><circle cx="2" cy="-9" r="16"></circle><circle cx="19" cy="0" r="12"></circle><rect height="15" rx="7" width="42" x="-19" y="-2"></rect></g>
-<text fill="#7C8F9E" font-family="IBM Plex Mono,monospace" font-size="12" letter-spacing="2" text-anchor="middle" x="0" y="38">اینترنت</text>
-</g>
-<g id="towerG" transform="translate(1160,0)">
-<path d="M0 600 L0 356 M-30 600 L0 460 L30 600 M-18 520 L18 520 M-12 460 L12 460" fill="none" stroke="#93A8B8" stroke-width="3"></path>
-<circle class="twlight" cx="0" cy="348" r="5"></circle>
-<text fill="#7C8F9E" font-family="IBM Plex Mono,monospace" font-size="12" letter-spacing="2" text-anchor="middle" x="0" y="628">دکل مخابراتی</text>
-</g>
-<path d="M0 900 L0 610 L130 610 L130 540 L220 540 L220 630 L340 630 L340 510 L440 510 L440 620 L560 620 L560 550 L680 550 L680 640 L820 640 L820 520 L940 520 L940 626 L1080 626 L1080 560 L1200 560 L1200 634 L1440 634 L1440 900 Z" fill="#0D1926"></path>
-<path d="M0 900 L0 660 L90 660 L90 586 L180 586 L180 690 L270 690 L270 546 L375 546 L375 672 L480 672 L480 606 L600 606 L600 700 L705 700 L705 570 L810 570 L810 682 L930 682 L930 616 L1050 616 L1050 694 L1170 694 L1170 594 L1290 594 L1290 676 L1440 676 L1440 900 Z" fill="#0A141C"></path>
-<g fill="#FFD98A" opacity=".26"><rect height="8" width="6" x="120" y="612"></rect><rect height="8" width="6" x="294" y="576"></rect><rect height="8" width="6" x="333" y="618"></rect><rect height="8" width="6" x="510" y="630"></rect><rect height="8" width="6" x="738" y="596"></rect><rect height="8" width="6" x="840" y="636"></rect><rect height="8" width="6" x="969" y="639"></rect><rect height="8" width="6" x="1209" y="621"></rect><rect height="8" width="6" x="645" y="588"></rect></g>
-<path d="M0 716 Q360 688 720 716 T1440 710 L1440 900 L0 900 Z" fill="#0C1822"></path>
-<g><line class="inf" x1="450" x2="1148" y1="682" y2="460"></line><line class="inf" x1="990" x2="1172" y1="708" y2="460"></line><line class="inf" x1="1160" x2="322" y1="356" y2="178"></line></g>
-<rect fill="url(#swg)" height="1200" id="sweep" transform="rotate(12 720 450)" width="240" x="-60" y="-140"></rect>
-<g>
-<circle class="devring" cx="450" cy="682" r="11"></circle><circle class="devring" cx="630" cy="712" r="11" style="animation-delay:.5s"></circle><circle class="devring" cx="810" cy="682" r="11" style="animation-delay:1s"></circle><circle class="devring" cx="990" cy="708" r="11" style="animation-delay:1.5s"></circle>
-<circle class="devdot" cx="450" cy="682" r="5.5"></circle><circle class="devdot" cx="630" cy="712" r="5.5"></circle><circle class="devdot" cx="810" cy="682" r="5.5"></circle><circle class="devdot" cx="990" cy="708" r="5.5"></circle>
-<circle class="devdot" cx="225" cy="722" opacity=".5" r="4.5"></circle>
-</g>
-<path class="mlk" d="M450 682 L630 712" id="hl1" pathlength="1"></path>
-<path class="mlk" d="M630 712 L810 682" id="hl2" pathlength="1"></path>
-<path class="mlk" d="M810 682 L990 708" id="hl3" pathlength="1"></path>
-<circle class="hmsg" id="hmsg" r="5" style="offset-path:path('M450 682 L630 712 L810 682 L990 708')"></circle>
-
-<!-- HUMAN MESH: people remain when infrastructure disappears -->
-<g id="peopleLayer" aria-hidden="true">
-  <g class="hero-person" transform="translate(450 648)">
-    <circle class="sil" cx="0" cy="-23" r="10"></circle>
-    <path class="sil" d="M-20 26 Q-17 -6 0 -8 Q17 -6 20 26 Z"></path>
-    <rect class="hero-phone" x="15" y="-6" width="7" height="12" rx="1.5"></rect>
-  </g>
-  <g class="hero-person" transform="translate(630 678)">
-    <circle class="sil" cx="0" cy="-23" r="9"></circle>
-    <path class="sil" d="M-18 25 Q-15 -5 0 -7 Q15 -5 18 25 Z"></path>
-    <rect class="hero-phone" x="-22" y="-5" width="7" height="12" rx="1.5"></rect>
-  </g>
-  <g class="hero-person" transform="translate(810 648)">
-    <circle class="sil" cx="0" cy="-23" r="10"></circle>
-    <path class="sil" d="M-20 26 Q-17 -6 0 -8 Q17 -6 20 26 Z"></path>
-    <rect class="hero-phone" x="15" y="-6" width="7" height="12" rx="1.5"></rect>
-  </g>
-  <g class="hero-person" transform="translate(990 674)">
-    <circle class="sil" cx="0" cy="-23" r="9"></circle>
-    <path class="sil" d="M-18 25 Q-15 -5 0 -7 Q15 -5 18 25 Z"></path>
-    <rect class="hero-phone" x="-22" y="-5" width="7" height="12" rx="1.5"></rect>
-  </g>
-</g>
-
-<!-- HUMAN NETWORK -> REZMESH IDENTITY -->
-<path class="hero-mark-bridge" id="heroMarkBridge" pathLength="1" d="M990 708 Q1090 560 1210 300"></path>
-<g transform="translate(1210 206)">
-  <g class="hero-mark" id="heroMark">
-    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path class="mline" pathLength="1" d="M0 -72 L50 -43 L74 0 L50 43 L0 72 L-50 43 L-74 0 L-50 -43 Z"></path>
-      <path class="mline" pathLength="1" d="M0 -72 L0 0 L0 72 M-50 -43 L0 0 L50 -43 M-74 0 L0 43 L74 0 M-50 43 L0 0 L50 43"></path>
-      <path class="mline" pathLength="1" d="M-50 -43 L-50 43 M50 -43 L50 43 M-74 0 L0 -43 L74 0 L0 43 Z"></path>
+<section aria-label="شهری در غروب زیرساخت تلفن همراه و اینترنت را از دست می‌دهد، اما افراد نزدیک از طریق مسیر محلی RezMesh به ارتباط ادامه می‌دهند." class="hero-v3" id="hero" data-phase="0">
+<div class="hero-media" aria-hidden="true">
+  <img class="hero-bg" src="/assets/hero/rezmesh-city-scene.svg" alt="" decoding="async" fetchpriority="high"/>
+  <svg class="hero-network" id="heroNetwork" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+    <g class="infra-overlay">
+      <path class="infra-link" d="M485 660 Q760 405 1180 305"/>
+      <path class="infra-link" d="M1002 702 Q1120 500 1180 305"/>
+      <path class="infra-link" d="M1180 305 Q980 180 730 150"/>
+      <g class="infra-cloud" transform="translate(730 150)">
+        <circle cx="-17" cy="2" r="12"/><circle cx="0" cy="-8" r="16"/><circle cx="18" cy="2" r="12"/><rect x="-19" y="-1" width="40" height="15" rx="7"/>
+      </g>
+      <g class="infra-tower" transform="translate(1180 305)">
+        <path d="M0-48V30M-27 30 0-20 27 30M-16 2H16M-9-20H9"/>
+        <circle cx="0" cy="-52" r="5"/>
+      </g>
     </g>
-    <g class="mnodes">
-      <circle cx="0" cy="-72" r="5"></circle><circle cx="-50" cy="-43" r="5"></circle><circle cx="50" cy="-43" r="5"></circle>
-      <circle cx="-74" cy="0" r="5"></circle><circle cx="0" cy="0" r="6"></circle><circle cx="74" cy="0" r="5"></circle>
-      <circle cx="-50" cy="43" r="5"></circle><circle cx="50" cy="43" r="5"></circle><circle cx="0" cy="72" r="5"></circle>
-    </g>
-  </g>
-</g>
 
-</svg>
-<div aria-hidden="true" class="scrim"></div>
-<div class="wrap hero-copy settle">
-<h1>RezMesh</h1>
-<p class="hero-tag" data-i18n="hero.tag">ارتباط فراتر از زیرساخت.</p>
-<p class="hero-sub" data-i18n="hero.sub">بدون سرویس تلفن همراه یا زیرساخت اینترنت، ارتباط برقرار کنید.</p>
-<p class="hero-body" data-i18n="hero.body">RezMesh برای ارتباط مقاوم دستگاه‌به‌دستگاه طراحی شده است؛ هنگامی که شبکه‌های متداول در دسترس نیستند، مختل شده‌اند، اشباع شده‌اند یا خارج از دسترس‌اند.</p>
-<div class="hero-cta">
-<a class="btn" data-i18n="hero.cta1" href="#problem">کاوش RezMesh</a>
-<a class="btn ghost" data-i18n="hero.cta2" href="/fa/how-it-works/">نحوه عملکرد را ببینید</a>
-</div>
-<p class="hero-beta"><span data-i18n="hero.beta">انتشار نسخه بتا به‌زودی. برای دسترسی بتا، مستقیماً با سهیل مظفری تماس بگیرید.</span> <a href="mailto:Soheil.Mozaffari@gmail.com">Soheil.Mozaffari@gmail.com</a></p>
+    <g class="mesh-overlay">
+      <path id="mesh1" class="mesh-link" pathLength="1" d="M484 658 L583 699"/>
+      <path id="mesh2" class="mesh-link" pathLength="1" d="M583 699 L900 663"/>
+      <path id="mesh3" class="mesh-link" pathLength="1" d="M900 663 L1000 700"/>
+      <path id="mesh4" class="mesh-link mesh-branch" pathLength="1" d="M583 699 Q710 590 835 545"/>
+      <g class="mesh-nodes">
+        <circle cx="484" cy="658" r="8"/><circle cx="583" cy="699" r="8"/><circle cx="900" cy="663" r="8"/><circle cx="1000" cy="700" r="8"/>
+      </g>
+      <circle id="heroPacket" class="hero-packet" r="6"/>
+    </g>
+  </svg>
+  <div class="hero-light hero-light-a"></div>
+  <div class="hero-light hero-light-b"></div>
+  <div class="hero-scrim"></div>
 </div>
 
-<aside aria-label="آنچه پس از ناپدید شدن زیرساخت باقی می‌ماند" class="hero-resilience" id="heroResilience">
-  <p class="hr-kicker">وضعیت تاب‌آوری</p>
-  <div class="rr" data-r="cell"><span class="ri">01</span><span><b>شبکه‌های سلولی</b><small>در دسترس</small></span></div>
-  <div class="rr" data-r="net"><span class="ri">02</span><span><b>زیرساخت اینترنت</b><small>متصل</small></span></div>
-  <div class="rr" data-r="people"><span class="ri">03</span><span><b>مردم و دستگاه‌ها</b><small>هنوز اینجا هستند</small></span></div>
-  <div class="rr" data-r="mesh"><span class="ri">04</span><span><b>RezMesh</b><small>آمادهٔ شکل‌دادن مسیرهای محلی</small></span></div>
-</aside>
+<div class="wrap hero-stage">
+  <div class="hero-copy settle">
+    <div class="hero-kicker"><span class="hero-kicker-dot"></span> REZMESH / ارتباط محلی</div>
+    <h1>RezMesh</h1>
+    <p class="hero-tag" data-i18n="hero.tag">ارتباط فراتر از زیرساخت.</p>
+    <p class="hero-sub" data-i18n="hero.sub">بدون سرویس تلفن همراه یا زیرساخت اینترنت، ارتباط برقرار کنید.</p>
+    <p class="hero-body" data-i18n="hero.body">RezMesh برای ارتباط مقاوم دستگاه‌به‌دستگاه طراحی شده است؛ هنگامی که شبکه‌های متداول در دسترس نیستند، مختل شده‌اند، اشباع شده‌اند یا خارج از دسترس‌اند.</p>
+    <div class="hero-cta">
+      <a class="btn" data-i18n="hero.cta1" href="#problem">کاوش RezMesh</a>
+      <a class="btn ghost" data-i18n="hero.cta2" href="/fa/how-it-works/">نحوه عملکرد را ببینید</a>
+    </div>
+    <p class="hero-beta"><span data-i18n="hero.beta">انتشار نسخه بتا به‌زودی. برای دسترسی بتا، مستقیماً با سهیل مظفری تماس بگیرید.</span> <a href="mailto:Soheil.Mozaffari@gmail.com">Soheil.Mozaffari@gmail.com</a></p>
+  </div>
+
+  <aside aria-label="وضعیت تاب‌آوری" class="hero-resilience" id="heroResilience">
+    <div class="hr-head"><span class="hr-kicker">وضعیت تاب‌آوری</span><span class="hr-live">زنده</span></div>
+    <div class="rr" data-r="cell"><span class="ri">01</span><span><b>شبکه‌های سلولی</b><small data-on="در دسترس" data-off="در دسترس نیست">در دسترس</small></span></div>
+    <div class="rr" data-r="net"><span class="ri">02</span><span><b>زیرساخت اینترنت</b><small data-on="متصل" data-off="قطع شده">متصل</small></span></div>
+    <div class="rr" data-r="people"><span class="ri">03</span><span><b>مردم و دستگاه‌ها</b><small data-on="حاضر" data-off="هنوز اینجا هستند">حاضر</small></span></div>
+    <div class="rr" data-r="mesh"><span class="ri">04</span><span><b>RezMesh</b><small data-on="در انتظار" data-off="ارتباط محلی را ادامه می‌دهد">در انتظار</small></span></div>
+    <div class="hr-summary"><span class="hr-summary-mark"></span><span>مسیر محلی</span><strong id="meshState">STANDBY</strong></div>
+  </aside>
+</div>
+
 <div class="wrap tele">
-<span data-i18n="hero.seq" id="heroSeq">ترتیب ۰۱ — فقدان زیرساخت / شکل‌گیری mesh</span>
-<span aria-hidden="true" class="dots" id="hDots"><b class="on"></b><b></b><b></b><b></b></span>
-<span aria-live="polite" class="status" id="heroStatus" style="position:static;background:none;border:0;padding:0"><i></i><span data-i18n="hs.1">زیرساخت فعال</span></span>
-<span id="tcode">T+00S</span>
+  <span id="heroSeq">توالی ۰۱ — قطع زیرساخت / شکل‌گیری مش</span>
+  <span aria-hidden="true" class="dots" id="hDots"><b class="on"></b><b></b><b></b><b></b><b></b></span>
+  <span aria-live="polite" class="status" id="heroStatus" style="position:static;background:none;border:0;padding:0"><i></i><span data-i18n="hs.1">زیرساخت فعال است</span></span>
+  <span id="tcode">T+00S</span>
 </div>
 </section>
 <!-- ============ BAND ============ -->

@@ -123,25 +123,56 @@ const spy=new IntersectionObserver(es=>es.forEach(e=>{const l=document.querySele
   if(l&&e.isIntersecting){$$("nav.main a").forEach(a=>a.classList.remove("active"));l.classList.add("active");}}),{rootMargin:"-42% 0px -52% 0px"});
 ["problem","how","emergency","power","scenarios","engineering"].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
 /* ================= HERO ================= */
-const HS=$("#heroScene"),hStat=$("#heroStatus"),hDots=$$("#hDots b"),tcode=$("#tcode");
-function heroPhase(n,key,cls){hStat.className="status"+(cls?" "+cls:"");const sp=hStat.querySelector("span");sp.setAttribute("data-i18n",key);sp.textContent=t(key);hDots.forEach((b,i)=>b.classList.toggle("on",i<=n));}
-const hMark=$("#heroMark"),hBridge=$("#heroMarkBridge"),hRows=$("#heroResilience .rr");
-function heroConceptPhase(n){
-  hRows.forEach(r=>r.classList.remove("lost","present","active"));
-  if(n>=1){hRows[0]&&hRows[0].classList.add("lost");hRows[1]&&hRows[1].classList.add("lost");}
-  if(n>=2)hRows[2]&&hRows[2].classList.add("present");
-  if(n>=3){hRows[3]&&hRows[3].classList.add("active");add(hMark,"on");add(hBridge,"on");}
-  else{rm(hMark,"on");rm(hBridge,"on");}
+const HERO=$("#hero"),hStat=$("#heroStatus"),hDots=$$("#hDots b"),tcode=$("#tcode");
+const hRows=$$("#heroResilience .rr"),hPacket=$("#heroPacket"),meshState=$("#meshState");
+function heroPhase(n,key,cls){
+  hStat.className="status"+(cls?" "+cls:"");
+  const sp=hStat.querySelector("span");
+  sp.setAttribute("data-i18n",key);
+  sp.textContent=t(key);
+  hDots.forEach((dot,i)=>dot.classList.toggle("on",i<=n));
 }
-makeLoop(16,[
- {t:0,fn:()=>{rm(HS,"dim");rm($("#sweep"),"run");["#hl1","#hl2","#hl3"].forEach(s=>rm($(s),"on"));rm($("#hmsg"),"run");heroConceptPhase(0);heroPhase(0,"hs.1","");}},
- {t:4.2,fn:()=>{add($("#sweep"),"run");add(HS,"dim");heroConceptPhase(1);heroPhase(1,"hs.2","warn");}},
- {t:6.2,fn:()=>{add($("#hl1"),"on");heroConceptPhase(2);heroPhase(2,"hs.3","ok");}},
- {t:7.4,fn:()=>add($("#hl2"),"on")},
- {t:8.6,fn:()=>add($("#hl3"),"on")},
- {t:10,fn:()=>{const m=$("#hmsg");rm(m,"run");void m.offsetWidth;add(m,"run");heroConceptPhase(3);heroPhase(3,"hs.4","ok");}},
- {t:13,fn:()=>heroPhase(3,"hs.5","ok")}],
- $("#hero"),tt=>{tcode.textContent="T+"+String(Math.floor(tt)).padStart(2,"0")+"S";});
+function rowSet(row,mode){
+  if(!row)return;
+  row.classList.remove("lost","present","active");
+  if(mode)row.classList.add(mode);
+  const small=row.querySelector("small");
+  if(small){
+    const off=mode==="lost"||mode==="active";
+    small.textContent=off?(small.dataset.off||small.textContent):(small.dataset.on||small.textContent);
+  }
+}
+function heroScenePhase(n){
+  HERO.dataset.phase=String(n);
+  rowSet(hRows[0],n>=1?"lost":"");
+  rowSet(hRows[1],n>=1?"lost":"");
+  rowSet(hRows[2],n>=2?"present":"");
+  rowSet(hRows[3],n>=3?"active":"");
+  if(meshState){
+    const lang=document.documentElement.lang;
+    const active=lang==="fa"?"فعال":lang==="ar"?"نشط":"ACTIVE";
+    const standby=lang==="fa"?"آماده‌باش":lang==="ar"?"استعداد":"STANDBY";
+    meshState.textContent=n>=3?active:standby;
+  }
+}
+function runHeroPacket(){
+  if(!hPacket)return;
+  rm(hPacket,"run");
+  void hPacket.getBoundingClientRect();
+  add(hPacket,"run");
+}
+if(RM){
+  heroScenePhase(4);
+  heroPhase(4,"hs.5","ok");
+}else{
+  makeLoop(17,[
+    {t:0,fn:()=>{heroScenePhase(0);heroPhase(0,"hs.1","");rm(hPacket,"run");}},
+    {t:4,fn:()=>{heroScenePhase(1);heroPhase(1,"hs.2","warn");}},
+    {t:6.4,fn:()=>{heroScenePhase(2);heroPhase(2,"hs.3","ok");}},
+    {t:9,fn:()=>{heroScenePhase(3);heroPhase(3,"hs.4","ok");}},
+    {t:11.2,fn:()=>{heroScenePhase(4);runHeroPacket();heroPhase(4,"hs.5","ok");}}
+  ],HERO,tt=>{tcode.textContent="T+"+String(Math.floor(tt)).padStart(2,"0")+"S";});
+}
 /* ================= PROBLEM ================= */
 const PS=$("#probSvg"),pStat=$("#probStatus");let pT=[];
 const pClear=()=>{pT.forEach(clearTimeout);pT=[];};

@@ -72,6 +72,48 @@
 <path class="mlk" d="M630 712 L810 682" id="hl2" pathlength="1"></path>
 <path class="mlk" d="M810 682 L990 708" id="hl3" pathlength="1"></path>
 <circle class="hmsg" id="hmsg" r="5" style="offset-path:path('M450 682 L630 712 L810 682 L990 708')"></circle>
+
+<!-- HUMAN MESH: people remain when infrastructure disappears -->
+<g id="peopleLayer" aria-hidden="true">
+  <g class="hero-person" transform="translate(450 648)">
+    <circle class="sil" cx="0" cy="-23" r="10"></circle>
+    <path class="sil" d="M-20 26 Q-17 -6 0 -8 Q17 -6 20 26 Z"></path>
+    <rect class="hero-phone" x="15" y="-6" width="7" height="12" rx="1.5"></rect>
+  </g>
+  <g class="hero-person" transform="translate(630 678)">
+    <circle class="sil" cx="0" cy="-23" r="9"></circle>
+    <path class="sil" d="M-18 25 Q-15 -5 0 -7 Q15 -5 18 25 Z"></path>
+    <rect class="hero-phone" x="-22" y="-5" width="7" height="12" rx="1.5"></rect>
+  </g>
+  <g class="hero-person" transform="translate(810 648)">
+    <circle class="sil" cx="0" cy="-23" r="10"></circle>
+    <path class="sil" d="M-20 26 Q-17 -6 0 -8 Q17 -6 20 26 Z"></path>
+    <rect class="hero-phone" x="15" y="-6" width="7" height="12" rx="1.5"></rect>
+  </g>
+  <g class="hero-person" transform="translate(990 674)">
+    <circle class="sil" cx="0" cy="-23" r="9"></circle>
+    <path class="sil" d="M-18 25 Q-15 -5 0 -7 Q15 -5 18 25 Z"></path>
+    <rect class="hero-phone" x="-22" y="-5" width="7" height="12" rx="1.5"></rect>
+  </g>
+</g>
+
+<!-- HUMAN NETWORK -> REZMESH IDENTITY -->
+<path class="hero-mark-bridge" id="heroMarkBridge" pathLength="1" d="M990 708 Q1090 560 1210 300"></path>
+<g transform="translate(1210 206)">
+  <g class="hero-mark" id="heroMark">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path class="mline" pathLength="1" d="M0 -72 L50 -43 L74 0 L50 43 L0 72 L-50 43 L-74 0 L-50 -43 Z"></path>
+      <path class="mline" pathLength="1" d="M0 -72 L0 0 L0 72 M-50 -43 L0 0 L50 -43 M-74 0 L0 43 L74 0 M-50 43 L0 0 L50 43"></path>
+      <path class="mline" pathLength="1" d="M-50 -43 L-50 43 M50 -43 L50 43 M-74 0 L0 -43 L74 0 L0 43 Z"></path>
+    </g>
+    <g class="mnodes">
+      <circle cx="0" cy="-72" r="5"></circle><circle cx="-50" cy="-43" r="5"></circle><circle cx="50" cy="-43" r="5"></circle>
+      <circle cx="-74" cy="0" r="5"></circle><circle cx="0" cy="0" r="6"></circle><circle cx="74" cy="0" r="5"></circle>
+      <circle cx="-50" cy="43" r="5"></circle><circle cx="50" cy="43" r="5"></circle><circle cx="0" cy="72" r="5"></circle>
+    </g>
+  </g>
+</g>
+
 </svg>
 <div aria-hidden="true" class="scrim"></div>
 <div class="wrap hero-copy settle">
@@ -85,6 +127,14 @@
 </div>
 <p class="hero-beta"><span data-i18n="hero.beta">Beta release coming soon. For Beta access, contact Soheil Mozaffari directly.</span> <a href="mailto:Soheil.Mozaffari@gmail.com">Soheil.Mozaffari@gmail.com</a></p>
 </div>
+
+<aside aria-label="What remains when infrastructure disappears" class="hero-resilience" id="heroResilience">
+  <p class="hr-kicker">RESILIENCE STATE</p>
+  <div class="rr" data-r="cell"><span class="ri">01</span><span><b>Cellular networks</b><small>Available</small></span></div>
+  <div class="rr" data-r="net"><span class="ri">02</span><span><b>Internet infrastructure</b><small>Connected</small></span></div>
+  <div class="rr" data-r="people"><span class="ri">03</span><span><b>People and devices</b><small>Still here</small></span></div>
+  <div class="rr" data-r="mesh"><span class="ri">04</span><span><b>RezMesh</b><small>Ready to form local paths</small></span></div>
+</aside>
 <div class="wrap tele">
 <span data-i18n="hero.seq" id="heroSeq">SEQ 01 — Infrastructure loss / mesh formation</span>
 <span aria-hidden="true" class="dots" id="hDots"><b class="on"></b><b></b><b></b><b></b></span>

@@ -857,3 +857,13 @@ html[dir="rtl"] #howRail{inset-inline-start:auto;inset-inline-end:0}
   html[dir="rtl"] .story-step{grid-template-columns:1fr 34px}
   html[dir="rtl"] .story-status{max-width:calc(100% - 30px)}
 }
+
+
+/* Phase 6 bidi corrections after cross-direction review */
+html[dir="rtl"] .hero-v3 .hero-copy h1{text-align:right}
+html[dir="rtl"] .story-step{grid-template-columns:38px 1fr}
+html[dir="rtl"] .story-index{grid-column:auto;grid-row:auto}
+html[dir="rtl"] .story-step-copy{grid-column:auto;grid-row:auto}
+@media(max-width:640px){
+  html[dir="rtl"] .story-step{grid-template-columns:34px 1fr}
+}

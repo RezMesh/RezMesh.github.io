@@ -173,18 +173,46 @@ if(RM){
     {t:11.2,fn:()=>{heroScenePhase(4);runHeroPacket();heroPhase(4,"hs.5","ok");}}
   ],HERO,tt=>{tcode.textContent="T+"+String(Math.floor(tt)).padStart(2,"0")+"S";});
 }
-/* ================= PROBLEM ================= */
-const PS=$("#probSvg"),pStat=$("#probStatus");let pT=[];
-const pClear=()=>{pT.forEach(clearTimeout);pT=[];};
-function pRunMsg(w){const m=$(w);rm(m,"run");void m.offsetWidth;add(m,"run");}
-function pSet(st,k){PS.classList.remove("st-conv","st-fail","st-mesh");PS.classList.add("st-"+st);pStat.setAttribute("data-i18n",k);pStat.textContent=t(k);}
-function pSeq(){pClear();pSet("conv","ps.conv");pRunMsg("#pmsgC");
-  pT.push(setTimeout(()=>pSet("fail","ps.fail"),2600));
-  pT.push(setTimeout(()=>{pSet("mesh","ps.mesh");pRunMsg("#pmsgM");},4400));}
-$("#btnRemove").addEventListener("click",pSeq);
-$("#btnRestore").addEventListener("click",()=>{pClear();pSet("conv","ps.conv");pRunMsg("#pmsgC");});
-if(RM)pSet("mesh","ps.mesh");
-else new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){pSeq();o.disconnect();}}),{threshold:.35}).observe(PS);
+/* ================= DISCONNECTED -> CONNECTED ================= */
+const story=$("#problem"),storySteps=$$(".story-step"),storyStatus=$("#storyStatus"),storyMsg=$("#storyMessage");
+let storyRestart=null;
+function setStory(n,runMessage=false){
+  if(!story)return;
+  story.dataset.storyStage=String(n);
+  storySteps.forEach((btn,i)=>{
+    const on=i===n;
+    btn.classList.toggle("active",on);
+    btn.setAttribute("aria-pressed",String(on));
+  });
+  const active=storySteps[n];
+  if(active&&storyStatus)storyStatus.textContent=active.dataset.status||"";
+  if(runMessage&&storyMsg){
+    rm(storyMsg,"run");
+    void storyMsg.getBoundingClientRect();
+    add(storyMsg,"run");
+  }else if(storyMsg){
+    rm(storyMsg,"run");
+  }
+}
+let storyLoop=null;
+if(story){
+  if(RM){
+    setStory(3,false);
+  }else{
+    storyLoop=makeLoop(14,[
+      {t:0,fn:()=>setStory(0,false)},
+      {t:3.2,fn:()=>setStory(1,false)},
+      {t:6.2,fn:()=>setStory(2,false)},
+      {t:9.2,fn:()=>setStory(3,true)}
+    ],story);
+  }
+  storySteps.forEach((btn,i)=>btn.addEventListener("click",()=>{
+    if(storyLoop)storyLoop.pause();
+    clearTimeout(storyRestart);
+    setStory(i,i===3);
+    if(storyLoop&&!RM)storyRestart=setTimeout(()=>storyLoop.start(),4500);
+  }));
+}
 /* ================= HOW (scrub) ================= */
 const howLis=$$("#howList li"),howRail=$("#howRail"),howRead=$("#howRead"),howStat=$("#howStatus");
 const HOWK=["how.s1t","how.s2t","how.s3t","how.s4t"];

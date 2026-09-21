@@ -136,60 +136,98 @@
     </div>
   </div>
 </section>
-<!-- ============ BAND ============ -->
-<section class="band" id="band">
-<div class="wrap">
-<p class="l1"><span data-i18n="princ.l1">زیرساخت می‌تواند ناپدید شود.</span></p>
-<p class="l2"><span data-i18n="princ.l2">مردم و دستگاه‌هایشان هنوز آنجا هستند.</span></p>
-<p class="note" data-i18n="princ.note">RezMesh دستگاه‌های باقی‌مانده را به نقاط ارتباطی ممکن تبدیل می‌کند.</p>
-</div>
-</section>
-<!-- ============ 01 PROBLEM ============ -->
-<section class="light pad" id="problem">
-<div class="wrap">
-<div class="shead rv">
-<span class="snum">01 /</span>
-<div><p class="kick" data-i18n="prob.kick">مسئله</p>
-<h2 data-i18n="prob.head">وقتی شبکه از میان می‌رود، دستگاه‌های نزدیک همچنان می‌توانند ارتباط برقرار کنند.</h2></div>
-</div>
-<div class="g2">
-<div class="rv">
-<p class="lede" data-i18n="prob.lead">زیرساخت می‌تواند ناپدید شود؛ نیاز به ارتباط نه.</p>
-<p class="lede dim" data-i18n="prob.body">دکل‌های سلولی، دسترسی اینترنت و خدمات متمرکز مفیدند—تا زمانی که آسیب‌دیده، در دسترس نباشند، اشباع شوند، مسدود شوند یا خیلی دور باشند. RezMesh ارتباط را از جهت دیگر آغاز می‌کند: با دستگاه‌هایی که هنوز حضور فیزیکی دارند.</p>
-<p aria-live="polite" data-i18n="ps.conv" id="probStatus">پیام از زیرساخت حامل مسیریابی می‌شود</p>
-<div class="pctl">
-<button class="btn" data-i18n="prob.btnRemove" id="btnRemove">حذف زیرساخت</button>
-<button class="btn ghost" data-i18n="prob.btnRestore" id="btnRestore">بازگردانی زیرساخت</button>
-</div>
-<p class="pnote" data-i18n="prob.note">برد ارتباط نه با جادو، بلکه از طریق دستگاه‌های نزدیکِ مشارکت‌کننده گسترش می‌یابد.</p>
-</div>
-<figure class="plate rv d1">
-<figcaption class="plate-h"><span class="fig">FIG. 01</span><span data-i18n="fig.p1">Mesh reorganization after infrastructure loss</span><span class="fig-r">N.T.S.</span></figcaption>
-<div class="plate-b">
-<svg aria-label="مسیر معمول از طریق دکل و سرور با حذف زیرساخت قطع می‌شود و سپس همان پیام از مسیر دستگاه‌به‌دستگاه عبور می‌کند." class="st-conv" id="probSvg" role="img" viewbox="0 0 1000 440">
-<path class="pconv" d="M70 120 H930"></path>
-<g id="breakX" stroke="#D95A4E" stroke-width="2.6"><line x1="488" x2="512" y1="108" y2="132"></line><line x1="512" x2="488" y1="108" y2="132"></line></g>
-<path class="pmesh" d="M70 320 H930" pathlength="1"></path>
-<g class="nodeI" transform="translate(250,120)"><g class="nicon"><path d="M0 -24 L0 8 M-12 8 L0 -8 L12 8 M-8 -12 L8 -12"></path></g><circle cx="0" cy="-27" fill="#D95A4E" r="2.6"></circle><text class="nlabel" data-i18n="lbl.tower" text-anchor="middle" y="34">دکل سلولی</text></g>
-<g class="nodeI" transform="translate(410,120)"><g fill="#7C8F9E"><circle cx="-8" cy="0" r="8"></circle><circle cx="2" cy="-5" r="10"></circle><circle cx="11" cy="1" r="7"></circle><rect height="9" rx="4" width="24" x="-11" y="-1"></rect></g><text class="nlabel" data-i18n="lbl.net" text-anchor="middle" y="34">حامل / اینترنت</text></g>
-<g class="nodeI" transform="translate(570,120)"><g class="nicon"><rect height="32" rx="3" width="26" x="-13" y="-16"></rect><line x1="-7" x2="7" y1="-7" y2="-7"></line><line x1="-7" x2="7" y1="1" y2="1"></line></g><text class="nlabel" data-i18n="lbl.server" text-anchor="middle" y="38">سرور</text></g>
-<g class="nodeI" transform="translate(730,120)"><g fill="#7C8F9E"><circle cx="-8" cy="0" r="8"></circle><circle cx="2" cy="-5" r="10"></circle><circle cx="11" cy="1" r="7"></circle><rect height="9" rx="4" width="24" x="-11" y="-1"></rect></g><text class="nlabel" data-i18n="lbl.net" text-anchor="middle" y="34">حامل / اینترنت</text></g>
-<g class="gphone" style="--px:70px" transform="translate(70,120)"><g class="nicon"><rect height="36" rx="3" width="20" x="-10" y="-18"></rect><circle cx="0" cy="11" fill="#111A22" r="1.5" stroke="none"></circle></g><text class="nlabel" data-i18n="lbl.phone" text-anchor="middle" y="40">گوشی</text></g>
-<g class="gphone" style="--px:930px" transform="translate(930,120)"><g class="nicon"><rect height="36" rx="3" width="20" x="-10" y="-18"></rect><circle cx="0" cy="11" fill="#111A22" r="1.5" stroke="none"></circle></g><text class="nlabel" data-i18n="lbl.phone" text-anchor="middle" y="40">گوشی</text></g>
-<g class="gdev" style="--dx:360px" transform="translate(360,320)"><g class="nicon" stroke="#2E7D6F"><rect height="32" rx="3" width="18" x="-9" y="-16"></rect><path d="M-14 -22 a14 14 0 0 1 28 0" fill="none"></path></g><text class="nlabel" data-i18n="lbl.device" text-anchor="middle" y="40">دستگاه نزدیک</text></g>
-<g class="gdev" style="--dx:640px" transform="translate(640,320)"><g class="nicon" stroke="#2E7D6F"><rect height="32" rx="3" width="18" x="-9" y="-16"></rect><path d="M-14 -22 a14 14 0 0 1 28 0" fill="none"></path></g><text class="nlabel" data-i18n="lbl.device" text-anchor="middle" y="40">دستگاه نزدیک</text></g>
-<circle class="pmsg" fill="#54646F" id="pmsgC" r="6" style="offset-path:path('M70 120 H930')"></circle>
-<circle class="pmsg" fill="#2E7D6F" id="pmsgM" r="6" style="offset-path:path('M70 320 H930')"></circle>
-</svg>
-</div>
-<div class="plate-f">
-<span class="lg"><i></i><span data-i18n="hero.legendInfra">زیرساخت متداول</span></span>
-<span class="lg"><i class="t"></i><span data-i18n="hero.legendMesh">مسیر محلی RezMesh</span></span>
-<span class="fig-r" data-i18n="ps.auto">تحول زنده — دکمه‌ها تکرار می‌کنند</span>
-</div>
-</figure>
-</div>
-<a class="btn ghost route-cta" href="/fa/how-it-works/">توضیح کامل را بخوانید</a></div>
+<!-- ============ 01 CONNECTED STORY ============ -->
+<section class="connect-story light pad" id="problem" data-story-stage="0">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="snum">01 /</span>
+      <div><p class="kick">چگونگی گذار</p><h2>از قطع ارتباط تا اتصال.</h2></div>
+    </div>
+    <div class="story-layout">
+      <div class="story-copy rv">
+        <p class="lede">وقتی زیرساخت متمرکز در دسترس نیست، دستگاه‌های مشارکت‌کنندهٔ نزدیک همچنان می‌توانند یک مسیر ارتباطی محلی بسازند.</p>
+        <p class="lede dim">RezMesh از چیزهایی آغاز می‌کند که باقی مانده‌اند: مردم، تلفن‌هایشان و برد بی‌سیم محلی. دستگاه‌های نزدیک یکدیگر را کشف می‌کنند، مسیرهای محلی می‌سازند و اطلاعات را گام‌به‌گام به سمت مقصد منتقل می‌کنند.</p>
+        <div class="story-steps" role="group" aria-label="از قطع زیرساخت تا ارتباط محلی">
+<button class="story-step active" data-story-step="0" data-status="زیرساخت در دسترس نیست" type="button" aria-pressed="true">
+  <span class="story-index">01</span>
+  <span class="story-step-copy"><strong>زیرساخت از دسترس خارج می‌شود</strong><small>مسیرهای سلولی و اینترنت ناپدید می‌شوند.</small></span>
+</button>
+<button class="story-step" data-story-step="1" data-status="دستگاه‌های نزدیک باقی مانده‌اند" type="button" aria-pressed="false">
+  <span class="story-index">02</span>
+  <span class="story-step-copy"><strong>دستگاه‌های نزدیک باقی می‌مانند</strong><small>مردم و تلفن‌هایشان هنوز در محل حضور دارند.</small></span>
+</button>
+<button class="story-step" data-story-step="2" data-status="مسیر محلی RezMesh برقرار شد" type="button" aria-pressed="false">
+  <span class="story-index">03</span>
+  <span class="story-step-copy"><strong>RezMesh مسیرهای محلی می‌سازد</strong><small>دستگاه‌های مشارکت‌کننده یکدیگر را کشف و متصل می‌کنند.</small></span>
+</button>
+<button class="story-step" data-story-step="3" data-status="اطلاعات در مسیر محلی در حرکت است" type="button" aria-pressed="false">
+  <span class="story-index">04</span>
+  <span class="story-step-copy"><strong>اطلاعات به حرکت ادامه می‌دهد</strong><small>پیام از مسیر محلی موجود به سمت مقصد حرکت می‌کند.</small></span>
+</button>
+        </div>
+        <p class="story-note">برد ارتباط از طریق دستگاه‌های نزدیکِ مشارکت‌کننده گسترش می‌یابد؛ RezMesh به معنی برد رادیویی نامحدود بین دو تلفن نیست.</p>
+        <a class="btn ghost route-cta" href="/fa/how-it-works/">توضیح کامل را بخوانید</a>
+      </div>
+      <figure class="story-figure plate rv d1">
+        <figcaption class="plate-h"><span class="fig">FIG. 01</span><span>از قطع زیرساخت تا ارتباط محلی</span><span class="fig-r">توالی زنده</span></figcaption>
+        <div class="story-canvas plate-b">
+          <div class="story-status"><span class="story-status-dot"></span><span id="storyStatus" aria-live="polite">زیرساخت در دسترس نیست</span></div>
+          <svg aria-label="نمودار چهارمرحله‌ای: زیرساخت از دسترس خارج می‌شود، تلفن‌های نزدیک باقی می‌مانند، مسیرهای محلی RezMesh شکل می‌گیرند و پیام از میان دستگاه‌های مشارکت‌کننده حرکت می‌کند." class="story-svg" id="storySvg" role="img" viewBox="0 0 920 560">
+            <defs>
+              <linearGradient id="storyGlow" x1="0" x2="1"><stop offset="0" stop-color="#5FD4C0"/><stop offset="1" stop-color="#55DFFF"/></linearGradient>
+            </defs>
+            <g class="story-grid" opacity=".32">
+              <path d="M0 120H920M0 280H920M0 440H920"/>
+              <path d="M140 0V560M340 0V560M540 0V560M740 0V560"/>
+            </g>
+
+            <g class="story-infra">
+              <path class="story-infra-path" d="M126 394 C220 235 305 170 420 118 S650 100 790 190"/>
+              <g class="story-tower" transform="translate(420 118)">
+                <path d="M0-40V38M-28 38 0-18 28 38M-17 8H17M-10-17H10"/>
+                <circle cx="0" cy="-44" r="5"/>
+              </g>
+              <g class="story-cloud" transform="translate(620 104)">
+                <circle cx="-18" cy="2" r="13"/><circle cx="0" cy="-8" r="17"/><circle cx="19" cy="2" r="12"/><rect x="-20" y="-2" width="42" height="16" rx="8"/>
+              </g>
+              <g class="story-server" transform="translate(790 190)">
+                <rect x="-25" y="-35" width="50" height="70" rx="5"/><path d="M-14-17H14M-14 0H14M-14 17H14"/>
+              </g>
+            </g>
+
+            <g class="story-failure">
+              <circle cx="520" cy="130" r="31"/><path d="M500 110l40 40M540 110l-40 40"/>
+            </g>
+
+            <g class="story-people">
+              <g class="story-person" transform="translate(130 390)"><circle cy="-60" r="21"/><path d="M-34 52Q-28-34 0-36Q30-34 35 52Z"/><rect class="story-phone" x="36" y="-5" width="18" height="31" rx="4"/></g>
+              <g class="story-person" transform="translate(345 420)"><circle cy="-58" r="20"/><path d="M-32 48Q-27-32 0-34Q28-32 34 48Z"/><rect class="story-phone" x="-52" y="-2" width="18" height="31" rx="4"/></g>
+              <g class="story-person" transform="translate(575 392)"><circle cy="-60" r="21"/><path d="M-34 52Q-28-34 0-36Q30-34 35 52Z"/><rect class="story-phone" x="36" y="-5" width="18" height="31" rx="4"/></g>
+              <g class="story-person" transform="translate(792 420)"><circle cy="-58" r="20"/><path d="M-32 48Q-27-32 0-34Q28-32 34 48Z"/><rect class="story-phone" x="-52" y="-2" width="18" height="31" rx="4"/></g>
+            </g>
+
+            <g class="story-mesh">
+              <path id="storyLink1" class="story-mesh-link" pathLength="1" d="M178 390 L293 418"/>
+              <path id="storyLink2" class="story-mesh-link" pathLength="1" d="M293 418 L623 391"/>
+              <path id="storyLink3" class="story-mesh-link" pathLength="1" d="M623 391 L740 418"/>
+              <path class="story-mesh-link secondary" pathLength="1" d="M293 418 Q440 315 575 392"/>
+              <circle class="story-node" cx="178" cy="390" r="8"/><circle class="story-node" cx="293" cy="418" r="8"/><circle class="story-node" cx="623" cy="391" r="8"/><circle class="story-node" cx="740" cy="418" r="8"/>
+              <circle class="story-message" id="storyMessage" r="6" style="offset-path:path('M178 390 L293 418 L623 391 L740 418')"/>
+            </g>
+
+            <g class="story-destination" transform="translate(792 420)">
+              <circle r="34"/><path d="M-10 0h20M0-10v20"/>
+            </g>
+          </svg>
+        </div>
+        <div class="plate-f">
+          <span class="lg"><i></i><span>زیرساخت</span></span>
+          <span class="lg"><i class="t"></i><span>مسیر محلی RezMesh</span></span>
+          <span class="fig-r">01 → 04</span>
+        </div>
+      </figure>
+    </div>
+  </div>
 </section>
 <!-- ============ 02 HOW (scroll-scrubbed) ============ -->
 <section id="how">

@@ -1,6 +1,4 @@
-# RezMesh website — corrected handover build
-
-This package converts the single-page prototype into a static, multilingual, GitHub-Pages-ready website while preserving the approved homepage visual direction.
+# RezMesh website
 
 ## Public languages
 - English: `/`

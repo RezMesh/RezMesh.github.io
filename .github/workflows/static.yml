@@ -24,6 +24,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate static site
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check assets/home.js
+          node scripts/validate-static-site.mjs
+
       - name: Prepare static site artifact
         shell: bash
         run: |

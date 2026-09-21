@@ -768,3 +768,102 @@ html[dir="rtl"] .story-status{direction:rtl}
   .connect-story .story-destination{opacity:1!important}
   .story-message{display:none}
 }
+
+
+/* ---------- PHASE 6 MULTILINGUAL / RTL REFINEMENT ---------- */
+html[lang="fa"],html[lang="ar"]{
+  text-rendering:optimizeLegibility;
+}
+html[dir="rtl"] body{text-align:start}
+html[dir="rtl"] .kick,
+html[dir="rtl"] .snum,
+html[dir="rtl"] .plate-h,
+html[dir="rtl"] .plate-f,
+html[dir="rtl"] .tele,
+html[dir="rtl"] .status,
+html[dir="rtl"] .hero-kicker,
+html[dir="rtl"] .hr-kicker,
+html[dir="rtl"] .hr-live,
+html[dir="rtl"] .feature-num,
+html[dir="rtl"] .story-status,
+html[dir="rtl"] #howRead,
+html[dir="rtl"] #howHint,
+html[dir="rtl"] .wrow .t,
+html[dir="rtl"] .emgcount .den{
+  letter-spacing:0;
+  text-transform:none;
+}
+html[dir="rtl"] .hero-v3 .hero-kicker{
+  direction:rtl;
+  justify-content:flex-start;
+  flex-wrap:wrap;
+}
+html[dir="rtl"] .hero-v3 .hero-kicker bdi{
+  direction:ltr;
+  unicode-bidi:isolate;
+}
+html[dir="rtl"] svg text{
+  direction:rtl;
+  unicode-bidi:plaintext;
+}
+html[dir="rtl"] .tree text,
+html[dir="rtl"] .tree .sub{
+  direction:ltr;
+  unicode-bidi:isolate;
+}
+html[dir="rtl"] .bmail a,
+html[dir="rtl"] .hero-beta a,
+html[dir="rtl"] .brand,
+html[dir="rtl"] .langs,
+html[dir="rtl"] .fig-r,
+html[dir="rtl"] #tcode{
+  direction:ltr;
+  unicode-bidi:isolate;
+}
+html[dir="rtl"] .btn{letter-spacing:0;text-transform:none}
+html[dir="rtl"] .feature-copy strong,
+html[dir="rtl"] .feature-copy small,
+html[dir="rtl"] .story-step-copy strong,
+html[dir="rtl"] .story-step-copy small{
+  line-height:1.65;
+}
+html[dir="rtl"] .hero-v3 .hero-copy h1{
+  direction:ltr;
+  unicode-bidi:isolate;
+  text-align:start;
+}
+html[dir="rtl"] .hero-v3 .hero-tag,
+html[dir="rtl"] .hero-v3 .hero-sub,
+html[dir="rtl"] .hero-v3 .hero-body,
+html[dir="rtl"] .hero-v3 .hero-beta{
+  max-width:48ch;
+}
+html[dir="rtl"] .plate-h .fig-r,
+html[dir="rtl"] .plate-f .fig-r{
+  margin-inline-start:auto;
+}
+html[dir="rtl"] .story-status{max-width:min(72%,420px)}
+html[dir="rtl"] .story-step{grid-template-columns:1fr 38px}
+html[dir="rtl"] .story-index{grid-column:2;grid-row:1}
+html[dir="rtl"] .story-step-copy{grid-column:1;grid-row:1}
+html[dir="rtl"] #howList li{padding:13px 0 13px 22px}
+html[dir="rtl"] #howList li::before{inset-inline-start:auto;inset-inline-end:0}
+html[dir="rtl"] #howRail{inset-inline-start:auto;inset-inline-end:0}
+
+@media(max-width:900px){
+  html[dir="rtl"] .hero-v3 .hero-copy h1{text-align:start}
+}
+@media(max-width:640px){
+  html[dir="rtl"] .story-step{grid-template-columns:1fr 34px}
+  html[dir="rtl"] .story-status{max-width:calc(100% - 30px)}
+}
+
+
+/* Phase 6 bidi corrections after cross-direction review */
+html[dir="rtl"] .hero-v3 .hero-copy h1{text-align:right}
+html[dir="rtl"] .story-step{grid-template-columns:38px 1fr}
+html[dir="rtl"] .story-index{grid-column:auto;grid-row:auto}
+html[dir="rtl"] .story-step-copy{grid-column:auto;grid-row:auto}
+@media(max-width:640px){
+  html[dir="rtl"] .story-step{grid-template-columns:34px 1fr}
+}

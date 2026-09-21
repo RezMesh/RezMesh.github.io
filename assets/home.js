@@ -27,15 +27,15 @@ en:{"nav.problem":"Problem","nav.how":"How it works","nav.emergency":"Emergency"
 "foot.tag":"Communication beyond infrastructure.","foot.product":"Product","foot.identity":"Identity","foot.langs":"Languages","foot.history":"RezMesh was formerly known as RezvanMesh.","foot.colophon":"Diagrams are schematic and not to scale. Set in Space Grotesk, IBM Plex Sans & IBM Plex Mono.","foot.rights":"© Soheil Mozaffari. All rights reserved.",
 "title":"RezMesh — Communication beyond infrastructure"},
 fa:{"nav.problem":"مسئله","nav.how":"نحوه عملکرد","nav.emergency":"ارتباط اضطراری","nav.power":"مدیریت نیرو","nav.scenarios":"سناریوها","nav.engineering":"مهندسی","nav.beta":"دسترسی بتا",
-"hero.tag":"ارتباط فراتر از زیرساخت.","hero.sub":"بدون سرویس تلفن همراه یا زیرساخت اینترنت، ارتباط برقرار کنید.","hero.body":"RezMesh برای ارتباط مقاوم دستگاه‌به‌دستگاه طراحی شده است؛ هنگامی که شبکه‌های متداول در دسترس نیستند، مختل شده‌اند، اشباع شده‌اند یا خارج از دسترس‌اند.","hero.cta1":"کاوش RezMesh","hero.cta2":"نحوه عملکرد را ببینید","hero.beta":"انتشار نسخه بتا به‌زودی. برای دسترسی بتا، مستقیماً با سهیل مظفری تماس بگیرید.","hero.legendInfra":"زیرساخت متداول","hero.legendMesh":"مسیر محلی RezMesh","hero.seq":"ترتیب ۰۱ — فقدان زیرساخت / شکل‌گیری mesh",
+"hero.tag":"ارتباط فراتر از زیرساخت.","hero.sub":"بدون سرویس تلفن همراه یا زیرساخت اینترنت، ارتباط برقرار کنید.","hero.body":"RezMesh برای ارتباط مقاوم دستگاه‌به‌دستگاه طراحی شده است؛ هنگامی که شبکه‌های متداول در دسترس نیستند، مختل شده‌اند، اشباع شده‌اند یا خارج از دسترس‌اند.","hero.cta1":"کاوش RezMesh","hero.cta2":"نحوه عملکرد را ببینید","hero.beta":"انتشار نسخه بتا به‌زودی. برای دسترسی بتا، مستقیماً با سهیل مظفری تماس بگیرید.","hero.legendInfra":"زیرساخت متداول","hero.legendMesh":"مسیر محلی RezMesh","hero.seq":"ترتیب ۰۱ — فقدان زیرساخت / شکل‌گیری مش",
 "hs.1":"زیرساخت فعال","hs.2":"اختلال — زیرساخت از دست رفت","hs.3":"شبکه محلی در حال شکل‌گیری","hs.4":"پیام میان دستگاه‌ها در حرکت است","hs.5":"ارتباط بدون زیرساخت ادامه دارد",
 "princ.l1":"زیرساخت می‌تواند ناپدید شود.","princ.l2":"مردم و دستگاه‌هایشان هنوز آنجا هستند.","princ.note":"RezMesh دستگاه‌های باقی‌مانده را به نقاط ارتباطی ممکن تبدیل می‌کند.",
 "prob.kick":"مسئله","prob.head":"وقتی شبکه از میان می‌رود، دستگاه‌های نزدیک همچنان می‌توانند ارتباط برقرار کنند.","prob.lead":"زیرساخت می‌تواند ناپدید شود؛ نیاز به ارتباط نه.","prob.body":"دکل‌های سلولی، دسترسی اینترنت و خدمات متمرکز مفیدند—تا زمانی که آسیب‌دیده، در دسترس نباشند، اشباع شوند، مسدود شوند یا خیلی دور باشند. RezMesh ارتباط را از جهت دیگر آغاز می‌کند: با دستگاه‌هایی که هنوز حضور فیزیکی دارند.","prob.btnRemove":"حذف زیرساخت","prob.btnRestore":"بازگردانی زیرساخت","prob.note":"برد ارتباط نه با جادو، بلکه از طریق دستگاه‌های نزدیکِ مشارکت‌کننده گسترش می‌یابد.",
-"ps.conv":"پیام از زیرساخت حامل مسیریابی می‌شود","ps.fail":"زیرساخت حذف شد — مسیر متداول ناموفق است","ps.mesh":"مسیر mesh برقرار شد — پیام تحویل شد","ps.auto":"تحول زنده — دکمه‌ها تکرار می‌کنند",
+"ps.conv":"پیام از زیرساخت حامل مسیریابی می‌شود","ps.fail":"زیرساخت حذف شد — مسیر متداول ناموفق است","ps.mesh":"مسیر RezMesh برقرار شد — پیام تحویل شد","ps.auto":"تحول زنده — دکمه‌ها تکرار می‌کنند",
 "lbl.phone":"گوشی","lbl.tower":"دکل سلولی","lbl.net":"حامل / اینترنت","lbl.server":"سرور","lbl.device":"دستگاه نزدیک","lbl.shelter":"پناهگاه","lbl.medical":"نقطه پزشکی","lbl.volunteers":"داوطلبان",
-"how.kick":"نحوه عملکرد","how.lead":"دستگاه‌های نزدیک بخشی از مسیر ارتباط می‌شوند.","how.body":"RezMesh با ارتباط محلی دستگاه‌به‌دستگاه، مسیرهای مقاومی میان دستگاه‌های مشارکت‌کننده می‌سازد، بدون آنکه سرویس تلفن همراه یا اینترنت پیش‌شرط آغاز باشد.","how.s1t":"کشف","how.s1d":"دستگاه‌های نزدیک RezMesh یکدیگر را با قابلیت‌های بی‌سیم محلی پیدا می‌کنند.","how.s2t":"اتصال","how.s2d":"دستگاه‌ها رابطه ارتباطی محلی برقرار می‌کنند، بدون نیاز به سرویس اینترنت مرکزی.","how.s3t":"مسیریابی","how.s3d":"اطلاعات می‌تواند از میان دستگاه‌های مشارکت‌کننده به مقصد برسد.","how.s4t":"سازگاری","how.s4d":"رفتار ارتباط و مصرف نیرو متناسب با شرایط کاری تغییر می‌کند.","how.out":"خارج از دسترس مستقیم","how.recalc":"مسیریابی دوباره…","how.scroll":"برای پیشرفت توالی اسکرول کنید","how.dest":"مقصد","how.route":"مسیر فعال","how.settle":"مسیر محلی فعال — ارتباط ادامه دارد","how.phase":"فاز",
-"emg.kick":"پخش اضطراری","emg.head":"یک پیام فوری؛ جامعه‌ای از دستگاه‌های قابل دسترس.","emg.body":"RezMesh سازوکاری برای هشدار اضطراری دارد که ارتباط فوری را در mesh محلی موجود اولویت‌بندی می‌کند. پیام‌های اضطراری می‌توانند فراتر از دستگاه مبدأ از طریق گره‌های مشارکت‌کننده منتشر شوند، بدون وابستگی به زیرساخت سلولی یا اینترنت.","emg.btn":"فعال‌سازی هشدار اضطراری","emg.note":"انتشار به دستگاه‌های حاضر و مشارکت‌کننده بستگی دارد؛ پوشش همگانی تضمین نمی‌شود.","emg.reached":"دستگاه‌های رسیده","emg.w0":"مبدأ هشدار را می‌سازد","emg.w1":"همسایگان بلافاصله دریافت می‌کنند","emg.w2":"گروه قابل دسترس بعدی","emg.w3":"mesh گسترده‌تر — و آرام می‌گیرد",
-"lg.origin":"هشدار مبدأ","lg.reached":"دستگاه رسیده","lg.link":"پیوند mesh","lg.cover":"پوشش",
+"how.kick":"نحوه عملکرد","how.lead":"دستگاه‌های نزدیک بخشی از مسیر ارتباط می‌شوند.","how.body":"RezMesh با ارتباط محلی دستگاه‌به‌دستگاه، مسیرهای مقاومی میان دستگاه‌های مشارکت‌کننده می‌سازد، بدون آنکه سرویس تلفن همراه یا اینترنت پیش‌شرط آغاز باشد.","how.s1t":"کشف","how.s1d":"دستگاه‌های نزدیک RezMesh یکدیگر را با قابلیت‌های بی‌سیم محلی پیدا می‌کنند.","how.s2t":"اتصال","how.s2d":"دستگاه‌ها رابطه ارتباطی محلی برقرار می‌کنند، بدون نیاز به سرویس اینترنت مرکزی.","how.s3t":"مسیریابی","how.s3d":"اطلاعات می‌تواند از میان دستگاه‌های مشارکت‌کننده به مقصد برسد.","how.s4t":"سازگاری","how.s4d":"رفتار ارتباط و مصرف نیرو متناسب با شرایط کاری تغییر می‌کند.","how.out":"خارج از دسترس مستقیم","how.recalc":"مسیریابی دوباره…","how.scroll":"برای پیشرفت توالی اسکرول کنید","how.dest":"مقصد","how.route":"مسیر فعال","how.settle":"مسیر محلی فعال — ارتباط ادامه دارد","how.phase":"مرحله",
+"emg.kick":"پخش اضطراری","emg.head":"یک پیام فوری؛ جامعه‌ای از دستگاه‌های قابل دسترس.","emg.body":"RezMesh سازوکاری برای هشدار اضطراری دارد که ارتباط فوری را در مش محلی موجود اولویت‌بندی می‌کند. پیام‌های اضطراری می‌توانند فراتر از دستگاه مبدأ از طریق گره‌های مشارکت‌کننده منتشر شوند، بدون وابستگی به زیرساخت سلولی یا اینترنت.","emg.btn":"فعال‌سازی هشدار اضطراری","emg.note":"انتشار به دستگاه‌های حاضر و مشارکت‌کننده بستگی دارد؛ پوشش همگانی تضمین نمی‌شود.","emg.reached":"دستگاه‌های رسیده","emg.w0":"مبدأ هشدار را می‌سازد","emg.w1":"همسایگان بلافاصله دریافت می‌کنند","emg.w2":"گروه قابل دسترس بعدی","emg.w3":"مش گسترده‌تر — پایدار می‌شود",
+"lg.origin":"هشدار مبدأ","lg.reached":"دستگاه رسیده","lg.link":"پیوند مش","lg.cover":"پوشش",
 "pow.kick":"کنترل هوشمند نیرو","pow.head":"تاب‌آوری ارتباط یعنی حفاظت از باتری هم.","pow.lead":"در شرایط اضطراری، اتصال تنها تا زمانی مفید است که دستگاه هنوز نیرو دارد.","pow.body":"RezMesh چند حالت نیرو دارد که شدت استفاده از منابع ارتباطی را تغییر می‌دهد: از ارتباط فعال تا حالت‌های محافظه‌کارانه و خواب زمستانی. زمان‌بندی اسکن BLE، تبلیغ دسترس‌پذیری، Wi‑Fi Direct و بسامد به‌روزرسانی مسیریابی با هر حالت تغییر می‌کند.","pow.quote":"وقتی ارتباط مهم است، نیرو خرج کن؛ وقتی زمان بقا مهم است، ذخیره کن.","pow.btnEmg":"نمایش حالت اضطراری","pow.term":"چرخه وظیفه (Duty cycling).","pow.termNote":"نوار نگار نشان می‌دهد رادیو چند وقت یک‌بار بیدار می‌شود: تناوب اسکن و ارسال از حالت نیرو پیروی می‌کند.","pow.battery":"باتری","pow.axis":"فعالیت رادیویی","pow.time":"زمان →","pow.override":"جایگزینی عمدی","pow.scale":"مقیاس نزولی باتری",
 "st.emergency":"اضطراری","st.active":"فعال","st.balanced":"متعادل","st.saver":"ذخیرهٔ نیرو","st.minimal":"حداقل","st.hibernation":"خواب زمستانی","st.dead":"خاموش",
 "pd.active":"اسکن پرتکرار؛ اتصال پاسخ‌گو؛ فعالیت رادیویی زیاد.","pd.balanced":"اسکن آرام‌تر؛ ترافیک معمولی کمی به تعویق می‌افتد.","pd.saver":"رادیو با فاصله‌های طولانی‌تر بیدار می‌شود؛ فقط ضروریات.","pd.minimal":"فعالیت پراکنده و عمدی؛ سکوت شنیداری طولانی.","pd.hibernation":"رادیو عمدتاً خواب است؛ بیدارشدن‌های دوره‌ای کوتاه.","pd.dead":"نیرویی نمانده؛ دستگاه از سرِ فیزیک خاموش است، نه از سرِ انتخاب.","pd.emergency":"حالت اولویت بالا: منابع رادیویی صرف‌نظر از سطح باتری کاملاً درگیرند.",
@@ -79,6 +79,12 @@ ar:{"nav.problem":"المشكلة","nav.how":"كيف يعمل","nav.emergency":"
 const TITLES={en:"RezMesh — Communication beyond infrastructure",fa:"RezMesh — ارتباط فراتر از زیرساخت",ar:"RezMesh — اتصال يتجاوز البنية التحتية"};
 let LANG=document.documentElement.lang||"en";
 const t=k=>(I18N[LANG]||I18N.en)[k]??I18N.en[k]??k;
+function localDigits(value){
+  const s=String(value);
+  const digits=LANG==="fa"?"۰۱۲۳۴۵۶۷۸۹":LANG==="ar"?"٠١٢٣٤٥٦٧٨٩":null;
+  return digits?s.replace(/[0-9]/g,d=>digits[Number(d)]):s;
+}
+function localPercent(){return LANG==="en"?"%":"٪";}
 function applyLang(c){LANG=c;const d=I18N[c]||I18N.en;
   document.documentElement.lang=c;document.documentElement.dir=(c==="fa"||c==="ar")?"rtl":"ltr";
   document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.getAttribute("data-i18n");if(d[k]!==undefined)el.textContent=d[k];});
@@ -151,7 +157,7 @@ function heroScenePhase(n){
   if(meshState){
     const lang=document.documentElement.lang;
     const active=lang==="fa"?"فعال":lang==="ar"?"نشط":"ACTIVE";
-    const standby=lang==="fa"?"آماده‌باش":lang==="ar"?"استعداد":"STANDBY";
+    const standby=lang==="fa"?"آماده‌باش":lang==="ar"?"جاهز":"STANDBY";
     meshState.textContent=n>=3?active:standby;
   }
 }
@@ -242,7 +248,7 @@ function applyHow(p){
   const idx=p<.22?0:p<.42?1:p<.68?2:3;
   howLis.forEach(li=>{const s=+li.dataset.stage;li.classList.toggle("on",s===idx);li.classList.toggle("done",s<idx);});
   howRail.style.height=(p*100)+"%";
-  howRead.textContent=t("how.phase")+" 0"+(idx+1)+" / 04 — "+String(Math.round(p*100)).padStart(3,"0")+"%";
+  howRead.textContent=t("how.phase")+" "+localDigits("0"+(idx+1))+" / "+localDigits("04")+" — "+localDigits(String(Math.round(p*100)).padStart(3,"0"))+localPercent();
   const sk=p>.93?"how.settle":HOWK[idx];const sp=howStat.querySelector("span");sp.setAttribute("data-i18n",sk);sp.textContent=t(sk);
 }
 const howTall=$("#howTall");let howStatic=false;

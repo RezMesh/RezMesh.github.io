@@ -70,7 +70,7 @@
 
 <div class="wrap hero-stage">
   <div class="hero-copy settle">
-    <div class="hero-kicker"><span class="hero-kicker-dot"></span> REZMESH / اتصال محلي</div>
+    <div class="hero-kicker"><span class="hero-kicker-dot"></span><bdi dir="ltr">RezMesh</bdi><span aria-hidden="true">/</span><span>اتصال محلي</span></div>
     <h1>RezMesh</h1>
     <p class="hero-tag" data-i18n="hero.tag">اتصال يتجاوز البنية التحتية.</p>
     <p class="hero-sub" data-i18n="hero.sub">تواصل دون خدمة خلوية أو بنية تحتية للإنترنت.</p>
@@ -88,7 +88,7 @@
     <div class="rr" data-r="net"><span class="ri">02</span><span><b>بنية الإنترنت</b><small data-on="متصلة" data-off="منقطعة">متصلة</small></span></div>
     <div class="rr" data-r="people"><span class="ri">03</span><span><b>الأشخاص والأجهزة</b><small data-on="موجودون" data-off="ما زالوا هنا">موجودون</small></span></div>
     <div class="rr" data-r="mesh"><span class="ri">04</span><span><b>RezMesh</b><small data-on="في وضع الاستعداد" data-off="يبقي الاتصال المحلي مستمرًا">في وضع الاستعداد</small></span></div>
-    <div class="hr-summary"><span class="hr-summary-mark"></span><span>مسار محلي</span><strong id="meshState">STANDBY</strong></div>
+    <div class="hr-summary"><span class="hr-summary-mark"></span><span>مسار محلي</span><strong id="meshState">جاهز</strong></div>
   </aside>
 </div>
 
@@ -169,7 +169,7 @@
         <a class="btn ghost route-cta" href="/ar/how-it-works/">اقرأ الشرح الكامل</a>
       </div>
       <figure class="story-figure plate rv d1">
-        <figcaption class="plate-h"><span class="fig">FIG. 01</span><span>من فقدان البنية إلى الاتصال المحلي</span><span class="fig-r">تسلسل مباشر</span></figcaption>
+        <figcaption class="plate-h"><span class="fig">الشكل ٠١</span><span>من فقدان البنية إلى الاتصال المحلي</span><span class="fig-r">تسلسل مباشر</span></figcaption>
         <div class="story-canvas plate-b">
           <div class="story-status"><span class="story-status-dot"></span><span id="storyStatus" aria-live="polite">البنية التحتية غير متاحة</span></div>
           <svg aria-label="مخطط من أربع مراحل: تصبح البنية غير متاحة، تبقى الهواتف القريبة، تتشكل مسارات RezMesh المحلية، وتتحرك رسالة عبر الأجهزة المشاركة." class="story-svg" id="storySvg" role="img" viewBox="0 0 920 560">
@@ -244,11 +244,11 @@
 <li data-stage="2"><h3><b>03</b><span data-i18n="how.s3t">توجيه</span></h3><p data-i18n="how.s3d">تنتقل المعلومات نحو وجهتها عبر الأجهزة المشاركة المتاحة.</p></li>
 <li data-stage="3"><h3><b>04</b><span data-i18n="how.s4t">تكيّف</span></h3><p data-i18n="how.s4d">يتغير سلوك الاتصال واستهلاك الطاقة وفق ظروف التشغيل.</p></li>
 </ol>
-<p id="howRead">PHASE 01 / 04 — 000%</p>
+<p id="howRead">المرحلة ٠١ / ٠٤ — ٠٠٠٪</p>
 <p id="howHint"><svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-width="1.4" viewbox="0 0 10 14" width="10"><path d="M5 1v11M1.5 8.5 5 12l3.5-3.5"></path></svg><span data-i18n="how.scroll">مرّر لتقديم التسلسل</span></p>
 </div>
 <figure class="plate" style="position:relative">
-<figcaption class="plate-h"><span class="fig">FIG. 02</span><span data-i18n="fig.h">Route adaptation under topology change</span><span class="fig-r">SCRUB →</span></figcaption>
+<figcaption class="plate-h"><span class="fig">الشكل ٠٢</span><span data-i18n="fig.h">تكيّف المسار عند تغيّر الطوبولوجيا</span><span class="fig-r">تمرير</span></figcaption>
 <div class="plate-b" style="position:relative">
 <div class="status ok" id="howStatus"><i></i><span data-i18n="how.s1t">اكتشاف</span></div>
 <svg aria-label="يكتشف جهاز جديد الأجهزة القريبة ويتصل ويوجه عبر عقدة وسيطة ويتكيف عندما يتغير شكل الشبكة." id="howSvg" role="img" viewbox="0 0 900 520">
@@ -284,7 +284,7 @@
 </div>
 <div class="emggrid">
 <figure class="plate rv" style="position:relative">
-<figcaption class="plate-h"><span class="fig">FIG. 03</span><span data-i18n="fig.e">Emergency propagation across a neighbourhood mesh</span><span class="fig-r">SCALE 1:24 000</span></figcaption>
+<figcaption class="plate-h"><span class="fig">الشكل ٠٣</span><span data-i18n="fig.e">انتشار تنبيه الطوارئ عبر شبكة الحي</span><span class="fig-r">المقياس ١:٢٤٬٠٠٠</span></figcaption>
 <div class="plate-b" style="position:relative">
 <span id="emgChip">T+0s</span>
 <svg aria-label="ينتشر تنبيه طوارئ أولًا إلى الأجهزة المباشرة ثم إلى المجتمع المحلي الأوسع القابل للوصول، ويتوقف ضمن التغطية الفعلية." id="emgSvg" role="img" viewbox="0 0 900 560">
@@ -356,7 +356,7 @@
 </div>
 <div class="g2" style="align-items:start">
 <figure class="plate powplate rv powpanel run" id="powPanel">
-<figcaption class="plate-h"><span class="fig">FIG. 04</span><span data-i18n="fig.pw">Power states and radio duty cycling</span><span class="fig-r">LIVE</span></figcaption>
+<figcaption class="plate-h"><span class="fig">الشكل ٠٤</span><span data-i18n="fig.pw">حالات الطاقة ودورات نشاط الراديو</span><span class="fig-r">مباشر</span></figcaption>
 <div class="plate-b grid">
 <div class="pzone" style="text-align:center">
 <span class="mono" data-i18n="pow.battery" style="font-size:9.5px;letter-spacing:.2em;color:var(--inkMut)">البطارية</span>
@@ -370,7 +370,7 @@
 <div class="pzone">
 <span class="mono" data-i18n="pow.axis" style="font-size:9.5px;letter-spacing:.2em;color:var(--inkMut)">النشاط اللاسلكي</span>
 <canvas id="scope" style="margin-top:10px"></canvas>
-<div class="scope-ax"><span data-i18n="pow.time">الزمن →</span><span id="scopeState">ACTIVE</span></div>
+<div class="scope-ax"><span data-i18n="pow.time">الزمن →</span><span id="scopeState">نشط</span></div>
 <div aria-hidden="true" class="duty" id="duty"></div>
 </div>
 <div class="pzone">
@@ -385,8 +385,8 @@
 <div class="srow" data-state="hibernation"><i></i><span data-i18n="st.hibernation">سبات</span></div>
 <div class="srow" data-state="dead"><i></i><span data-i18n="st.dead">متوقف</span></div>
 </div>
-<p id="stateDesc" style="margin-top:14px">Scanning frequent; connections responsive; radio activity high.</p>
-<p class="wakeline"><span data-i18n="pw.wake">استيقاظات اللاسلكي</span>: <b id="wakeVal">frequent</b></p>
+<p id="stateDesc" style="margin-top:14px">فحص متكرر؛ اتصال سريع الاستجابة؛ نشاط لاسلكي عالٍ.</p>
+<p class="wakeline"><span data-i18n="pw.wake">استيقاظات اللاسلكي</span>: <b id="wakeVal">متكرر</b></p>
 <button class="btn" data-i18n="pow.btnEmg" id="btnPwrEmg" style="margin-top:16px">عرض حالة الطوارئ</button>
 </div>
 </div>
@@ -411,7 +411,7 @@
 <div class="scnwrap" id="scnWrap">
 <div aria-label="السيناريوهات" class="scn-sticky rv" id="scnList" role="tablist"></div>
 <figure class="plate rv d1">
-<figcaption class="plate-h"><span class="fig">FIG. 05</span><span id="scnTitle">Earthquake</span><span class="fig-r" id="scnNum">01 / 07</span></figcaption>
+<figcaption class="plate-h"><span class="fig">الشكل ٠٥</span><span id="scnTitle">زلزال</span><span class="fig-r" id="scnNum">01 / 07</span></figcaption>
 <div class="plate-b scn-stage" id="scnStage">
 <div class="scn-item on" data-i="0"><svg viewbox="0 0 320 180"><path d="M0 150 L40 150 L40 90 L80 90 L80 150 L120 150 L120 70 L160 70 L160 150 L210 150 L210 100 L250 100 L250 150 L320 150" fill="#0E1A24"></path><path d="M60 150 L74 138 L66 150 L82 142" fill="none" stroke="#3A4C5A"></path><g class="vinf"><path d="M285 150 L285 60 M275 150 L285 95 L295 150" fill="none" stroke="#7C8F9E" stroke-width="1.6"></path><circle cx="285" cy="56" fill="#D95A4E" r="2.6"></circle></g><circle class="vpulse" cx="60" cy="120" r="8"></circle><path class="vmesh" d="M60 120 L140 108 L215 122 L275 112" pathlength="1"></path><circle class="vmsg" r="4" style="offset-path:path('M60 120 L140 108 L215 122 L275 112')"></circle><g fill="#CFE3EE"><circle cx="60" cy="120" r="3.6"></circle><circle cx="140" cy="108" r="3.6"></circle><circle cx="215" cy="122" r="3.6"></circle><circle cx="275" cy="112" r="3.6"></circle></g><rect fill="none" height="10" stroke="#E8A33D" stroke-width="1.4" width="14" x="268" y="102"></rect></svg></div>
 <div class="scn-item" data-i="1"><svg viewbox="0 0 320 180"><path d="M0 96 Q80 88 160 96 T320 94 L320 128 Q240 136 160 128 T0 130 Z" fill="#173042"></path><g class="vrain"><line x1="40" x2="36" y1="10" y2="26"></line><line x1="110" x2="106" y1="0" y2="16"></line><line x1="180" x2="176" y1="14" y2="30"></line><line x1="250" x2="246" y1="4" y2="20"></line><line x1="290" x2="286" y1="18" y2="34"></line></g><g class="vinf"><path d="M40 96 L40 40 M30 96 L40 60 L50 96" fill="none" stroke="#7C8F9E" stroke-width="1.6"></path></g><circle class="vpulse" cx="70" cy="60" r="8"></circle><path class="vmesh" d="M70 60 L130 66 L160 92 L190 66 L255 58" pathlength="1"></path><circle class="vmsg" r="4" style="offset-path:path('M70 60 L130 66 L160 92 L190 66 L255 58')"></circle><g fill="#CFE3EE"><circle cx="70" cy="60" r="3.6"></circle><circle cx="130" cy="66" r="3.6"></circle><circle cx="160" cy="92" r="3.6"></circle><circle cx="190" cy="66" r="3.6"></circle><circle cx="255" cy="58" r="3.6"></circle></g><g fill="#CFE3EE" opacity=".45"><circle cx="60" cy="152" r="3.6"></circle><circle cx="120" cy="156" r="3.6"></circle><circle cx="220" cy="154" r="3.6"></circle></g></svg></div>
@@ -421,7 +421,7 @@
 <div class="scn-item" data-i="5"><svg viewbox="0 0 320 180"><ellipse cx="160" cy="100" fill="#12212D" rx="130" ry="58"></ellipse><ellipse cx="160" cy="100" fill="#0C1620" rx="90" ry="36"></ellipse><g class="vinf"><path d="M160 42 L160 12" stroke="#7C8F9E" stroke-width="1.6"></path><path class="vcong" d="M146 20 a20 20 0 0 1 28 0 M140 12 a28 28 0 0 1 40 0" fill="none" stroke="#D95A4E" stroke-width="1.6"></path></g><g fill="#8CA0AF"><circle cx="110" cy="92" r="2.8"></circle><circle cx="126" cy="104" r="2.8"></circle><circle cx="142" cy="94" r="2.8"></circle><circle cx="158" cy="108" r="2.8"></circle><circle cx="176" cy="96" r="2.8"></circle><circle cx="192" cy="106" r="2.8"></circle><circle cx="206" cy="92" r="2.8"></circle><circle cx="150" cy="120" r="2.8"></circle><circle cx="176" cy="122" r="2.8"></circle></g><path class="vmesh" d="M110 92 L126 104 L142 94 L158 108 L176 96" pathlength="1"></path><path class="vmesh" d="M150 120 L176 122 L192 106" pathlength="1" style="animation-delay:.4s"></path><circle class="vmsg" r="3.4" style="offset-path:path('M110 92 L126 104 L142 94 L158 108 L176 96')"></circle></svg></div>
 <div class="scn-item" data-i="6"><svg viewbox="0 0 320 180"><g fill="#15222E"><rect height="60" width="46" x="30" y="50"></rect><rect height="76" width="46" x="90" y="34"></rect><rect height="52" width="46" x="150" y="58"></rect><rect height="68" width="46" x="210" y="42"></rect></g><g class="vinf"><path d="M285 110 L285 44 M275 110 L285 66 L295 110" fill="none" stroke="#7C8F9E" stroke-width="1.6"></path><circle cx="285" cy="40" fill="#D95A4E" r="2.6"></circle></g><circle class="vpulse" cx="60" cy="132" r="8"></circle><path class="vmesh" d="M60 132 L112 128 L168 134 L228 126" pathlength="1"></path><circle class="vmsg" r="4" style="offset-path:path('M60 132 L112 128 L168 134 L228 126')"></circle><g fill="#CFE3EE"><circle cx="60" cy="132" r="3.6"></circle><circle cx="112" cy="128" r="3.6"></circle><circle cx="168" cy="134" r="3.6"></circle><circle cx="228" cy="126" r="3.6"></circle></g><g transform="translate(228,126)"><circle fill="none" r="8" stroke="#E8A33D" stroke-width="1.4"></circle><path d="M-3 0 H3 M0 -3 V3" stroke="#E8A33D" stroke-width="1.4"></path></g></svg></div>
 </div>
-<div class="plate-f"><span id="scnMsg" style="text-transform:none;letter-spacing:.02em;font-family:var(--body);font-size:13px">Local communication when centralized infrastructure is damaged or unavailable.</span></div>
+<div class="plate-f"><span id="scnMsg" style="text-transform:none;letter-spacing:.02em;font-family:var(--body);font-size:13px">اتصال محلي حين تتضرر البنية المركزية أو تغيب.</span></div>
 </figure>
 </div>
 <p class="principle rv" data-i18n-html="scn.principle">تختفي البنية التحتية. <em>تبقى الأجهزة المحلية.</em></p>
@@ -438,7 +438,7 @@
 </div>
 <div class="pkflow">
 <figure class="plate rv" style="max-width:420px;width:100%;margin-inline:auto">
-<figcaption class="plate-h"><span class="fig">FIG. 06</span><span data-i18n="fig.pk">From endpoint to participating node</span></figcaption>
+<figcaption class="plate-h"><span class="fig">الشكل ٠٦</span><span data-i18n="fig.pk">من نقطة نهاية إلى عقدة مشاركة</span></figcaption>
 <div class="plate-b">
 <svg aria-label="يتحول هاتف عادي من نقطة معزولة إلى عقدة مشاركة في RezMesh؛ تنضم الأجهزة القريبة وتتكون مسارات محلية مرنة." role="img" viewbox="0 0 360 300">
 <rect fill="none" height="110" rx="10" stroke="#111A22" stroke-width="2.4" width="60" x="150" y="26"></rect>
@@ -459,9 +459,9 @@
 </ol>
 </div>
 <dl class="gl rv">
-<div><span class="gn">TERM 01</span><dt data-i18n="gl.t1">اتصال من جهاز إلى جهاز</dt><dd data-i18n="gl.d1">تتحدث الأجهزة مباشرة مع بعضها دون برج أو خادم.</dd></div>
-<div><span class="gn">TERM 02</span><dt data-i18n="gl.t2">اتصال شبكي (mesh)</dt><dd data-i18n="gl.d2">كل جهاز مشارك يمكنه نقل رسائل الآخرين؛ تمتد المسافة عبر العقد القريبة.</dd></div>
-<div><span class="gn">TERM 03</span><dt data-i18n="gl.t3">اتصال واعٍ بالطاقة</dt><dd data-i18n="gl.d3">يُضبط النشاط اللاسلكي وفق مستوى البطارية وظروف التشغيل للحفاظ على وقت البقاء.</dd></div>
+<div><span class="gn">المصطلح ٠١</span><dt data-i18n="gl.t1">اتصال من جهاز إلى جهاز</dt><dd data-i18n="gl.d1">تتحدث الأجهزة مباشرة مع بعضها دون برج أو خادم.</dd></div>
+<div><span class="gn">المصطلح ٠٢</span><dt data-i18n="gl.t2">اتصال شبكي (mesh)</dt><dd data-i18n="gl.d2">كل جهاز مشارك يمكنه نقل رسائل الآخرين؛ تمتد المسافة عبر العقد القريبة.</dd></div>
+<div><span class="gn">المصطلح ٠٣</span><dt data-i18n="gl.t3">اتصال واعٍ بالطاقة</dt><dd data-i18n="gl.d3">يُضبط النشاط اللاسلكي وفق مستوى البطارية وظروف التشغيل للحفاظ على وقت البقاء.</dd></div>
 </dl>
 </div>
 </section>
@@ -486,7 +486,7 @@
 </div>
 </div>
 <figure class="plate rv d1">
-<figcaption class="plate-h"><span class="fig">FIG. 07</span><span data-i18n="fig.t">Entity relationship</span><span class="fig-r">SAMEAS GRAPH</span></figcaption>
+<figcaption class="plate-h"><span class="fig">الشكل ٠٧</span><span data-i18n="fig.t">علاقة الكيانات</span><span class="fig-r">مخطط sameAs</span></figcaption>
 <div class="plate-b">
 <svg aria-label="علاقة الهوية: سهيل مظفري هو مؤلف BOUND Method v3.0 ومطور RezMesh الذي كان يُعرف سابقًا باسم RezvanMesh." class="tree" role="img" viewbox="0 0 460 330">
 <line x1="210" x2="120" y1="82" y2="200"></line><line x1="210" x2="300" y1="82" y2="200"></line><line class="dash" x1="300" x2="382" y1="216" y2="272"></line>
@@ -538,7 +538,7 @@
 </div>
 </div>
 </footer>
-<div id="toast" role="status">Email copied</div>
+<div id="toast" role="status">تم نسخ البريد</div>
 <button aria-label="العودة إلى الأعلى" id="backTop"><svg aria-hidden="true" fill="none" height="15" stroke="currentColor" stroke-width="1.6" viewbox="0 0 16 16" width="15"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"></path></svg></button>
 <noscript><style>.mlk,.hlk,.elink,.pmesh,.pk-link,.gdev{opacity:1 !important;stroke-dashoffset:0 !important}.rv,.settle>*{opacity:1;transform:none}.band .l1>span,.band .l2>span{transform:none}#howTall{height:auto}.how-sticky{position:static}</style></noscript>
 <script defer="True" src="/assets/home.js"></script></body>

@@ -468,7 +468,7 @@ footer a:hover{color:var(--ac)}
 #hdr.scrolled .hbar{height:64px}
 .brand{gap:10px;font:700 21px/1 var(--disp);letter-spacing:-.025em;white-space:nowrap}
 .brand svg{display:none!important}
-.brand::before{content:"";width:34px;height:34px;flex:none;background:url("/assets/brand/rezmesh-mark.svg") center/contain no-repeat;filter:drop-shadow(0 0 7px rgba(95,212,192,.28))}
+.brand::before{content:"";width:38px;height:38px;flex:none;background:linear-gradient(135deg,#F0FBFF 0%,#8FEDE3 58%,#55DFFF 100%);-webkit-mask:url("/assets/brand/rezmesh-mark.svg") center/contain no-repeat;mask:url("/assets/brand/rezmesh-mark.svg") center/contain no-repeat;filter:drop-shadow(0 0 8px rgba(95,212,192,.32))}
 nav.main{gap:18px;margin-inline-start:auto;align-items:center}
 nav.main a{font:500 11.5px/1 var(--body);letter-spacing:.01em;text-transform:none;color:#B7C5CF;padding:25px 0 22px}
 nav.main a[aria-current="page"],nav.main a:hover{color:#fff}
@@ -489,7 +489,7 @@ nav.main a::after{height:2px;background:#55DFFF}
   .hbar{gap:8px;height:68px}
   #hdr.scrolled .hbar{height:62px}
   .brand{font-size:17px;gap:7px}
-  .brand::before{width:28px;height:28px}
+  .brand::before{width:31px;height:31px}
   #menuBtn{width:34px;height:34px}
   .langs{margin-inline-start:0}
   .langs a{padding:7px 6px;font-size:8.5px}

@@ -415,3 +415,47 @@ footer a:hover{color:var(--ac)}
 .langs a[aria-current="page"]{background:var(--ac);color:#06231E}
 .route-cta{margin-top:20px}
 @media(max-width:430px){.hbar{gap:10px}.brand{font-size:15px}.langs a{padding:8px 7px;letter-spacing:.04em}#menuBtn{width:38px}.wrap{padding-inline:14px}}
+
+
+/* ---------- RezMesh concept integration: human mesh -> abstract identity ---------- */
+.brand svg{filter:drop-shadow(0 0 6px rgba(95,212,192,.28))}
+#peopleLayer{opacity:.44;transition:opacity .9s var(--eo)}
+#heroScene.dim #peopleLayer{opacity:.92}
+.hero-person .sil{fill:#071018;stroke:#1D3442;stroke-width:1}
+.hero-person .hero-phone{fill:#CFFBFF;stroke:#5FD4C0;stroke-width:.8;filter:drop-shadow(0 0 5px rgba(95,212,192,.9))}
+.hero-person{transform-box:fill-box;transform-origin:center bottom}
+#heroScene.dim .hero-person{animation:personBreathe 4s ease-in-out infinite}
+#heroScene.dim .hero-person:nth-child(2){animation-delay:.5s}
+#heroScene.dim .hero-person:nth-child(3){animation-delay:1s}
+#heroScene.dim .hero-person:nth-child(4){animation-delay:1.5s}
+@keyframes personBreathe{0%,100%{opacity:.76}50%{opacity:1}}
+.hero-mark{color:#ECFAFF;opacity:0;transform:scale(.72) rotate(-3deg);transform-box:fill-box;transform-origin:center;filter:drop-shadow(0 0 10px rgba(50,210,255,.5));transition:opacity .8s var(--eo),transform 1s var(--eo)}
+.hero-mark .mline{stroke-width:5;stroke-dasharray:1;stroke-dashoffset:1}
+.hero-mark .mnodes circle{fill:#F4FBFF;stroke:#91EEFF;stroke-width:1.2;opacity:0;transform-box:fill-box;transform-origin:center}
+.hero-mark.on{opacity:.86;transform:scale(1) rotate(0)}
+.hero-mark.on .mline{animation:markDraw 1.05s var(--eo) forwards}
+.hero-mark.on .mline:nth-child(2){animation-delay:.16s}
+.hero-mark.on .mline:nth-child(3){animation-delay:.3s}
+.hero-mark.on .mnodes circle{animation:markNode .45s .62s var(--eo) forwards}
+@keyframes markDraw{to{stroke-dashoffset:0}}
+@keyframes markNode{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:scale(1)}}
+.hero-mark-bridge{fill:none;stroke:#5FD4C0;stroke-width:1.4;stroke-dasharray:1;stroke-dashoffset:1;opacity:0;filter:drop-shadow(0 0 5px rgba(95,212,192,.5))}
+.hero-mark-bridge.on{opacity:.65;animation:markDraw 1.15s var(--eo) forwards}
+.hero-resilience{position:absolute;z-index:4;inset-inline-end:max(28px,calc((100vw - 1220px)/2 + 56px));top:clamp(118px,16vh,164px);width:min(310px,26vw);padding:14px 15px 12px;background:rgba(7,16,24,.66);border:1px solid rgba(207,227,238,.13);border-radius:6px;backdrop-filter:blur(12px);box-shadow:0 22px 70px rgba(0,0,0,.26)}
+.hr-kicker{font:500 9px/1.4 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--dim2);padding:0 2px 10px;border-bottom:1px solid var(--ln)}
+.rr{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:center;padding:10px 2px;border-bottom:1px solid rgba(231,237,242,.07);transition:.45s var(--eo)}
+.rr:last-child{border-bottom:0}
+.rr .ri{width:24px;height:24px;display:grid;place-items:center;border:1px solid rgba(207,227,238,.18);border-radius:50%;font:500 8px/1 var(--mono);color:var(--dim2);transition:.45s var(--eo)}
+.rr b{display:block;font:500 11px/1.2 var(--body);color:#CFDCE5}
+.rr small{display:block;margin-top:3px;font:400 9.5px/1.3 var(--mono);color:var(--dim2);transition:.45s var(--eo)}
+.rr.lost .ri{border-color:rgba(217,90,78,.55);color:var(--rd)}
+.rr.lost small{color:var(--rd)}
+.rr.lost{opacity:.68}
+.rr.present .ri{border-color:rgba(207,227,238,.55);color:#CFE3EE;box-shadow:0 0 12px rgba(207,227,238,.08)}
+.rr.present small{color:#CFE3EE}
+.rr.active{background:linear-gradient(90deg,rgba(95,212,192,.09),transparent);margin-inline:-8px;padding-inline:10px;border-radius:3px}
+.rr.active .ri{border-color:var(--ac);color:var(--ac);box-shadow:0 0 14px var(--acG)}
+.rr.active b,.rr.active small{color:var(--ac)}
+@media(max-width:1180px){.hero-resilience{display:none}}
+@media(max-width:760px){#heroScene{transform:translateX(-10%) scale(1.05);transform-origin:center bottom}#heroMark{opacity:0!important}#heroMarkBridge{display:none}#peopleLayer{opacity:.72}}
+@media(prefers-reduced-motion:reduce){.hero-mark.on .mline,.hero-mark.on .mnodes circle,.hero-mark-bridge.on,#heroScene.dim .hero-person{animation:none}.hero-mark.on .mline{stroke-dashoffset:0}.hero-mark.on .mnodes circle{opacity:1;transform:none}}

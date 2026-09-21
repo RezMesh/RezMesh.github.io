@@ -125,13 +125,21 @@ const spy=new IntersectionObserver(es=>es.forEach(e=>{const l=document.querySele
 /* ================= HERO ================= */
 const HS=$("#heroScene"),hStat=$("#heroStatus"),hDots=$$("#hDots b"),tcode=$("#tcode");
 function heroPhase(n,key,cls){hStat.className="status"+(cls?" "+cls:"");const sp=hStat.querySelector("span");sp.setAttribute("data-i18n",key);sp.textContent=t(key);hDots.forEach((b,i)=>b.classList.toggle("on",i<=n));}
+const hMark=$("#heroMark"),hBridge=$("#heroMarkBridge"),hRows=$("#heroResilience .rr");
+function heroConceptPhase(n){
+  hRows.forEach(r=>r.classList.remove("lost","present","active"));
+  if(n>=1){hRows[0]&&hRows[0].classList.add("lost");hRows[1]&&hRows[1].classList.add("lost");}
+  if(n>=2)hRows[2]&&hRows[2].classList.add("present");
+  if(n>=3){hRows[3]&&hRows[3].classList.add("active");add(hMark,"on");add(hBridge,"on");}
+  else{rm(hMark,"on");rm(hBridge,"on");}
+}
 makeLoop(16,[
- {t:0,fn:()=>{rm(HS,"dim");rm($("#sweep"),"run");["#hl1","#hl2","#hl3"].forEach(s=>rm($(s),"on"));rm($("#hmsg"),"run");heroPhase(0,"hs.1","");}},
- {t:4.2,fn:()=>{add($("#sweep"),"run");add(HS,"dim");heroPhase(1,"hs.2","warn");}},
- {t:6.2,fn:()=>{add($("#hl1"),"on");heroPhase(2,"hs.3","ok");}},
+ {t:0,fn:()=>{rm(HS,"dim");rm($("#sweep"),"run");["#hl1","#hl2","#hl3"].forEach(s=>rm($(s),"on"));rm($("#hmsg"),"run");heroConceptPhase(0);heroPhase(0,"hs.1","");}},
+ {t:4.2,fn:()=>{add($("#sweep"),"run");add(HS,"dim");heroConceptPhase(1);heroPhase(1,"hs.2","warn");}},
+ {t:6.2,fn:()=>{add($("#hl1"),"on");heroConceptPhase(2);heroPhase(2,"hs.3","ok");}},
  {t:7.4,fn:()=>add($("#hl2"),"on")},
  {t:8.6,fn:()=>add($("#hl3"),"on")},
- {t:10,fn:()=>{const m=$("#hmsg");rm(m,"run");void m.offsetWidth;add(m,"run");heroPhase(3,"hs.4","ok");}},
+ {t:10,fn:()=>{const m=$("#hmsg");rm(m,"run");void m.offsetWidth;add(m,"run");heroConceptPhase(3);heroPhase(3,"hs.4","ok");}},
  {t:13,fn:()=>heroPhase(3,"hs.5","ok")}],
  $("#hero"),tt=>{tcode.textContent="T+"+String(Math.floor(tt)).padStart(2,"0")+"S";});
 /* ================= PROBLEM ================= */

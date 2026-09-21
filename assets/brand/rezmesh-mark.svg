@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-84 -84 168 168" role="img" aria-labelledby="title desc">
+<title id="title">RezMesh mark</title>
+<desc id="desc">A geometric mesh of connected nodes forming a resilient network symbol.</desc>
+<defs>
+  <filter id="g" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="3.2" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<g fill="none" stroke="#EAF9FF" stroke-linecap="round" stroke-linejoin="round" filter="url(#g)">
+  <path stroke-width="5.5" d="M0-72 50-43 74 0 50 43 0 72-50 43-74 0-50-43Z"/>
+  <path stroke-width="5" d="M0-72V0 72M-50-43 0 0 50-43M-74 0 0 43 74 0M-50 43 0 0 50 43"/>
+  <path stroke-width="4.2" d="M-50-43V43M50-43V43M-74 0 0-43 74 0 0 43Z"/>
+</g>
+<g fill="#F6FCFF" stroke="#9DEFFF" stroke-width="1.5">
+  <circle cx="0" cy="-72" r="6"/><circle cx="-50" cy="-43" r="6"/><circle cx="50" cy="-43" r="6"/>
+  <circle cx="-74" cy="0" r="6"/><circle cx="0" cy="0" r="7"/><circle cx="74" cy="0" r="6"/>
+  <circle cx="-50" cy="43" r="6"/><circle cx="50" cy="43" r="6"/><circle cx="0" cy="72" r="6"/>
+</g>
+</svg>
